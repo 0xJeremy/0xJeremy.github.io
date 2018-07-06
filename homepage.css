@@ -69,6 +69,14 @@
 	margin-right: 0.5em;
 }
 
+.section-header {
+	font-weight: lighter;
+	font-size: 50px;
+  	background: -webkit-linear-gradient(#ff6a00, #ee0979);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
 @media only screen and (max-width: 850px) {
     .pill-space {
         margin-top: 1em;
@@ -79,7 +87,7 @@
     	margin-bottom: 0.5em;
     }
     .section-header {
-    	font-size: 45px;
+    	font-size: 40px;
     }
 }
 
@@ -99,13 +107,6 @@ i {
 	color: white;
 }
 
-.section-header {
-	font-weight: lighter;
-	font-size: 50px;
-  	background: -webkit-linear-gradient(#ff6a00, #ee0979);
-  	-webkit-background-clip: text;
-  	-webkit-text-fill-color: transparent;
-}
 
 .contact-me-info {
 	font-size: 20px;
