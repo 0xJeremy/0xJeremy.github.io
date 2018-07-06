@@ -19,6 +19,21 @@
 	background: linear-gradient(#ff6a00, #ee0979);
 }
 
+.bg-2 {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.bg-3 {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.bg-4 {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
 .icon-padding {
 	padding-left: 20px;
 	padding-right: 20px;
@@ -93,4 +108,9 @@ i {
 	font-weight: lighter !important;
 	font-size: 30px;
 	color: white;
+}
+
+.card {
+	margin-left: 1em;
+	margin-right: 1em;
 }
