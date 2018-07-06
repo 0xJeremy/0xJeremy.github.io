@@ -4,7 +4,7 @@
 
 .bg-1 { 
 	padding-top: 12em;
-	padding-bottom: 12em;
+	padding-bottom: 13em;
 	color: #ffffff;
 	font-family: 'Open Sans', sans-serif;
 	-webkit-background-size: cover;
@@ -75,4 +75,16 @@
 
 i {
 	color: white;
+}
+
+.contact-me {
+	font-weight: lighter;
+	font-size: 50px;
+  	background: -webkit-linear-gradient(#ff6a00, #ee0979);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
+.contact-me-info {
+	font-size: 20px;
 }
