@@ -77,7 +77,7 @@ i {
 	color: white;
 }
 
-.contact-me {
+.section-header {
 	font-weight: lighter;
 	font-size: 50px;
   	background: -webkit-linear-gradient(#ff6a00, #ee0979);
@@ -87,4 +87,10 @@ i {
 
 .contact-me-info {
 	font-size: 20px;
+}
+
+.name-sub-text {
+	font-weight: lighter !important;
+	font-size: 30px;
+	color: white;
 }
