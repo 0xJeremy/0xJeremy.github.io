@@ -49,6 +49,11 @@
 	padding-right: 2em !important;
 }
 
+.bottom-button-space {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
 @media only screen and (max-width: 850px) {
     .pill-space {
         margin-top: 1em;
