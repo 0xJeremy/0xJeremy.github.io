@@ -49,6 +49,13 @@
 	padding-right: 2em !important;
 }
 
+@media only screen and (max-width: 850px) {
+    .pill-space {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+}
+
 .footer-background {
 	background-color: #343a40;
 	color: white;
