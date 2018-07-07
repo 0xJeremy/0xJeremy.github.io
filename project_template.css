@@ -77,6 +77,11 @@
     .section-header {
     	font-size: 40px;
     }
+    .projects-background {
+		background: #ecf0f1;
+		padding-left: 0em;
+		padding-right: 0em;
+	}
 }
 
 @media only screen and (max-width: 550px) {
