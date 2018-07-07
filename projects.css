@@ -94,6 +94,23 @@
 		margin-top: 0.5em;
 		margin-bottom: 0.5em;
 	}
+	.card {
+    	margin-top: 0.5em;
+    	margin-bottom: 0.5em;
+    	margin-left: 0;
+    	margin-right: 0;
+    }
+    .section-header {
+    	font-size: 40px;
+    }
+    .projects-background {
+		background: #ecf0f1;
+		padding-left: 0em;
+		padding-right: 0em;
+	}
+	.w-75 {
+		width: 100%;
+	}
 }
 
 .footer-background {
