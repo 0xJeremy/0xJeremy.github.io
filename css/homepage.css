@@ -113,9 +113,11 @@ i {
 }
 
 .name-sub-text {
-	font-weight: lighter !important;
+	font-weight: lighter;
 	font-size: 30px;
-	color: white;
+  	background: white;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
 }
 
 .card {
