@@ -20,8 +20,8 @@
 }
 
 .bg-2 {
-	padding-top: 2em;
-	padding-bottom: 2em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 }
 
 .bg-3 {
@@ -37,6 +37,10 @@
 .icon-padding {
 	padding-left: 20px;
 	padding-right: 20px;
+}
+
+.about-me-info {
+	font-size: 1.2em;
 }
 
 .button-mid {
