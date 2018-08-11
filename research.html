@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/projects.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="images/favicon.PNG">
+
+	<title>Jeremy Kanovsky</title>
+</head>
+
+
+
+<body>
+
+	<!-- Top Navbar -->
+	<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+		<a class="navbar-brand" href="index.html"><img src="images/corner_icon.svg" width="50" height="50"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav ml-auto">
+				<nav class="nav nav-pills nav-fill">
+					<a class="nav-item nav-link active pill-space" href="index.html">Home</a>
+					<a class="nav-item nav-link active pill-space" href="index.html#contact-me">Contact</a>
+					<a class="nav-item nav-link active pill-space" href="JCK Resume.pdf" target="_blank">Resume</a>
+					<a class="nav-item nav-link active pill-space" href="research.html">Research</a>
+					<a class="nav-item nav-link active pill-space" href="projects.html">Projects</a>
+				</nav>
+			</div>
+		</div>
+	</nav>
+
+
+
+<!-- Project Information -->
+<div class="sides">
+<div class="container-fluid w-75 bg-3 text-center projects-background">
+	<p class="section-header">// undergraduate research project //</p>
+	<div class="container">
+  		<div class="row">
+  			<p class="project-information">Over the summer of 2018, and into the fall semester I was working on an independent undergraduate research project in the Tufts ASAR Lab. The ASAR lab (link <a href="https://sites.google.com/a/tufts.edu/asar/">here</a>) is the Automated Systems and Robotics Lab at Tufts University. Under my adviser Dr. Jason Rife, and PI in the ASAR lab, I worked on developing a method of control for a single user to fly multiple quadrotor drones.</p>
+  			<p class="project-information">To accomplish this, there were multiple pieces that had to work together. Firstly, I used JavaScript to fly the drone around the lab while issueing commands from my computer (the drone used in this research is the Parrot AR 2.0: link <a href="https://www.parrot.com/us/drones/parrot-ardrone-20-elite-edition">here</a>). Next, I integrated a three dimensional positioning system that would provide feedback to my controller (the system used was the Marvelmind indoor navigation system: link <a href="https://marvelmind.com/">here</a>). The next step was to integrate the Python positioning system and the JavaScript flight control into a cohesive unit. This was accomplished using a local data socket. The last step for control over a single drone was to add data smoothing across the incoming position data, implement a proportional controller, and allow the user to enter desired locations for the quadrotor.</p>
+  			<p class="project-information">During the fall semester, the next steps will be to extend this control to multiple quadrotors using the same controllers and systems already in place for a single drone. Because of the semi-autonomous nature of the system, the user will not have to exert direct control over each drone at all times, and instead can specify tasks that will be carried out automatically. The full code for this project to date can be viewed on my Github, and is linked <a href="https://github.com/0xJeremy/ME94-Drone">here</a>.</p>
+  		</div>
+  		<div class="row">
+  			<div class="col">
+  				<div class="card" style="background: transparent; border: 2px solid rgba(0,0,0,0.125) !important">
+  					<img src="images/quadcopter_research/single_drone_control.png" class="img-fluid project-image" alt="Single drone control flow">
+  					<div class="card-body">
+    					<p class="card-text" style="font-weight: bold">Control flow for flying a single quadrotor.</p>
+  					</div>
+				</div>
+  			</div>
+  			<div class="col">
+  				<div class="card" style="background: transparent; border: 2px solid rgba(0,0,0,0.125) !important">
+  					<img src="images/quadcopter_research/multi_drone_control.png" class="img-fluid project-image" alt="Multi-drone control flow">
+  					<div class="card-body">
+    					<p class="card-text" style="font-weight: bold">Control flow for flying multiple quadrotors.</p>
+  					</div>
+				</div>
+  			</div>
+  		</div>
+  		</br>
+  		<div class="row">
+  			<div class="col">
+  				<div class="card" style="background: transparent; border: 2px solid rgba(0,0,0,0.125) !important">
+  					<img src="images/quadcopter_research/multipoint_diagonal.png" class="img-fluid project-image" alt="Single drone control flow">
+  					<div class="card-body">
+    					<p class="card-text" style="font-weight: bold">Logged path data for two point oscillation.</p>
+  					</div>
+				</div>
+  			</div>
+  			<div class="col">
+  				<div class="card" style="background: transparent; border: 2px solid rgba(0,0,0,0.125) !important">
+  					<img src="images/quadcopter_research/multipoint_square.png" class="img-fluid project-image" alt="Multi-drone control flow">
+  					<div class="card-body">
+    					<p class="card-text" style="font-weight: bold">Logged data for multipoint path flight.</p>
+  					</div>
+				</div>
+  			</div>
+  		</div>
+  	</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small pt-3 footer-background">
+	<div class="container">
+		<div class="list-unstyled list-inline text-center">
+			<button type="button" class="btn btn-outline-primary bottom-button-space"><a  href="https://github.com/0xJeremy"><i class="fa fa-github icon-padding" style="font-size: 30px;"></i></a></button>
+			<button type="button" class="btn btn-outline-primary bottom-button-space"><a href="mailto:kanovsky.jeremy@gmail.com"><i class="fa fa-envelope icon-padding" style="font-size: 30px;"></i></a></button>
+			<button type="button" class="btn btn-outline-primary bottom-button-space"><a href="http://www.linkedin.com/in/jeremy-kanovsky/"><i class="fa fa-linkedin icon-padding" style="font-size: 30px; bottom-button-space"></i></a></button>
+<!-- 			<button type="button" class="btn btn-outline-primary bottom-button-space"><a href="index.html#contact-me" ><i class="fa fa-phone icon-padding" style="font-size: 30px;"></i></a></button> -->
+		</div>
+		<div class="footer-copyright text-center py-3">© 2018 Copyright:
+			<a href="#"> Jeremy Kanovsky</a>
+		</div>
+	</div>
+</footer>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="images/https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="images/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="images/https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
