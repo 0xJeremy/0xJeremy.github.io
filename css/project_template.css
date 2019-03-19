@@ -84,6 +84,12 @@
 	}
 	.w-75 {
 		width: 100% !important;
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+	.col {
+		padding-left: 5px !important;
+		padding-right: 5px !important;
 	}
 }
 
@@ -102,7 +108,6 @@
 i {
 	color: white;
 }
-
 
 .contact-me-info {
 	font-size: 20px;
