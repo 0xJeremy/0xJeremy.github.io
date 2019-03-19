@@ -42,62 +42,33 @@
 <!-- Project Information -->
 <div class="sides">
 <div class="container-fluid w-75 bg-3 text-center projects-background">
-	<p class="section-header">// LEGO robots //</p>
+	<p class="section-header">// DUM-E Arms (v1) //</p>
 	<div class="container">
-
-  		<div class="row">
-  			<p class="project-information">The LEGO robots shown below were created for ME-84, an undergraduate course on Robotics and Mechatronics. The programming for all these robots was done in MatLab.</p>
-  		</div>
-
   		<div class="row">
     		<div class="col">
-      			<img src="../images/lego/iot_arms_1.JPG" class="img-fluid project-image" alt="LEGO Arms 1">
+      			<img src="../images/iot_arms_v1/arms_1.JPG" class="img-fluid project-image" alt="IOT Arms 1">
     		</div>
     		<div class="col">
-    			 <img src="../images/lego/iot_arms_3.JPG" class="img-fluid project-image" alt="LEGO Arms 2">
+    			 <img src="../images/iot_arms_v1/arms_2.JPG" class="img-fluid project-image" alt="IOT Arms 2">
     		</div>
   		</div>
   		<div class="row">
-  			<p class="project-information">These LEGO arms are IOT enabled. The arms are programmed using the sine and cosine function to draw oscillation patterns on a whiteboard table. On a web dashboard a user can enter a value between 0 and 100 to change the magnitude of the functions. The two arms are linked via Bluetooth, with arm also reading values from the web dashboard. This was accomplished by "hacking" the sensor port on the LEGO EV3 microcontroller to read values from a separate, web connected microcontroller (programmed in Python).</p>
-  		</div>
-
-  		<div class="row">
     		<div class="col">
-      			<img src="../images/lego/clock_3.JPG" class="img-fluid project-image" alt="LEGO Clock 1">
+      			<img src="../images/iot_arms_v1/arms_3.JPG" class="img-fluid project-image" alt="IOT Arms 3">
     		</div>
     		<div class="col">
-    			 <img src="../images/lego/clock_1.JPG" class="img-fluid project-image" alt="LEGO Clock 2">
+    			 <img src="../images/iot_arms_v1/arms_4.JPG" class="img-fluid project-image" alt="IOT Arms 4">
     		</div>
   		</div>
   		<div class="row">
-  			<p class="project-information">These "clocks" are inspiried by the Weasley clock in Harry Potter. The user can set their location on one clock, and that "location" will be sent to the other clock via Bluetooth, and displayed there. Both clocks are bidirectional and have 6 discrete location settings.</p>
+  			<p class="project-information">These internet-enabled arms are the first version of a swarm of robot arms intended to teach people new to robotics about fabrication and programming. Joking named DUM-E arms (after the robotic arm from Iron Man), these three arms were created in 24 hours from scratch at MakeHarvard 2019 (a Harvard university makeathon). They connect to a webserver where the user can control each arm individually.</p>
+  			<p class="project-information"><a href="http://makeharvard-mk1.herokuapp.com" target="_blank">Click here</a> to see the user facing webpage (note: the server may have fallen asleep; If it does not load immediately, please wait up to 15 seconds). In the future a kit containing all the pieces needed to create the arms will be put together and given to new members of the Tufts Robotics club to help them learn about laser cutting, 3D printing, Arduino coding, circuits, and webservers.<p>
   		</div>
-
-  		<div class="row">
-    		<div class="col">
-      			<img src="../images/lego/towers_1.JPG" class="img-fluid project-image" alt="LEGO Tower 1">
-    		</div>
-    		<div class="col">
-    			 <img src="../images/lego/towers_2.JPG" class="img-fluid project-image" alt="LEGO Tower 2">
-    		</div>
-  		</div>
-  		<div class="row">
-  			<p class="project-information">These LEGO towers were created to mimic a game of rock, paper, scissors. The user can enter either "Attack", "Defend", or "Plan" on a control panel, and their partner does likewise. The tower of the loser will then "fall" a portion of the way down. The first tower to fall completely is the loser of the game.</p>
-  		</div>
-
-  		<div class="row">
-    		<div class="col">
-      			<img src="../images/lego/gear_1.JPG" class="img-fluid project-image" alt="LEGO Gear Train 1">
-    		</div>
-    		<div class="col">
-    			 <img src="../images/lego/gear_2.JPG" class="img-fluid project-image" alt="LEGO Gear Train 2">
-    		</div>
-  		</div>
-  		<div class="row">
-  			<p class="project-information">This LEGO gear train was meant to mimic an art installation at the MIT museum of science. The speed of the motor can be adjusted by the two buttons on the front. The gear ratio of this train is approximately 1:2,100,000,000.</p>
-  		</div>
-
   	</div>
+  	<div class="alert alert-primary" role="alert">
+    To see full schematics and code for these arms, visit the git repository here!
+    <a href="https://github.com/0xJeremy/Dum-E-IOT" class="btn btn-primary"><i class="fa fa-github icon-padding" style="font-size: 30px;"></i></a>
+  </div>
 </div>
 </div>
 
