@@ -6,6 +6,15 @@ html {
 	color: white !important;
 }
 
+.name {
+	padding-top: 2em; 
+	padding-bottom: 16vh;
+}
+
+.subtext {
+	padding-bottom: 2em;
+}
+
 .down-arrow {
 	transform-origin: 0% 50%;
   	animation: arrow 2s ease-in-out infinite;
@@ -136,6 +145,17 @@ html {
 	.bottom-button-space {
 		margin-top: 0.5em;
 		margin-bottom: 0.5em;
+	}
+	.name {
+		padding-top: 2em; 
+		padding-bottom: 8vh;
+	}
+	.bg-1 { 
+		padding-top: 6em;
+		padding-bottom: 4em;
+	}
+	.subtext {
+		padding-bottom: 0em;
 	}
 }
 
