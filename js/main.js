@@ -112,5 +112,4 @@ var partJson = {
 var jsonUri = "data:text/plain;base64,"+window.btoa(JSON.stringify(partJson));
 
 particlesJS.load('particles-js', jsonUri, function() {
-  console.log('callback - particles.js config loaded');
 });
