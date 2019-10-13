@@ -49,9 +49,10 @@ html {
 
 .bg-2 {
 	background: #343a40;
-	padding-top: 16vh;
-	padding-bottom: 16vh;
+	padding-top: 12vh;
+	padding-bottom: 12vh;
 	color: #fff;
+	font-size: 1.1em;
 }
 
 .bg-3 {
@@ -65,6 +66,7 @@ html {
 	padding-top: 2em;
 	padding-bottom: 2em;
 	color: #fff;
+	font-size: 1.1em;
 }
 
 .icon-padding {
