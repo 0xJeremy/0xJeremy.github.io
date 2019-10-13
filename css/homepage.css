@@ -1,5 +1,27 @@
+html {
+	scroll-behavior: smooth;
+}
+
 .nav-item {
 	color: white !important;
+}
+
+.down-arrow {
+	transform-origin: 0% 50%;
+  	animation: arrow 2s ease-in-out infinite;
+  	padding-top: 16vh;
+  	width: 48px;
+}
+
+@keyframes arrow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, 10px);
+  }
 }
 
 #particles-js {
@@ -35,6 +57,7 @@
 .bg-3 {
 	background: #141a20;
 	padding-top: 2em;
+	padding-bottom: 10vh;
 }
 
 .bg-4 {
@@ -76,6 +99,7 @@
 	margin-left: 20px;
 	padding-left: 2em !important;
 	padding-right: 2em !important;
+	color: white;
 }
 
 .bottom-button-space {
