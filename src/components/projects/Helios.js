@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "Hexapod (v1)";
-const coverImage = "hexapod_isometric.JPG";
+const title = "Helios Pi-Hat Robot Controller";
+const coverImage = "Helios_Board.png";
 const description =
-  "This was the final project for Tufts ME-134 (Advanced Robotics) in Fall 2020. We were tasked with creating a robot that could navigate an obstacle course (containing a tunnel, wall, and rough terrain) autonomously.";
+  "This is a custom PCB Raspberry Pi hat designed to enable CAN bus communication and high-precision servo control. It can also supply power to the Pi.";
 
 export default function Component() {
   const classes = useStyles();
@@ -23,10 +23,9 @@ export default function Component() {
     <ProjectTemplate title={title}>
       <img
         className={classes.image}
-        src={`${imagePath}/hexapod/hexapod_isometric.JPG`}
+        src={`${imagePath}/helios/Helios_Board.png`}
       />
-      This robot was made for ME-134 (Advanced Robotics) at Tufts University in
-      the Fall of 2020.
+      This PCB was made for fun :)
     </ProjectTemplate>
   );
 }

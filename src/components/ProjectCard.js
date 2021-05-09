@@ -39,16 +39,21 @@ const useStyles = makeStyles({
   title: {
     fontSize: "2em",
     fontWeight: "600",
+    color: colorOrange
   },
   description: {
     color: "white",
   },
   media: {
-    height: "20vh",
+    height: "30vh",
   },
   actions: {
     float: "right",
   },
+  content: {
+    // minHeight: '10vh'
+    // height: '8vh'
+  }
 });
 
 export default function ProjectCard(props) {
@@ -57,13 +62,14 @@ export default function ProjectCard(props) {
 
   return (
     <Card className={classes.root}>
+      <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
             image={`static/projects/${name}/${project.coverImage}`}
             title={name}
           />
-          <CardContent>
+          <CardContent className={classes.content}>
             <Typography gutterBottom className={classes.title}>
               {project.title}
             </Typography>
@@ -72,6 +78,7 @@ export default function ProjectCard(props) {
             </Typography>
           </CardContent>
         </CardActionArea>
+      </Link>
 
       <CardActions className={classes.actions}>
         <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
@@ -80,7 +87,6 @@ export default function ProjectCard(props) {
           </ViewProjectButton>
         </Link>
       </CardActions>
-
     </Card>
   );
 }

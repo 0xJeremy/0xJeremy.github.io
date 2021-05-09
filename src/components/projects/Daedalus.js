@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "Hexapod (v1)";
-const coverImage = "hexapod_isometric.JPG";
+const title = "Daedalus BLDC Motor Controller";
+const coverImage = "Daedalus_Brackets_Board.png";
 const description =
-  "This was the final project for Tufts ME-134 (Advanced Robotics) in Fall 2020. We were tasked with creating a robot that could navigate an obstacle course (containing a tunnel, wall, and rough terrain) autonomously.";
+  "This is a custom PCB designed to drive high-speed, high-power brushless motors. It includes current monitoring and positional feedback, turning the brushless motor into a high-torque servo motor.";
 
 export default function Component() {
   const classes = useStyles();
@@ -23,10 +23,9 @@ export default function Component() {
     <ProjectTemplate title={title}>
       <img
         className={classes.image}
-        src={`${imagePath}/hexapod/hexapod_isometric.JPG`}
+        src={`${imagePath}/daedalus/Daedalus_Brackets_Board.png`}
       />
-      This robot was made for ME-134 (Advanced Robotics) at Tufts University in
-      the Fall of 2020.
+      This PCB was made for fun :)
     </ProjectTemplate>
   );
 }

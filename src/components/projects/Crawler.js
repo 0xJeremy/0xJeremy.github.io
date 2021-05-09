@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "Hexapod (v1)";
-const coverImage = "hexapod_isometric.JPG";
+const title = "Crawling Robot";
+const coverImage = "crawler_isometric.JPG";
 const description =
-  "This was the final project for Tufts ME-134 (Advanced Robotics) in Fall 2020. We were tasked with creating a robot that could navigate an obstacle course (containing a tunnel, wall, and rough terrain) autonomously.";
+  "This robot was build as a homework assignment for Tufts ME-134 (Advanced Robotics) in Fall 2020. The assignment was to create a \"crawling robot\", so we created a modular robot that rolls end over end.";
 
 export default function Component() {
   const classes = useStyles();
@@ -23,7 +23,7 @@ export default function Component() {
     <ProjectTemplate title={title}>
       <img
         className={classes.image}
-        src={`${imagePath}/hexapod/hexapod_isometric.JPG`}
+        src={`${imagePath}/crawler/crawler_isometric.JPG`}
       />
       This robot was made for ME-134 (Advanced Robotics) at Tufts University in
       the Fall of 2020.

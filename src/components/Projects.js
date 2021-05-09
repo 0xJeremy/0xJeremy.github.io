@@ -10,7 +10,7 @@ import {
 import Paper from "@material-ui/core/Paper";
 import ProjectCard from "./ProjectCard";
 import Toolbar from "./Toolbar";
-import projectPages from './projects';
+import projectPages from "./projects";
 
 const tableMargin = 1;
 

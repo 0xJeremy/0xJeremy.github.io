@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
   },
   children: {
     color: "white",
-    maxWidth: '75%',
-    fontSize: '0.5em',
+    maxWidth: "75%",
+    fontSize: "0.5em",
     display: "block",
   },
   outline: {
