@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
+import { Link } from 'react-router-dom';
 import { paperColor, colorOrange, colorBlue, colorGreen } from "./PageStyles";
 
 const useStyles = makeStyles((theme) => ({
@@ -42,57 +43,73 @@ const useStyles = makeStyles((theme) => ({
 
 function ToolBar(props) {
   const classes = useStyles();
+  const { setPage } = props;
 
   return (
     <Toolbar className={classes.root}>
-      <img className={classes.logo} src="static/logo.png" alt="" />
+{/*      <img className={classes.logo} src="static/logo.png" alt="" />
       <Typography className={classes.name}>
         Raspberry Pi[co] [OSS]illoscope
-      </Typography>
+      </Typography>*/}
 
       <section className={classes.rightToolbar}>
-        <Button
-          className={classes.button}
-          classes={{ outlined: classes.outline }}
-          variant="outlined"
-          color="primary"
-          href="https://github.com/0xJeremy/p6"
-          target="_blank"
-        >
-          Contact Me
-        </Button>
+        <Link to="/contact-me" style={{ textDecoration: 'none' }}>
+          <Button
+            className={classes.button}
+            classes={{ outlined: classes.outline }}
+            variant="outlined"
+            color="primary"
+          >
+            Contact Me
+          </Button>
+        </Link>
 
         <Button
           className={classes.button}
           classes={{ outlined: classes.outline }}
           variant="outlined"
           color="primary"
-          href="https://github.com/0xJeremy/p6"
+          href="https://jeremykanovsky.com/JCK%20Resume.pdf"
           target="_blank"
         >
           Resume
         </Button>
 
-        <Button
-          className={classes.button}
-          classes={{ outlined: classes.outline }}
-          variant="outlined"
-          color="primary"
-          href="https://github.com/0xJeremy/p6"
-          target="_blank"
-        >
-          Research
-        </Button>
+        <Link to="/research" style={{ textDecoration: 'none' }}>
+          <Button
+            className={classes.button}
+            classes={{ outlined: classes.outline }}
+            variant="outlined"
+            color="primary"
+            href="https://github.com/0xJeremy/p6"
+            target="_blank"
+          >
+            Research
+          </Button>
+        </Link>
+
+        <Link to="/projects" style={{ textDecoration: 'none' }}>
+          <Button
+            className={classes.button}
+            classes={{ outlined: classes.outline }}
+            variant="outlined"
+            color="primary"
+            href="https://github.com/0xJeremy/p6"
+            target="_blank"
+          >
+            Projects
+          </Button>
+        </Link>
 
         <Button
           className={classes.button}
           classes={{ outlined: classes.outline }}
           variant="outlined"
           color="primary"
-          href="https://github.com/0xJeremy/p6"
+          href="https://github.com/0xJeremy/"
           target="_blank"
         >
-          Projects
+          Github
         </Button>
         
       </section>

@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typewriter from 'typewriter-effect';
 import Button from "@material-ui/core/Button";
+import { Link } from 'react-router-dom';
 import { colorGreen, colorOrange } from "./PageStyles";
 
 const offsetLeft = 5;
@@ -52,8 +53,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Greeting() {
+export default function Greeting(props) {
   const classes = useStyles();
+  const { setPage } = props;
 
   return (
     <div className={classes.root}>
@@ -79,27 +81,29 @@ export default function Greeting() {
 
       <br />
       <br />
-      <Button
-          className={classes.button}
-          classes={{ outlined: classes.outline }}
-          variant="outlined"
-          color="primary"
-          href="https://github.com/0xJeremy/p6"
-          target="_blank"
-        >
-          Contact Me
-        </Button>
 
+      <Link to="/contact-me" style={{ textDecoration: 'none' }}>
         <Button
           className={classes.button}
           classes={{ outlined: classes.outline }}
           variant="outlined"
           color="primary"
-          href="https://github.com/0xJeremy/p6"
-          target="_blank"
+        >
+          Contact Me
+        </Button>
+      </Link>
+
+      <Link to="/projects" style={{ textDecoration: 'none' }}>
+        <Button
+          className={classes.button}
+          classes={{ outlined: classes.outline }}
+          variant="outlined"
+          color="primary"
         >
           Projects
         </Button>
+      </Link>
+
     </div>
   );
 }
