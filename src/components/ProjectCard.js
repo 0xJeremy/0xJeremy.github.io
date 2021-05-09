@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Chip from '@material-ui/core/Chip';
+import Chip from "@material-ui/core/Chip";
 import { Link } from "react-router-dom";
 import {
   paperColor,
@@ -15,6 +15,7 @@ import {
   colorOrange,
   colorRed,
   colorBlue,
+  colorYellow,
 } from "./PageStyles";
 
 const ViewProjectButton = withStyles({
@@ -40,7 +41,7 @@ const useStyles = makeStyles({
   title: {
     fontSize: "2em",
     fontWeight: "600",
-    color: colorOrange
+    color: colorOrange,
   },
   description: {
     color: "white",
@@ -57,15 +58,19 @@ const useStyles = makeStyles({
   },
   hardware: {
     color: colorRed,
-    borderColor: colorRed
+    borderColor: colorRed,
   },
   software: {
     color: colorBlue,
-    borderColor: colorBlue
+    borderColor: colorBlue,
   },
   pcb: {
     color: colorGreen,
-    borderColor: colorGreen
+    borderColor: colorGreen,
+  },
+  oss: {
+    color: colorYellow,
+    borderColor: colorYellow,
   },
 });
 
@@ -94,15 +99,38 @@ export default function ProjectCard(props) {
       </Link>
 
       <CardActions className={classes.actions}>
-        {project.tags.hardware &&
-          <Chip variant="outlined" size="medium" className={classes.hardware} label="Hardware" />
-        }
-        {project.tags.software &&
-          <Chip variant="outlined" size="medium" className={classes.software} label="Software" />
-        }
-        {project.tags.pcb &&
-          <Chip variant="outlined" size="medium" className={classes.pcb} label="PCB Design" />
-        }
+        {project.tags.hardware && (
+          <Chip
+            variant="outlined"
+            size="medium"
+            className={classes.hardware}
+            label="Hardware"
+          />
+        )}
+        {project.tags.software && (
+          <Chip
+            variant="outlined"
+            size="medium"
+            className={classes.software}
+            label="Software"
+          />
+        )}
+        {project.tags.pcb && (
+          <Chip
+            variant="outlined"
+            size="medium"
+            className={classes.pcb}
+            label="PCB Design"
+          />
+        )}
+        {project.tags.oss && (
+          <Chip
+            variant="outlined"
+            size="medium"
+            className={classes.oss}
+            label="Open-Source Library"
+          />
+        )}
         <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
           <ViewProjectButton size="medium" color="primary" variant="outlined">
             View Project

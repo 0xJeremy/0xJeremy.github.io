@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
-import { imagePath } from './ProjectCommon';
+import { imagePath } from "./ProjectCommon";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -17,7 +17,7 @@ const description =
   "This is a custom PCB Raspberry Pi hat designed to enable CAN bus communication and high-precision servo control. It can also supply power to the Pi.";
 const tags = {
   pcb: true,
-}
+};
 
 export default function Component() {
   const classes = useStyles();

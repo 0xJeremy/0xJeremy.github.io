@@ -11,12 +11,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "Daedalus BLDC Motor Controller";
-const coverImage = "Daedalus_Brackets_Board.png";
+const title = "MLE (My Little Eye)";
+const coverImage = "mle.png";
 const description =
-  "This is a custom PCB designed to drive high-speed, high-power brushless motors. It includes current monitoring and positional feedback, turning the brushless motor into a high-torque servo motor.";
+  "MLE (My Little Eye) was part of a hackathon project at HackMIT where we created a fleet of semi-autonomous robots that track down lost objects for people with vision and mobility impairments.";
 const tags = {
-  pcb: true,
+  software: true,
+  hardware: true,
 };
 
 export default function Component() {
@@ -24,11 +25,8 @@ export default function Component() {
 
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/daedalus/Daedalus_Brackets_Board.png`}
-      />
-      This PCB was made for fun :)
+      <img className={classes.image} src={`${imagePath}/mle/mle.png`} />
+      This project was made just for fun :)
     </ProjectTemplate>
   );
 }

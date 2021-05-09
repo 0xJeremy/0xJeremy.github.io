@@ -1,3 +1,3 @@
-const imagePath = '/static/projects';
+const imagePath = "/static/projects";
 
 export { imagePath };

@@ -11,12 +11,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "Daedalus BLDC Motor Controller";
-const coverImage = "Daedalus_Brackets_Board.png";
+const title = "Tufts BCI Team";
+const coverImage = "bci.png";
 const description =
-  "This is a custom PCB designed to drive high-speed, high-power brushless motors. It includes current monitoring and positional feedback, turning the brushless motor into a high-torque servo motor.";
+  "As part of the Tufts BCI (Brain-Computer Interface) team, I created a user-interface for viewing real-time brain activity on a 3D model. Data can be streamed from a remote sensor to the page.";
 const tags = {
-  pcb: true,
+  software: true,
 };
 
 export default function Component() {
@@ -24,11 +24,8 @@ export default function Component() {
 
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/daedalus/Daedalus_Brackets_Board.png`}
-      />
-      This PCB was made for fun :)
+      <img className={classes.image} src={`${imagePath}/bci/bci.png`} />
+      This project was made just for fun :)
     </ProjectTemplate>
   );
 }

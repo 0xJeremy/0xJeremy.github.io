@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
-import { imagePath } from './ProjectCommon';
+import { imagePath } from "./ProjectCommon";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
 const title = "Crawling Robot";
 const coverImage = "crawler_isometric.JPG";
 const description =
-  "This robot was build as a homework assignment for Tufts ME-134 (Advanced Robotics) in Fall 2020. The assignment was to create a \"crawling robot\", so we created a modular robot that rolls end over end.";
+  'This robot was build as a homework assignment for Tufts ME-134 (Advanced Robotics) in Fall 2020. The assignment was to create a "crawling robot", so we created a modular robot that rolls end over end.';
 const tags = {
   software: true,
   hardware: true,
-}
+};
 
 export default function Component() {
   const classes = useStyles();

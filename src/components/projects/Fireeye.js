@@ -11,12 +11,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "Daedalus BLDC Motor Controller";
-const coverImage = "Daedalus_Brackets_Board.png";
+const title = "FireEye";
+const coverImage = "fireeye.png";
 const description =
-  "This is a custom PCB designed to drive high-speed, high-power brushless motors. It includes current monitoring and positional feedback, turning the brushless motor into a high-torque servo motor.";
+  "FireEye is an open-source real-time socket communication library designed for low-latency video streaming from remote sources. It was designed to steam a Raspberry Pi camera to a webpage.";
 const tags = {
-  pcb: true,
+  software: true,
+  oss: true,
 };
 
 export default function Component() {
@@ -24,11 +25,8 @@ export default function Component() {
 
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/daedalus/Daedalus_Brackets_Board.png`}
-      />
-      This PCB was made for fun :)
+      <img className={classes.image} src={`${imagePath}/fireeye/fireeye.png`} />
+      This project was made just for fun :)
     </ProjectTemplate>
   );
 }

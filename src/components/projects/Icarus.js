@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
-import { imagePath } from './ProjectCommon';
+import { imagePath } from "./ProjectCommon";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -17,7 +17,7 @@ const description =
   "This is a custom PCB power distribution board designed for use with the Daedalus BLDC motor controller for driving high-current motors and the Helios Raspberry Pi hat. It has 6 power breakouts.";
 const tags = {
   pcb: true,
-}
+};
 
 export default function Component() {
   const classes = useStyles();

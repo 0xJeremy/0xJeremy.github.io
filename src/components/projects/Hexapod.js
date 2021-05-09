@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
-import { imagePath } from './ProjectCommon';
+import { imagePath } from "./ProjectCommon";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -18,7 +18,7 @@ const description =
 const tags = {
   software: true,
   hardware: true,
-}
+};
 
 export default function Component() {
   const classes = useStyles();
