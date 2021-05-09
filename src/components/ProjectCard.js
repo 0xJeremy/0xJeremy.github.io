@@ -72,6 +72,10 @@ const useStyles = makeStyles({
     color: colorYellow,
     borderColor: colorYellow,
   },
+  hackathon: {
+    color: colorOrange,
+    borderColor: colorOrange
+  },
 });
 
 export default function ProjectCard(props) {
@@ -129,6 +133,14 @@ export default function ProjectCard(props) {
             size="medium"
             className={classes.oss}
             label="Open-Source Library"
+          />
+        )}
+        {project.tags.hackathon && (
+          <Chip
+            variant="outlined"
+            size="medium"
+            className={classes.hackathon}
+            label="Hackathon Project"
           />
         )}
         <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>

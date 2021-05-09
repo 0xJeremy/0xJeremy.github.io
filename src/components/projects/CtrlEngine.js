@@ -11,14 +11,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "MLE (My Little Eye)";
-const coverImage = "mle.png";
+const title = "ctrl.engine";
+const coverImage = "ctrlengine.png";
 const description =
-  "MLE (My Little Eye) was part of a hackathon project at HackMIT where we created a fleet of semi-autonomous robots that track down lost objects for people with vision and mobility impairments.";
+  "ctrl.engine is an open-source robotics library. It provides various tools in Python to make writing software for robotics easier and faster. It gives boilerplate multi-threaded code to multiple APIs and image processing tools.";
 const tags = {
   software: true,
-  hardware: true,
-  hackathon: true,
+  oss: true,
 };
 
 export default function Component() {
@@ -26,8 +25,12 @@ export default function Component() {
 
   return (
     <ProjectTemplate title={title}>
-      <img className={classes.image} src={`${imagePath}/mle/mle.png`} alt="" />
-      This project was made just for fun :)
+      <img
+        className={classes.image}
+        src={`${imagePath}/ctrlengine/ctrlengine.png`}
+        alt=""
+      />
+      This project was made for fun :) (and out of necessity)
     </ProjectTemplate>
   );
 }

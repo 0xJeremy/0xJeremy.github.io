@@ -11,14 +11,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "MLE (My Little Eye)";
-const coverImage = "mle.png";
+const title = "socket.engine";
+const coverImage = "socketengine.png";
 const description =
-  "MLE (My Little Eye) was part of a hackathon project at HackMIT where we created a fleet of semi-autonomous robots that track down lost objects for people with vision and mobility impairments.";
+  "socket.engine is the open-source successor to FireEye. It enabled real-time communication between devices that is optimized to be light-weight and very fast.";
 const tags = {
   software: true,
-  hardware: true,
-  hackathon: true,
+  oss: true,
 };
 
 export default function Component() {
@@ -26,8 +25,12 @@ export default function Component() {
 
   return (
     <ProjectTemplate title={title}>
-      <img className={classes.image} src={`${imagePath}/mle/mle.png`} alt="" />
-      This project was made just for fun :)
+      <img
+        className={classes.image}
+        src={`${imagePath}/socketengine/socketengine.png`}
+        alt=""
+      />
+      This project was made for fun :) (and out of necessity)
     </ProjectTemplate>
   );
 }

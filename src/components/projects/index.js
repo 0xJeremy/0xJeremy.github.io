@@ -10,6 +10,9 @@ import * as Icarus from "./Icarus";
 import * as Fireeye from "./Fireeye";
 import * as BCI from "./BCI";
 import * as MLE from "./MLE";
+import * as SocketEngine from './SocketEngine';
+import * as VizEngine from './VizEngine';
+import * as CtrlEngine from './CtrlEngine';
 
 export default {
   hexapod: Hexapod,
@@ -24,4 +27,7 @@ export default {
   fireeye: Fireeye,
   bci: BCI,
   mle: MLE,
+  socketengine: SocketEngine,
+  vizengine: VizEngine,
+  ctrlengine: CtrlEngine,
 };
