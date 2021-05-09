@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
 import Typewriter from 'typewriter-effect';
 import Button from "@material-ui/core/Button";
 import { Link } from 'react-router-dom';
@@ -55,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Greeting(props) {
   const classes = useStyles();
-  const { setPage } = props;
 
   return (
     <div className={classes.root}>

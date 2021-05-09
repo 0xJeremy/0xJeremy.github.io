@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { colorGreen, colorOrange, paperColor, backgroundColor } from "./PageStyles";
 import Paper from '@material-ui/core/Paper';
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import ProjectCard from './ProjectCard';
 import Toolbar from './Toolbar';
 
@@ -20,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     color: colorOrange,
     fontWeight: '600',
     fontSize: '6em',
+    paddingBottom: '3vh',
+    paddingTop: '3vh',
+    marginLeft: '1vw'
   },
   icon: {
     fontSize: '1em',
@@ -61,10 +63,10 @@ export default function Projects() {
 
       <div className={classes.root}>
         <div className={classes.title}>
-          <KeyboardArrowRightIcon className={classes.icon} />Projects
+          > projects
         </div>
 
-        <Grid container spacing={1} className={classes.grid} >
+        <Grid container spacing={2} className={classes.grid} >
           <Grid container item xs={12} spacing={3}>
             <FormRow />
           </Grid>

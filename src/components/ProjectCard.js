@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: '100%',
     background: paperColor,
-    color: colorGreen
+    color: colorOrange
   },
   title: {
     fontSize: '2em',

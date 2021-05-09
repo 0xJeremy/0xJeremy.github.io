@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { colorGreen, colorOrange } from "../PageStyles";
+import { colorGreen, colorOrange } from "./PageStyles";
 import Button from "@material-ui/core/Button";
 import { Link } from 'react-router-dom';
-import Toolbar from '../Toolbar';
+import Toolbar from './Toolbar';
 
 const offsetLeft = 5;
 const offsetTop = 15;
@@ -40,29 +40,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Hexapod() {
+export default function Research() {
   const classes = useStyles();
 
   return (
-    <div >
+    <div>
         <Toolbar />
 
         <div className={classes.root}>
           <div className={classes.text}>
-            there will be some stuff here eventually.
+            there will be some stuff here eventually. for now, see <a href="https://drive.google.com/file/d/1SMG8e5CHDPIT6oHzzlDiidvKQyhi1HIR/view?usp=sharing" target="_blank" rel="noopener noreferrer" className={classes.link}>here</a>.
           </div>
 
           <br />
           <br />
 
-          <Link to="/projects" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <Button
               className={classes.button}
               classes={{ outlined: classes.outline }}
               variant="outlined"
               color="primary"
             >
-              Projects
+              Home
             </Button>
           </Link>
 
