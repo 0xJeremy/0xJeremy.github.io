@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { colorGreen, colorOrange } from "./PageStyles";
+import { colorGreen, colorOrange } from "../PageStyles";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import Toolbar from "./Toolbar";
+import Toolbar from "../Toolbar";
 
 const offsetLeft = 5;
-const offsetTop = 15;
+const offsetTop = 3;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
     width: `${100 - offsetLeft}vw`,
     height: `${100 - offsetTop - 10}vh`,
     top: `${offsetTop}vh`,
+  },
+  title: {
+    color: colorGreen,
+    paddingBottom: "3vh",
   },
   text: {
     color: "white",
@@ -40,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Research() {
+export default function ProjectTemplate(props) {
   const classes = useStyles();
 
   return (
@@ -48,30 +52,21 @@ export default function Research() {
       <Toolbar />
 
       <div className={classes.root}>
-        <div className={classes.text}>
-          there will be some stuff here eventually. for now, see{" "}
-          <a
-            href="https://drive.google.com/file/d/1SMG8e5CHDPIT6oHzzlDiidvKQyhi1HIR/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-            here
-          </a>
-          .
-        </div>
+        <div className={classes.title}>{props.title}</div>
+
+        <div className={classes.text}>{props.children}</div>
 
         <br />
         <br />
 
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/projects" style={{ textDecoration: "none" }}>
           <Button
             className={classes.button}
             classes={{ outlined: classes.outline }}
             variant="outlined"
             color="primary"
           >
-            Home
+            Projects
           </Button>
         </Link>
       </div>

@@ -3,14 +3,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { paperColor, colorOrange, colorBlue, colorGreen } from "./PageStyles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: 'transparent',
+    background: "transparent",
     color: colorOrange,
-    marginTop: '1vh',
+    marginTop: "1vh",
   },
   logo: {
     height: "2.5em",
@@ -23,14 +23,15 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginLeft: "16px",
+    fontWeight: "600",
     color: colorOrange,
-    marginLeft: '1vw',
-    marginRight: '1vw',
-    fontSize: '1.2em',
-    '&:hover': {
-        borderColor:colorGreen,
-        color: colorGreen,
-    }
+    marginLeft: "1vw",
+    marginRight: "1vw",
+    fontSize: "1.2em",
+    "&:hover": {
+      borderColor: colorGreen,
+      color: colorGreen,
+    },
   },
   outline: {
     borderColor: colorOrange,
@@ -47,14 +48,13 @@ function ToolBar(props) {
 
   return (
     <Toolbar className={classes.root}>
-{/*      <img className={classes.logo} src="static/logo.png" alt="" />
+      {/*      <img className={classes.logo} src="static/logo.png" alt="" />
       <Typography className={classes.name}>
         Raspberry Pi[co] [OSS]illoscope
       </Typography>*/}
 
       <section className={classes.rightToolbar}>
-
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: "none" }}>
           <Button
             className={classes.button}
             classes={{ outlined: classes.outline }}
@@ -65,7 +65,7 @@ function ToolBar(props) {
           </Button>
         </Link>
 
-        <Link to="/contact" style={{ textDecoration: 'none' }}>
+        <Link to="/contact" style={{ textDecoration: "none" }}>
           <Button
             className={classes.button}
             classes={{ outlined: classes.outline }}
@@ -87,7 +87,7 @@ function ToolBar(props) {
           Resume
         </Button>
 
-        <Link to="/research" style={{ textDecoration: 'none' }}>
+        <Link to="/research" style={{ textDecoration: "none" }}>
           <Button
             className={classes.button}
             classes={{ outlined: classes.outline }}
@@ -98,7 +98,7 @@ function ToolBar(props) {
           </Button>
         </Link>
 
-        <Link to="/projects" style={{ textDecoration: 'none' }}>
+        <Link to="/projects" style={{ textDecoration: "none" }}>
           <Button
             className={classes.button}
             classes={{ outlined: classes.outline }}
@@ -119,7 +119,6 @@ function ToolBar(props) {
         >
           Github
         </Button>
-        
       </section>
     </Toolbar>
   );

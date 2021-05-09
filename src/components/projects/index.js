@@ -1,5 +1,5 @@
-import Hexapod from './Hexapod';
+import Hexapod from "./Hexapod";
 
 export default {
-	'hexapod': Hexapod,
+  hexapod: Hexapod,
 };
