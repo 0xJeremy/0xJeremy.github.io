@@ -2,7 +2,7 @@
   "name": "pwv3",
   "version": "0.0.1",
   "dependencies": {
-    "@material-ui/core": "4.9.10",
+    "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "4.0.0-alpha.49",
     "express": "4.17.1",

@@ -11,23 +11,16 @@ import { paperColor, colorGreen, colorOrange, colorRed, colorBlue } from "./Page
 
 const ViewProjectButton = withStyles({
   root: {
-    backgroundColor: colorGreen,
-    borderColor: colorGreen,
+    backgroundColor: colorOrange,
+    borderColor: colorOrange,
+    color: 'white',
     fontFamily: [
     ].join(','),
     '&:hover': {
-      backgroundColor: colorRed,
+      backgroundColor: "#F78200",
       borderColor: colorOrange,
       boxShadow: 'none',
     },
-    '&:active': {
-      boxShadow: 'none',
-      backgroundColor: colorOrange,
-      borderColor: colorBlue,
-    },
-    // '&:focus': {
-    //   boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-    // },
   },
 })(Button);
 
@@ -45,7 +38,8 @@ const useStyles = makeStyles({
     color: 'white',
   },
   media: {
-    height: '100%',
+    height: '20vh',
+
   },
   actions: {
     float: 'right'
@@ -61,7 +55,7 @@ export default function ProjectCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="favicon.png"
           title="Project Title Here"
         />
         <CardContent>

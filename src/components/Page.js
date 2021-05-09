@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-// import AppBar from "@material-ui/core/AppBar";
+import AppBar from "@material-ui/core/AppBar";
 import { colorRed, colorBlue, colorGreen, colorYellow } from "./PageStyles";
+import Toolbar from './Toolbar';
 import Greeting from './Greeting';
 import Projects from './Projects';
 
@@ -16,19 +17,12 @@ export default function Page() {
   return (
     <div>
 
+      {/*<AppBar>*/}
+        <Toolbar />
+      {/*</AppBar>*/}
+
       <Greeting />
-      <Projects />
 
-
-{/*      <Grid container spacing={0}>
-        <Grid item xs={12}>
-          
-        </Grid>
-
-        <Grid item xs={12}>
-        </Grid>
-      </Grid>
-*/}
     </div>
   );
 }
