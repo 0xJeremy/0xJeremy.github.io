@@ -82,7 +82,7 @@ export default function Greeting(props) {
       <br />
       <br />
 
-      <Link to="/contact-me" style={{ textDecoration: 'none' }}>
+      <Link to="/contact" style={{ textDecoration: 'none' }}>
         <Button
           className={classes.button}
           classes={{ outlined: classes.outline }}

@@ -12,7 +12,6 @@ export default function Home() {
         <Toolbar />
 
         <Greeting />
-
     </div>
   );
 }

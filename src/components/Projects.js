@@ -5,6 +5,7 @@ import { colorGreen, colorOrange, paperColor, backgroundColor } from "./PageStyl
 import Paper from '@material-ui/core/Paper';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import ProjectCard from './ProjectCard';
+import Toolbar from './Toolbar';
 
 const tableMargin = 1;
 
@@ -54,22 +55,28 @@ export default function Projects() {
   }
 
   return (
-    <div className={classes.root}>
-      <div className={classes.title}>
-        <KeyboardArrowRightIcon className={classes.icon} />Projects
+    <div>
+
+      <Toolbar />
+
+      <div className={classes.root}>
+        <div className={classes.title}>
+          <KeyboardArrowRightIcon className={classes.icon} />Projects
+        </div>
+
+        <Grid container spacing={1} className={classes.grid} >
+          <Grid container item xs={12} spacing={3}>
+            <FormRow />
+          </Grid>
+          <Grid container item xs={12} spacing={3}>
+            <FormRow />
+          </Grid>
+          <Grid container item xs={12} spacing={3}>
+            <FormRow />
+          </Grid>
+        </Grid>
       </div>
 
-      <Grid container spacing={1} className={classes.grid} >
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-      </Grid>
     </div>
   );
 }

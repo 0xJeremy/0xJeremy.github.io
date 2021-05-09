@@ -53,7 +53,19 @@ function ToolBar(props) {
       </Typography>*/}
 
       <section className={classes.rightToolbar}>
-        <Link to="/contact-me" style={{ textDecoration: 'none' }}>
+
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <Button
+            className={classes.button}
+            classes={{ outlined: classes.outline }}
+            variant="outlined"
+            color="primary"
+          >
+            Home
+          </Button>
+        </Link>
+
+        <Link to="/contact" style={{ textDecoration: 'none' }}>
           <Button
             className={classes.button}
             classes={{ outlined: classes.outline }}
@@ -81,8 +93,6 @@ function ToolBar(props) {
             classes={{ outlined: classes.outline }}
             variant="outlined"
             color="primary"
-            href="https://github.com/0xJeremy/p6"
-            target="_blank"
           >
             Research
           </Button>
@@ -94,8 +104,6 @@ function ToolBar(props) {
             classes={{ outlined: classes.outline }}
             variant="outlined"
             color="primary"
-            href="https://github.com/0xJeremy/p6"
-            target="_blank"
           >
             Projects
           </Button>
