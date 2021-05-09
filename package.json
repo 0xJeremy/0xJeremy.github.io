@@ -1,0 +1,41 @@
+{
+  "name": "pwv3",
+  "version": "0.0.1",
+  "dependencies": {
+    "@material-ui/core": "4.9.10",
+    "@material-ui/icons": "4.9.1",
+    "@material-ui/lab": "4.0.0-alpha.49",
+    "express": "4.17.1",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-scripts": "3.4.1",
+    "typewriter-effect": "2.17.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "local": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint src/**/*.js",
+    "prettier": "npx prettier --write src/"
+  },
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "7.23.2",
+    "prettier": "2.2.1"
+  }
+}
