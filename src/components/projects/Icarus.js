@@ -27,6 +27,7 @@ export default function Component() {
       <img
         className={classes.image}
         src={`${imagePath}/icarus/Icarus_Board.png`}
+        alt=""
       />
       This PCB was made for fun :)
     </ProjectTemplate>

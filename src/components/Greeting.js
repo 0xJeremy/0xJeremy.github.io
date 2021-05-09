@@ -57,7 +57,12 @@ export default function Greeting(props) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.hello}>👋 Hello.</div>
+      <div className={classes.hello}>
+        <span role="img" aria-label="">
+          👋
+        </span>{" "}
+        Hello.
+      </div>
       <div className={classes.name}>I'm Jeremy.</div>
       <div className={classes.build}>I build&nbsp;</div>
       <div className={classes.typewriter}>

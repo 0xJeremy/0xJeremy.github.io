@@ -1,10 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { paperColor, colorOrange, colorBlue, colorGreen } from "./PageStyles";
+import { colorOrange, colorGreen } from "./PageStyles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2.2em",
   },
   button: {
-    marginLeft: "16px",
     fontWeight: "600",
     color: colorOrange,
     marginLeft: "1vw",
@@ -44,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
 
 function ToolBar(props) {
   const classes = useStyles();
-  const { setPage } = props;
 
   return (
     <Toolbar className={classes.root}>

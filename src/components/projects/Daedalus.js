@@ -27,6 +27,7 @@ export default function Component() {
       <img
         className={classes.image}
         src={`${imagePath}/daedalus/Daedalus_Brackets_Board.png`}
+        alt=""
       />
       This PCB was made for fun :)
     </ProjectTemplate>

@@ -1,13 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import {
-  colorGreen,
-  colorOrange,
-  paperColor,
-  backgroundColor,
-} from "./PageStyles";
-import Paper from "@material-ui/core/Paper";
+import { colorOrange, backgroundColor } from "./PageStyles";
 import ProjectCard from "./ProjectCard";
 import Toolbar from "./Toolbar";
 import projectPages from "./projects";

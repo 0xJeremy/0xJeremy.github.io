@@ -25,7 +25,7 @@ export default function Component() {
 
   return (
     <ProjectTemplate title={title}>
-      <img className={classes.image} src={`${imagePath}/mle/mle.png`} />
+      <img className={classes.image} src={`${imagePath}/mle/mle.png`} alt="" />
       This project was made just for fun :)
     </ProjectTemplate>
   );

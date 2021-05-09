@@ -28,6 +28,7 @@ export default function Component() {
       <img
         className={classes.image}
         src={`${imagePath}/drawing_robot/drawing_isometric.JPG`}
+        alt=""
       />
       This robot was made for ME-134 (Advanced Robotics) at Tufts University in
       the Fall of 2020.
