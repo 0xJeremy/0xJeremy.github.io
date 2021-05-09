@@ -10,6 +10,7 @@ import {
 import Paper from "@material-ui/core/Paper";
 import ProjectCard from "./ProjectCard";
 import Toolbar from "./Toolbar";
+import projectPages from './projects';
 
 const tableMargin = 1;
 
@@ -44,39 +45,19 @@ const useStyles = makeStyles((theme) => ({
 export default function Projects() {
   const classes = useStyles();
 
-  function FormRow() {
-    return (
-      <React.Fragment>
-        <Grid item xs={4}>
-          <ProjectCard />
-        </Grid>
-        <Grid item xs={4}>
-          <ProjectCard />
-        </Grid>
-        <Grid item xs={4}>
-          <ProjectCard />
-        </Grid>
-      </React.Fragment>
-    );
-  }
-
   return (
     <div>
       <Toolbar />
 
       <div className={classes.root}>
-        <div className={classes.title}>> projects</div>
+        <div className={classes.title}>> PROJECTS</div>
 
         <Grid container spacing={2} className={classes.grid}>
-          <Grid container item xs={12} spacing={3}>
-            <FormRow />
-          </Grid>
-          <Grid container item xs={12} spacing={3}>
-            <FormRow />
-          </Grid>
-          <Grid container item xs={12} spacing={3}>
-            <FormRow />
-          </Grid>
+          {Object.entries(projectPages).map(([name, project]) => (
+            <Grid item xs={4}>
+              <ProjectCard name={name} project={project} key={name} />
+            </Grid>
+          ))}
         </Grid>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import Hexapod from "./Hexapod";
+import * as Hexapod from "./Hexapod";
 
 export default {
   hexapod: Hexapod,

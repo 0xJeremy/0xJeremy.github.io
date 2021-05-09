@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Research from "./components/Research";
-import routes from "./components/projects";
+import projectPages from "./components/projects";
 
 ReactDOM.render(
   <Router>
@@ -14,12 +14,12 @@ ReactDOM.render(
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/projects" component={Projects} />
       <Route exact path="/research" component={Research} />
-      {Object.entries(routes).map(([name, component]) => (
+      {Object.entries(projectPages).map(([name, project]) => (
         <Route
           exact
           path={`/projects/${name}`}
           key={name}
-          component={component}
+          component={project.Component}
         />
       ))}
     </Switch>

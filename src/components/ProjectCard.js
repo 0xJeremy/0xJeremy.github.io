@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 import {
   paperColor,
   colorGreen,
@@ -50,35 +51,36 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ProjectCard() {
+export default function ProjectCard(props) {
   const classes = useStyles();
+  const { name, project } = props;
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="favicon.png"
-          title="Project Title Here"
-        />
-        <CardContent>
-          <Typography gutterBottom className={classes.title}>
-            Project Title
-          </Typography>
-          <Typography className={classes.description}>
-            This section will contain a description for each of the projects.
-            This section will contain a description for each of the projects.
-            This section will contain a description for each of the projects.
-            This section will contain a description for each of the projects.
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={`static/projects/${name}/${project.coverImage}`}
+            title={name}
+          />
+          <CardContent>
+            <Typography gutterBottom className={classes.title}>
+              {project.title}
+            </Typography>
+            <Typography className={classes.description}>
+              {project.description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
 
       <CardActions className={classes.actions}>
-        <ViewProjectButton size="medium" color="primary" variant="outlined">
-          View Project
-        </ViewProjectButton>
+        <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
+          <ViewProjectButton size="medium" color="primary" variant="outlined">
+            View Project
+          </ViewProjectButton>
+        </Link>
       </CardActions>
+
     </Card>
   );
 }

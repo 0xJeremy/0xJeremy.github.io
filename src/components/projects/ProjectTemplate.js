@@ -19,11 +19,14 @@ const useStyles = makeStyles((theme) => ({
     top: `${offsetTop}vh`,
   },
   title: {
-    color: colorGreen,
+    color: colorOrange,
     paddingBottom: "3vh",
   },
-  text: {
+  children: {
     color: "white",
+    maxWidth: '75%',
+    fontSize: '0.5em',
+    display: "block",
   },
   outline: {
     borderColor: colorOrange,
@@ -54,7 +57,7 @@ export default function ProjectTemplate(props) {
       <div className={classes.root}>
         <div className={classes.title}>{props.title}</div>
 
-        <div className={classes.text}>{props.children}</div>
+        <div className={classes.children}>{props.children}</div>
 
         <br />
         <br />
