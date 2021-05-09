@@ -15,6 +15,9 @@ const title = "Helios Pi-Hat Robot Controller";
 const coverImage = "Helios_Board.png";
 const description =
   "This is a custom PCB Raspberry Pi hat designed to enable CAN bus communication and high-precision servo control. It can also supply power to the Pi.";
+const tags = {
+  pcb: true,
+}
 
 export default function Component() {
   const classes = useStyles();
@@ -30,4 +33,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description };
+export { Component, title, coverImage, description, tags };

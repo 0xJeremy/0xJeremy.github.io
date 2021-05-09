@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     float: "none",
     fontWeight: "600",
     fontSize: "0.7em",
-    marginRight: "2em",
     color: colorOrange,
     "&:hover": {
       borderColor: colorGreen,

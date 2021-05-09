@@ -11,10 +11,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "Hexapod (v1)";
+const title = "Hexapod";
 const coverImage = "hexapod_isometric.JPG";
 const description =
   "This was the final project for Tufts ME-134 (Advanced Robotics) in Fall 2020. We were tasked with creating a robot that could navigate an obstacle course (containing a tunnel, wall, and rough terrain) autonomously.";
+const tags = {
+  software: true,
+  hardware: true,
+}
 
 export default function Component() {
   const classes = useStyles();
@@ -31,4 +35,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description };
+export { Component, title, coverImage, description, tags };

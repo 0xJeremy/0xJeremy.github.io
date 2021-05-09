@@ -15,6 +15,9 @@ const title = "Daedalus BLDC Motor Controller";
 const coverImage = "Daedalus_Brackets_Board.png";
 const description =
   "This is a custom PCB designed to drive high-speed, high-power brushless motors. It includes current monitoring and positional feedback, turning the brushless motor into a high-torque servo motor.";
+const tags = {
+  pcb: true,
+}
 
 export default function Component() {
   const classes = useStyles();
@@ -30,4 +33,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description };
+export { Component, title, coverImage, description, tags };

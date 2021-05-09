@@ -6,6 +6,7 @@ import * as Clock from './Clock';
 import * as LED from './LED';
 import * as Daedalus from './Daedalus';
 import * as Helios from './Helios';
+import * as Icarus from './Icarus';
 
 export default {
   hexapod: Hexapod,
@@ -16,4 +17,5 @@ export default {
   led: LED,
   daedalus: Daedalus,
   helios: Helios,
+  icarus: Icarus,
 };

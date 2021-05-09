@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "4em",
     position: "relative",
     left: `${offsetLeft}vw`,
-    width: `${100 - offsetLeft}vw`,
-    height: `${100 - offsetTop - 10}vh`,
+    width: `${100 - 2*offsetLeft}vw`,
+    height: `${100 - 2*offsetTop}vh`,
     top: `${offsetTop}vh`,
   },
   title: {
@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     float: "none",
+    marginBottom: '2em',
     fontWeight: "600",
     fontSize: "0.7em",
     marginRight: "2em",
@@ -69,7 +70,7 @@ export default function ProjectTemplate(props) {
             variant="outlined"
             color="primary"
           >
-            Projects
+            &lt; Projects
           </Button>
         </Link>
       </div>

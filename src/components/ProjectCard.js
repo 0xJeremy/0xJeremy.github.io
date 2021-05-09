@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Chip from '@material-ui/core/Chip';
 import { Link } from "react-router-dom";
 import {
   paperColor,
@@ -53,7 +54,19 @@ const useStyles = makeStyles({
   content: {
     // minHeight: '10vh'
     // height: '8vh'
-  }
+  },
+  hardware: {
+    color: colorRed,
+    borderColor: colorRed
+  },
+  software: {
+    color: colorBlue,
+    borderColor: colorBlue
+  },
+  pcb: {
+    color: colorGreen,
+    borderColor: colorGreen
+  },
 });
 
 export default function ProjectCard(props) {
@@ -81,6 +94,15 @@ export default function ProjectCard(props) {
       </Link>
 
       <CardActions className={classes.actions}>
+        {project.tags.hardware &&
+          <Chip variant="outlined" size="medium" className={classes.hardware} label="Hardware" />
+        }
+        {project.tags.software &&
+          <Chip variant="outlined" size="medium" className={classes.software} label="Software" />
+        }
+        {project.tags.pcb &&
+          <Chip variant="outlined" size="medium" className={classes.pcb} label="PCB Design" />
+        }
         <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
           <ViewProjectButton size="medium" color="primary" variant="outlined">
             View Project

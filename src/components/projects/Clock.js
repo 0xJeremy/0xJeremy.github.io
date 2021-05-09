@@ -15,6 +15,10 @@ const title = "Analog Clock";
 const coverImage = "clock_isometric.JPG";
 const description =
   "This robot was build as a homework assignment for Tufts ME-134 (Advanced Robotics) in Fall 2020. The assignment was to create an analog clock, so we created a (digital) analog clock.";
+const tags = {
+  software: true,
+  hardware: true,
+}
 
 export default function Component() {
   const classes = useStyles();
@@ -31,4 +35,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description };
+export { Component, title, coverImage, description, tags };

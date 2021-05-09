@@ -11,13 +11,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "LED Display";
-const coverImage = "led_isometric.JPG";
+const title = "Icarus Power Distribution Board";
+const coverImage = "Icarus_Board.png";
 const description =
-  "This robot was build as a homework assignment for Tufts ME-134 (Advanced Robotics) in Fall 2020. The assignment was to create a human-interface robot, so we made an interactive display.";
+  "This is a custom PCB power distribution board designed for use with the Daedalus BLDC motor controller for driving high-current motors and the Helios Raspberry Pi hat. It has 6 power breakouts.";
 const tags = {
-  software: true,
-  hardware: true,
+  pcb: true,
 }
 
 export default function Component() {
@@ -27,10 +26,9 @@ export default function Component() {
     <ProjectTemplate title={title}>
       <img
         className={classes.image}
-        src={`${imagePath}/led/led_isometric.JPG`}
+        src={`${imagePath}/icarus/Icarus_Board.png`}
       />
-      This robot was made for ME-134 (Advanced Robotics) at Tufts University in
-      the Fall of 2020.
+      This PCB was made for fun :)
     </ProjectTemplate>
   );
 }
