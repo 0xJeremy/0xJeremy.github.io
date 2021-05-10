@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { colorGreen, colorOrange } from "./PageStyles";
 import Button from "@material-ui/core/Button";
@@ -42,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Research() {
   const classes = useStyles();
+
+  useEffect(() => {
+    document.title = "Research | Jeremy Kanovsky";
+  });
 
   return (
     <div>

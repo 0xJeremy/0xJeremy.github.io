@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { colorOrange, backgroundColor } from "./PageStyles";
+import {
+  colorOrange,
+  backgroundColor,
+  colorBlue,
+  colorGreen,
+  colorYellow,
+  colorRed,
+} from "./PageStyles";
 import ProjectCard from "./ProjectCard";
 import Toolbar from "./Toolbar";
+import Chip from "@material-ui/core/Chip";
 import projectPages from "./projects";
 
 const tableMargin = 1;
+const disabledColor = "#888888";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,24 +43,111 @@ const useStyles = makeStyles((theme) => ({
     marginRight: `${tableMargin}vw`,
     width: `${100 - 2 * tableMargin}vw`,
   },
+  hardware: {
+    color: (props) => (props.filter.hardware ? colorRed : disabledColor),
+    borderColor: (props) => (props.filter.hardware ? colorRed : disabledColor),
+    marginLeft: "5vw",
+  },
+  software: {
+    color: (props) => (props.filter.software ? colorBlue : disabledColor),
+    borderColor: (props) => (props.filter.software ? colorBlue : disabledColor),
+    marginLeft: "1.5vw",
+  },
+  pcb: {
+    color: (props) => (props.filter.pcb ? colorGreen : disabledColor),
+    borderColor: (props) => (props.filter.pcb ? colorGreen : disabledColor),
+    marginLeft: "1.5vw",
+  },
+  oss: {
+    color: (props) => (props.filter.oss ? colorYellow : disabledColor),
+    borderColor: (props) => (props.filter.oss ? colorYellow : disabledColor),
+    marginLeft: "1.5vw",
+  },
+  hackathon: {
+    color: (props) => (props.filter.hackathon ? colorOrange : disabledColor),
+    borderColor: (props) =>
+      props.filter.hackathon ? colorOrange : disabledColor,
+    marginLeft: "1.5vw",
+  },
 }));
 
 export default function Projects() {
-  const classes = useStyles();
+  const [filter, setFilter] = React.useState({
+    software: true,
+    hardware: true,
+    pcb: true,
+    oss: true,
+    hackathon: true,
+  });
+  const classes = useStyles({ filter });
+
+  useEffect(() => {
+    document.title = "Projects | Jeremy Kanovsky";
+  });
+
+  const handleClick = (tag) => {
+    setFilter({ ...filter, [tag]: !filter[tag] });
+  };
+
+  const showProject = (project) => {
+    for (const [key] of Object.entries(project.tags)) {
+      if (!filter[key]) {
+        return false;
+      }
+    }
+    return true;
+  };
 
   return (
     <div>
       <Toolbar />
 
       <div className={classes.root}>
-        <div className={classes.title}>> PROJECTS</div>
+        <div className={classes.title}>
+          > PROJECTS
+          <Chip
+            variant="outlined"
+            label="Hardware"
+            className={classes.hardware}
+            onClick={() => handleClick("hardware")}
+          />
+          <Chip
+            variant="outlined"
+            label="Software"
+            className={classes.software}
+            onClick={() => handleClick("software")}
+          />
+          <Chip
+            variant="outlined"
+            label="PCB Design"
+            className={classes.pcb}
+            onClick={() => handleClick("pcb")}
+          />
+          <Chip
+            variant="outlined"
+            label="Open-Source Library"
+            className={classes.oss}
+            onClick={() => handleClick("oss")}
+          />
+          <Chip
+            variant="outlined"
+            label="Hackathon Project"
+            className={classes.hackathon}
+            onClick={() => handleClick("hackathon")}
+          />
+        </div>
 
         <Grid container spacing={2} className={classes.grid}>
-          {Object.entries(projectPages).map(([name, project]) => (
-            <Grid item xs={4}>
-              <ProjectCard name={name} project={project} key={name} />
-            </Grid>
-          ))}
+          {Object.entries(projectPages).map(([name, project]) => {
+            if (showProject(project)) {
+              return (
+                <Grid item xs={4}>
+                  <ProjectCard name={name} project={project} key={name} />
+                </Grid>
+              );
+            }
+            return <div />;
+          })}
         </Grid>
       </div>
     </div>

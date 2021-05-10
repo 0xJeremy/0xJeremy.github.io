@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typewriter from "typewriter-effect";
 import Button from "@material-ui/core/Button";
@@ -12,7 +12,7 @@ const textPadding = 2;
 const useStyles = makeStyles((theme) => ({
   root: {
     fontWeight: "600",
-    fontSize: "8em",
+    fontSize: "10vh",
     position: "relative",
     left: `${offsetLeft}vw`,
     width: `${100 - offsetLeft}vw`,
@@ -54,6 +54,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Greeting(props) {
   const classes = useStyles();
+
+  useEffect(() => {
+    document.title = "Home | Jeremy Kanovsky";
+  });
 
   return (
     <div className={classes.root}>
