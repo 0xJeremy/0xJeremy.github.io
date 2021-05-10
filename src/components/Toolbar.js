@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
 
 function ToolBar(props) {
   const classes = useStyles({ smallScreen });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <Toolbar className={classes.root}>
