@@ -28,6 +28,9 @@ import * as HobbesBot from "./HobbesBot";
 import * as Quadcopter from "./Quadcopter";
 import * as Longboard from "./Longboard";
 import * as Vegas from "./Vegas";
+import * as SpacePrinter from "./SpacePrinter";
+import * as DevBoard from "./DevBoard";
+import * as PicoPCA from "./PicoPCA";
 
 export default {
   hexapod: Hexapod,
@@ -60,4 +63,7 @@ export default {
   quadcopter: Quadcopter,
   longboard: Longboard,
   vegas: Vegas,
+  space_printer: SpacePrinter,
+  devboard: DevBoard,
+  pico_pca: PicoPCA,
 };
