@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Drawing Robot";
 const coverImage = "drawing_isometric.JPG";
@@ -24,17 +16,32 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/drawing_robot/drawing_isometric.JPG`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/drawing_robot/drawing_isometric.JPG`,
+          `${imagePath}/drawing_robot/drawing_robot_1.jpg`,
+          `${imagePath}/drawing_robot/drawing_robot_2.jpg`,
+        ]}
       />
-      This robot was made for ME-134 (Advanced Robotics) at Tufts University in
-      the Fall of 2020.
+      This robot was made as a homework project for Tufts ME-134 (Advanced
+      Robotics) in the Fall of 2020. The prompt was to create a robotic arm
+      capable of writing our initials. This robot arm (which is the second
+      iteration, the first being a standard 3-DOF vertical arm) is capable of
+      writing arbitrary shapes and letters. Instead of hard-coding the positions
+      of the arms for each point of our initials, I wrote an SVG parser and
+      pather in Python that dissects any arbitrary SVG file and generates
+      "g-code" (really just tuples of position for motors 1 and 2) which the arm
+      them reads through and executes. It was pretty successful.
+      <Images
+        space
+        images={[
+          `${imagePath}/drawing_robot/drawing_robot_3.jpg`,
+          `${imagePath}/drawing_robot/drawing_robot_4.jpg`,
+          `${imagePath}/drawing_robot/drawing_robot_5.jpg`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }

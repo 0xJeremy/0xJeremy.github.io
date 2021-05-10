@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Analog Clock";
 const coverImage = "clock_isometric.JPG";
@@ -24,17 +16,27 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/clock/clock_isometric.JPG`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/clock/clock_isometric.JPG`,
+          `${imagePath}/clock/clock_1.jpg`,
+          `${imagePath}/clock/clock_3.jpg`,
+        ]}
       />
-      This robot was made for ME-134 (Advanced Robotics) at Tufts University in
-      the Fall of 2020.
+      This robot was made for a homework project as part of Tufts ME-134
+      (Advanced Robotics) in the Fall of 2020. The prompt was to create an
+      analog clock. Twisting the prompt slightly, I chose to make a "digital"
+      analog clock. This clock comprises 28 individual micro-servo motors
+      controlled by 2 servo drivers being controlled by a Raspberry Pi Zero.
+      <Images
+        space
+        images={[
+          `${imagePath}/clock/clock_4.jpg`,
+          `${imagePath}/clock/clock_5.jpg`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }

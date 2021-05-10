@@ -116,7 +116,6 @@ export default function ProjectTemplate(props) {
         <div className={classes.children}>{props.children}</div>
 
         <br />
-        <br />
 
         <Link to="/projects" style={{ textDecoration: "none" }}>
           <Button

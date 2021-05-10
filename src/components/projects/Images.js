@@ -7,6 +7,7 @@ const smallScreen = window.screen.width < 650;
 const useStyles = makeStyles((theme) => ({
   grid: {
     width: "100%",
+    marginTop: (props) => (props.space ? "3vh" : 0),
   },
   image: {
     width: "100%",
@@ -14,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Images(props) {
-  const classes = useStyles();
   const images = props.images;
+  const classes = useStyles(props);
   const imageSpace = 12 / images.length;
   const gridSize = smallScreen ? 12 : imageSpace;
 
