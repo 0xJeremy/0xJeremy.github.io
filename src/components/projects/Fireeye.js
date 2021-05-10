@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "FireEye";
 const coverImage = "fireeye.png";
@@ -26,16 +18,16 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/fireeye/fireeye.png`}
-        alt=""
-      />
-      This project was made just for fun :)
+      FireEye is an open-source cross-language (Python / Javascript via Node.js)
+      UNIX socket communication library. It was originally build and optimized
+      for streaming video from a Raspberry Pi camera to remote devices in
+      real-time, but has since been generalized to work for arbitrary
+      communication. It is extremely easy to use and handles almost all of the
+      setup for the user. It was later replaced with socket.engine (which is
+      newer and better for a number of reasons).
+      <Images space images={[`${imagePath}/fireeye/fireeye.png`]} />
     </ProjectTemplate>
   );
 }

@@ -16,7 +16,6 @@ const coverImage = "devboard.JPG";
 const description =
   "This is a development breakout board for the STM32F405 series microcontroller. I made it to learn about PCB design and embedded microcontroller programming.";
 const tags = {
-  hardware: true,
   software: true,
   pcb: true,
 };
@@ -31,8 +30,8 @@ export default function Component() {
         src={`${imagePath}/devboard/devboard.JPG`}
         alt=""
       />
-      This printer was made as part of Tufts mechanical engineering senior
-      design (ME-73)
+      This development board was made as a practice project to learn about PCB
+      design.
     </ProjectTemplate>
   );
 }

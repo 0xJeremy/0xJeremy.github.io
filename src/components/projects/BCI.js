@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Tufts BCI Team";
 const coverImage = "bci.png";
@@ -20,12 +12,17 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img className={classes.image} src={`${imagePath}/bci/bci.png`} alt="" />
-      This project was made just for fun :)
+      The Tufts BCI Team (Brain-Computer Interface Team) is a cross-major team
+      working on new interfaces for computers, devices, and robots. It uses
+      hardware from OpenBCI and some custom software we've written. I was
+      responsible for creating a user-interface for streaming, in real-time,
+      data from remote sensors to an interface which would display the brain
+      activity onto a 3D model of the brain. This interface I originally wrote
+      in vanilla HTML/CSS/Javascript, but later I re-wrote it in React.js. I
+      also made the team logo (below) which I an unreasonably proud of.
+      <Images space images={[`${imagePath}/bci/bci.png`]} />
     </ProjectTemplate>
   );
 }

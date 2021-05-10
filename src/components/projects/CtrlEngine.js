@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "ctrl.engine";
 const coverImage = "ctrlengine.png";
@@ -24,16 +16,17 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/ctrlengine/ctrlengine.png`}
-        alt=""
-      />
-      This project was made for fun :) (and out of necessity)
+      <Images images={[`${imagePath}/ctrlengine/ctrlengine.png`]} />
+      ctrl.engine is an open-source robotics library written in Python. It was
+      designed to provide a common set of tools to quickly prototype robots
+      (specifically those running on a Raspberry Pi, but in theory is
+      multiplatform). It provides boilerplate multi-threaded code for a number
+      of web-APIs, as well as numerous computer vision examples. It also
+      supports a number of input devices like xbox controllers, and provides
+      standard implementations of common algorithms (like PID controllers and
+      signal filters).
     </ProjectTemplate>
   );
 }

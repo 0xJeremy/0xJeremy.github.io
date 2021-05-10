@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "socket.engine";
 const coverImage = "socketengine.png";
@@ -26,16 +18,18 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/socketengine/socketengine.png`}
-        alt=""
-      />
-      This project was made for fun :) (and out of necessity)
+      <Images images={[`${imagePath}/socketengine/socketengine.png`]} />
+      socket.engine is the successor to FireEye. It is a real-time
+      bi-directional UNIX socket communication library built on top of ZMQ
+      sockets. It operates at extremely high speeds and is even capable of
+      streaming full video across the sockets. It was originally designed for
+      use in robots, but provides an interface to stream arbitrary data across
+      arbitrary devices. It was written in Python and Javascript (via Node.js).
+      It also holds the distinction of being my most successful project on
+      GitHub. The source is published on GitHub, and it is available for
+      download on PIP via PyPi, and on NPM.
     </ProjectTemplate>
   );
 }

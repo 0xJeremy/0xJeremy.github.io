@@ -84,7 +84,7 @@ function ToolBar(props) {
           classes={{ outlined: classes.outline }}
           variant="outlined"
           color="primary"
-          href="static/JCK%20Resume.pdf"
+          href="/static/JCK%20Resume.pdf"
           target="_blank"
         >
           Resume

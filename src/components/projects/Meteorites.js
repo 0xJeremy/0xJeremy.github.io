@@ -2,12 +2,12 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
+import Images from "./Images";
+import { colorBlue } from "../PageStyles";
 
 const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
+  link: {
+    color: colorBlue,
   },
 }));
 
@@ -27,13 +27,22 @@ export default function Component() {
 
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/meteorites/meteorites.png`}
-        alt=""
-      />
-      This project was made for COMP-177 (Data Visualization) at Tufts in Spring
-      2020.
+      <Images images={[`${imagePath}/meteorites/meteorites.png`]} />
+      This website was made as the final project in Tufts COMP-177 Data
+      Visualization in the Spring of 2020. The prompt was to create a website to
+      display a dataset in a number of different ways, and to allow the user to
+      explore the dataset. We used a dataset provided by NASA which lists all
+      the known meteorite impacts on Earth dating back to the 1800s. We built
+      the site with React.js and D3.js. It can be viewed live at{" "}
+      <a
+        href="http://www.lab84.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes.link}
+      >
+        lab84.org
+      </a>
+      .
     </ProjectTemplate>
   );
 }

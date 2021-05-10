@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "viz.engine";
 const coverImage = "vizengine.png";
@@ -24,16 +16,17 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/vizengine/vizengine.png`}
-        alt=""
-      />
-      This project was made for fun :) (and out of necessity)
+      <Images images={[`${imagePath}/vizengine/vizengine.png`]} />
+      viz.engine is an open-source React.js powered interface for controlling
+      robots. It was originally designed to help operators handle large swarms
+      of robots simultaneously by streaming real-time information about the
+      state of each system, and providing a unified and straight-forward method
+      of operating all the bots. It uses the socket.engine library for
+      communication between the robots and the server (which allows for standard
+      data to be streamed, as well as real-time video feeds from each robot).
+      <Images space images={[`${imagePath}/vizengine/dashboard.png`]} />
     </ProjectTemplate>
   );
 }
