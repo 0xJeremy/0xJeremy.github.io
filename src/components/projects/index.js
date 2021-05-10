@@ -13,21 +13,21 @@ import * as MLE from "./MLE";
 import * as SocketEngine from "./SocketEngine";
 import * as VizEngine from "./VizEngine";
 import * as CtrlEngine from "./CtrlEngine";
-import * as Meteorites from './Meteorites';
-import * as PicoOscilloscope from './PicoOscilloscope';
-import * as Couch from './Couch';
-import * as Autodrive from './Autodrive';
-import * as Fleet from './Fleet';
-import * as DumEArms from './DumEArms';
-import * as Lego from './Lego';
-import * as QBot from './QBot';
-import * as UJumbo from './UJumbo';
-import * as Firefighting from './FirefightingRobot';
-import * as ExpoDigitizer from './ExpoDigitizer';
-import * as HobbesBot from './HobbesBot';
-import * as Quadcopter from './Quadcopter';
-import * as Longboard from './Longboard';
-import * as Vegas from './Vegas';
+import * as Meteorites from "./Meteorites";
+import * as PicoOscilloscope from "./PicoOscilloscope";
+import * as Couch from "./Couch";
+import * as Autodrive from "./Autodrive";
+import * as Fleet from "./Fleet";
+import * as DumEArms from "./DumEArms";
+import * as Lego from "./Lego";
+import * as QBot from "./QBot";
+import * as UJumbo from "./UJumbo";
+import * as Firefighting from "./FirefightingRobot";
+import * as ExpoDigitizer from "./ExpoDigitizer";
+import * as HobbesBot from "./HobbesBot";
+import * as Quadcopter from "./Quadcopter";
+import * as Longboard from "./Longboard";
+import * as Vegas from "./Vegas";
 
 export default {
   hexapod: Hexapod,

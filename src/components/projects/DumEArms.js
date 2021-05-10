@@ -22,7 +22,7 @@ const tags = {
 };
 const data = {
   github: "https://github.com/0xJeremy/Dum-E-IOT",
-}
+};
 
 export default function Component() {
   const classes = useStyles();

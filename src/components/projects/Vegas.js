@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "\"Banned From Vegas\"";
+const title = '"Banned From Vegas"';
 const coverImage = "vegas.jpeg";
 const description =
   "This is an automatic card-dealing and sorting robot made at MakeHarvard 2020. It uses computer vision to detect and sort the cards (and a little bit of card-counting to make sure you always win).";
@@ -22,7 +22,7 @@ const tags = {
 };
 const data = {
   github: "https://github.com/0xJeremy/MakeHarvard2020",
-}
+};
 
 export default function Component() {
   const classes = useStyles();

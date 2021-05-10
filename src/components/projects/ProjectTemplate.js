@@ -75,7 +75,7 @@ export default function ProjectTemplate(props) {
       <div className={classes.root}>
         <div className={classes.title}>
           {props.title}
-          {props.data.github && (
+          {props.data && props.data.github && (
             <Button
               className={classes.linkButton}
               classes={{ outlined: classes.outline }}
@@ -87,7 +87,7 @@ export default function ProjectTemplate(props) {
               > View on GitHub
             </Button>
           )}
-          {props.data.pypi && (
+          {props.data && props.data.pypi && (
             <Button
               className={classes.linkButton}
               classes={{ outlined: classes.outline }}
@@ -99,7 +99,7 @@ export default function ProjectTemplate(props) {
               > View on PyPi
             </Button>
           )}
-          {props.data.npm && (
+          {props.data && props.data.npm && (
             <Button
               className={classes.linkButton}
               classes={{ outlined: classes.outline }}

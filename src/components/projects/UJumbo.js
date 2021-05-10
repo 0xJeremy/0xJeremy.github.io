@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const title = "µJumbo";
 const coverImage = "ujumbo.jpeg";
 const description =
-  "µJumbo was an entry to the Trinity International Robotic Firefighting competition in the \"small robot\" category.";
+  'µJumbo was an entry to the Trinity International Robotic Firefighting competition in the "small robot" category.';
 const tags = {
   software: true,
   hardware: true,

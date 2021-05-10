@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const title = "HobbesBot";
 const coverImage = "hobbesbot.jpeg";
 const description =
-  "This is a robotic puppet with 7 degrees of freedom called \"HobbesBot\" after the tiger in Calvin and Hobbes. It was the final project from ME-84 (Intro. Robotics & Mechatronics) in Fall 2018 at Tufts.";
+  'This is a robotic puppet with 7 degrees of freedom called "HobbesBot" after the tiger in Calvin and Hobbes. It was the final project from ME-84 (Intro. Robotics & Mechatronics) in Fall 2018 at Tufts.';
 const tags = {
   software: true,
   hardware: true,

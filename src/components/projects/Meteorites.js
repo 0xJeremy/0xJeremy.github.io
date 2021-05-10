@@ -32,7 +32,8 @@ export default function Component() {
         src={`${imagePath}/meteorites/meteorites.png`}
         alt=""
       />
-      This project was made for COMP-177 (Data Visualization) at Tufts in Spring 2020.
+      This project was made for COMP-177 (Data Visualization) at Tufts in Spring
+      2020.
     </ProjectTemplate>
   );
 }

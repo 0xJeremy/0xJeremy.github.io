@@ -17,11 +17,11 @@ const description =
   "This project is an open-source hardware platform for developing robotics software. It is intended to be a low-cost, modular swarm robotic system to test swarm algorithms.";
 const tags = {
   software: true,
-  hardware: true
+  hardware: true,
 };
 const data = {
   github: "https://github.com/0xJeremy/fleet",
-}
+};
 
 export default function Component() {
   const classes = useStyles();

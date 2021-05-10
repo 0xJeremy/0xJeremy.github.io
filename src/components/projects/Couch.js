@@ -17,7 +17,7 @@ const description =
   "This is a project done as part of the Tufts Robotics club in which we built a drivable, remote-controlled couch. It's pretty much exactly what it sounds like.";
 const tags = {
   software: true,
-  hardware: true
+  hardware: true,
 };
 
 export default function Component() {
