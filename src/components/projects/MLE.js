@@ -20,16 +20,19 @@ const tags = {
   hardware: true,
   hackathon: true,
 };
+const data = {
+  github: "https://github.com/0xJeremy/MLE",
+};
 
 export default function Component() {
   const classes = useStyles();
 
   return (
-    <ProjectTemplate title={title}>
+    <ProjectTemplate title={title} data={data}>
       <img className={classes.image} src={`${imagePath}/mle/mle.png`} alt="" />
       This project was made just for fun :)
     </ProjectTemplate>
   );
 }
 
-export { Component, title, coverImage, description, tags };
+export { Component, title, coverImage, description, tags, data };

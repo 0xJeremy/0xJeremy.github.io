@@ -19,12 +19,17 @@ const tags = {
   software: true,
   oss: true,
 };
+const data = {
+  github: "https://github.com/0xJeremy/socket.engine",
+  pypi: "https://pypi.org/project/socket.engine/",
+  npm: "https://www.npmjs.com/package/socket.engine",
+};
 
 export default function Component() {
   const classes = useStyles();
 
   return (
-    <ProjectTemplate title={title}>
+    <ProjectTemplate title={title} data={data}>
       <img
         className={classes.image}
         src={`${imagePath}/socketengine/socketengine.png`}
@@ -35,4 +40,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags };
+export { Component, title, coverImage, description, tags, data };

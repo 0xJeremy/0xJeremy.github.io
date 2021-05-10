@@ -19,12 +19,15 @@ const tags = {
   software: true,
   hardware: true,
 };
+const data = {
+  github: "https://github.com/0xJeremy/me134/tree/master/hw2",
+};
 
 export default function Component() {
   const classes = useStyles();
 
   return (
-    <ProjectTemplate title={title}>
+    <ProjectTemplate title={title} data={data}>
       <img
         className={classes.image}
         src={`${imagePath}/clock/clock_isometric.JPG`}
@@ -36,4 +39,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags };
+export { Component, title, coverImage, description, tags, data };

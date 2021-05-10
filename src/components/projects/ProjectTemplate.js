@@ -46,6 +46,19 @@ const useStyles = makeStyles((theme) => ({
       color: colorGreen,
     },
   },
+  linkButton: {
+    float: "none",
+    marginLeft: "5vw",
+    fontWeight: "600",
+    fontSize: "0.5em",
+    marginRight: "2em",
+    color: colorGreen,
+    borderColor: colorGreen,
+    "&:hover": {
+      borderColor: colorOrange,
+      color: colorOrange,
+    },
+  },
 }));
 
 export default function ProjectTemplate(props) {
@@ -56,8 +69,45 @@ export default function ProjectTemplate(props) {
       <Toolbar />
 
       <div className={classes.root}>
-        <div className={classes.title}>{props.title}</div>
-
+        <div className={classes.title}>
+          {props.title}
+          {props.data.github && (
+            <Button
+              className={classes.linkButton}
+              classes={{ outlined: classes.outline }}
+              variant="outlined"
+              color="primary"
+              href={props.data.github}
+              target="_blank"
+            >
+              > View on GitHub
+            </Button>
+          )}
+          {props.data.pypi && (
+            <Button
+              className={classes.linkButton}
+              classes={{ outlined: classes.outline }}
+              variant="outlined"
+              color="primary"
+              href={props.data.pypi}
+              target="_blank"
+            >
+              > View on PyPi
+            </Button>
+          )}
+          {props.data.npm && (
+            <Button
+              className={classes.linkButton}
+              classes={{ outlined: classes.outline }}
+              variant="outlined"
+              color="primary"
+              href={props.data.NPM}
+              target="_blank"
+            >
+              > View on NPM
+            </Button>
+          )}
+        </div>
         <div className={classes.children}>{props.children}</div>
 
         <br />

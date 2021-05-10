@@ -19,12 +19,17 @@ const tags = {
   software: true,
   oss: true,
 };
+const data = {
+  github: "https://github.com/0xJeremy/FireEye",
+  pypi: "https://pypi.org/project/FireEye/",
+  npm: "https://www.npmjs.com/package/fireeye",
+};
 
 export default function Component() {
   const classes = useStyles();
 
   return (
-    <ProjectTemplate title={title}>
+    <ProjectTemplate title={title} data={data}>
       <img
         className={classes.image}
         src={`${imagePath}/fireeye/fireeye.png`}
@@ -35,4 +40,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags };
+export { Component, title, coverImage, description, tags, data };

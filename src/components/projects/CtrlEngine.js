@@ -19,12 +19,15 @@ const tags = {
   software: true,
   oss: true,
 };
+const data = {
+  github: "https://github.com/0xJeremy/ctrl.engine",
+};
 
 export default function Component() {
   const classes = useStyles();
 
   return (
-    <ProjectTemplate title={title}>
+    <ProjectTemplate title={title} data={data}>
       <img
         className={classes.image}
         src={`${imagePath}/ctrlengine/ctrlengine.png`}
@@ -35,4 +38,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags };
+export { Component, title, coverImage, description, tags, data };

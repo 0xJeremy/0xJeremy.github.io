@@ -74,7 +74,7 @@ const useStyles = makeStyles({
   },
   hackathon: {
     color: colorOrange,
-    borderColor: colorOrange
+    borderColor: colorOrange,
   },
 });
 
