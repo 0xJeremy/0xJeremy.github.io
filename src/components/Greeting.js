@@ -8,16 +8,18 @@ import { colorGreen, colorOrange } from "./PageStyles";
 const offsetLeft = 5;
 const offsetTop = 15;
 const textPadding = 2;
+const smallScreen = window.screen.height < 850;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     fontWeight: "600",
-    fontSize: "10vh",
+    fontSize: (props) => (props.smallScreen ? "8vh" : "10vh"),
     position: "relative",
     left: `${offsetLeft}vw`,
     width: `${100 - offsetLeft}vw`,
     height: `${100 - offsetTop - 10}vh`,
-    top: `${offsetTop}vh`,
+    top: (props) =>
+      props.smallScreen ? `${offsetTop / 3}vh` : `${offsetTop}vh`,
   },
   hello: {
     color: "white",
@@ -53,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Greeting(props) {
-  const classes = useStyles();
+  const classes = useStyles({ smallScreen });
 
   useEffect(() => {
     document.title = "Home | Jeremy Kanovsky";

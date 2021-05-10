@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Hexapod";
 const coverImage = "hexapod_isometric.JPG";
@@ -24,14 +16,13 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/hexapod/hexapod_isometric.JPG`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/hexapod/hexapod_isometric.JPG`,
+          `${imagePath}/hexapod/hexapod_isometric.JPG`,
+        ]}
       />
       This robot was made for ME-134 (Advanced Robotics) at Tufts University in
       the Fall of 2020.

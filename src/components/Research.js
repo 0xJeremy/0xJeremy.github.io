@@ -55,7 +55,7 @@ export default function Research() {
         <div className={classes.text}>
           there will be some stuff here eventually. for now, see{" "}
           <a
-            href="https://drive.google.com/file/d/1SMG8e5CHDPIT6oHzzlDiidvKQyhi1HIR/view?usp=sharing"
+            href="static/ME94%20Poster%20Final.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={classes.link}

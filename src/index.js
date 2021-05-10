@@ -22,6 +22,7 @@ ReactDOM.render(
           component={project.Component}
         />
       ))}
+      <Route component={Home} />
     </Switch>
   </Router>,
   document.getElementById("root")

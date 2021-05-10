@@ -4,6 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import { colorOrange, colorGreen } from "./PageStyles";
+const smallScreen = window.screen.width < 650;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
       borderColor: colorGreen,
       color: colorGreen,
     },
+    marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
   outline: {
     borderColor: colorOrange,
@@ -41,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ToolBar(props) {
-  const classes = useStyles();
+  const classes = useStyles({ smallScreen });
 
   return (
     <Toolbar className={classes.root}>
@@ -78,7 +80,7 @@ function ToolBar(props) {
           classes={{ outlined: classes.outline }}
           variant="outlined"
           color="primary"
-          href="https://jeremykanovsky.com/JCK%20Resume.pdf"
+          href="static/JCK%20Resume.pdf"
           target="_blank"
         >
           Resume

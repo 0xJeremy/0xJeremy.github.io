@@ -16,6 +16,7 @@ import projectPages from "./projects";
 
 const tableMargin = 1;
 const disabledColor = "#888888";
+const smallScreen = window.screen.width < 650;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     color: colorOrange,
     fontWeight: "600",
-    fontSize: "6em",
+    fontSize: "8vh",
     paddingBottom: "3vh",
     paddingTop: "3vh",
     marginLeft: "1vw",
@@ -47,27 +48,32 @@ const useStyles = makeStyles((theme) => ({
     color: (props) => (props.filter.hardware ? colorRed : disabledColor),
     borderColor: (props) => (props.filter.hardware ? colorRed : disabledColor),
     marginLeft: "5vw",
+    marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
   software: {
     color: (props) => (props.filter.software ? colorBlue : disabledColor),
     borderColor: (props) => (props.filter.software ? colorBlue : disabledColor),
     marginLeft: "1.5vw",
+    marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
   pcb: {
     color: (props) => (props.filter.pcb ? colorGreen : disabledColor),
     borderColor: (props) => (props.filter.pcb ? colorGreen : disabledColor),
     marginLeft: "1.5vw",
+    marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
   oss: {
     color: (props) => (props.filter.oss ? colorYellow : disabledColor),
     borderColor: (props) => (props.filter.oss ? colorYellow : disabledColor),
     marginLeft: "1.5vw",
+    marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
   hackathon: {
     color: (props) => (props.filter.hackathon ? colorOrange : disabledColor),
     borderColor: (props) =>
       props.filter.hackathon ? colorOrange : disabledColor,
     marginLeft: "1.5vw",
+    marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
 }));
 
@@ -79,7 +85,8 @@ export default function Projects() {
     oss: true,
     hackathon: true,
   });
-  const classes = useStyles({ filter });
+  const classes = useStyles({ filter, smallScreen });
+  const gridSize = smallScreen ? 12 : 4;
 
   useEffect(() => {
     document.title = "Projects | Jeremy Kanovsky";
@@ -141,7 +148,7 @@ export default function Projects() {
           {Object.entries(projectPages).map(([name, project]) => {
             if (showProject(project)) {
               return (
-                <Grid item xs={4}>
+                <Grid item xs={gridSize} key={name}>
                   <ProjectCard name={name} project={project} key={name} />
                 </Grid>
               );

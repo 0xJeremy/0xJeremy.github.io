@@ -7,6 +7,7 @@ import Toolbar from "../Toolbar";
 
 const offsetLeft = 5;
 const offsetTop = 3;
+const smallScreen = window.screen.width < 650;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
   children: {
     color: "white",
-    maxWidth: "75%",
-    fontSize: "0.5em",
+    maxWidth: "100%",
+    fontSize: (props) => (props.smallScreen ? "0.35em" : "0.5em"),
     display: "block",
   },
   outline: {
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     float: "none",
     marginBottom: "2em",
     fontWeight: "600",
-    fontSize: "0.7em",
+    fontSize: (props) => (props.smallScreen ? "0.3em" : "0.5em"),
     marginRight: "2em",
     color: colorOrange,
     "&:hover": {
@@ -48,9 +49,9 @@ const useStyles = makeStyles((theme) => ({
   },
   linkButton: {
     float: "none",
-    marginLeft: "5vw",
+    marginLeft: (props) => (props.smallScreen ? `1vw` : "5vw"),
     fontWeight: "600",
-    fontSize: "0.5em",
+    fontSize: (props) => (props.smallScreen ? "0.2em" : "0.4em"),
     marginRight: "2em",
     color: colorGreen,
     borderColor: colorGreen,
@@ -62,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProjectTemplate(props) {
-  const classes = useStyles();
+  const classes = useStyles({ smallScreen });
 
   useEffect(() => {
     document.title = `${props.title} | Jeremy Kanovsky`;
