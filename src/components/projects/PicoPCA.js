@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Raspberry Pi Pico Servo Driver";
 const coverImage = "pico_pca.JPG";
@@ -21,17 +13,26 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/pico_pca/pico_pca.JPG`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/pico_pca/pico_pca.JPG`,
+          `${imagePath}/pico_pca/pico_pca_1.JPG`,
+          `${imagePath}/pico_pca/pico_pca_2.JPG`,
+        ]}
       />
-      This project was made as part of Tufts ME-193 MPP (Micro-Controller
-      Projects) in the Spring of 2021.
+      This PCB is a breakout board for the Raspberry Pi Pico. It carries a
+      PCA9685 16-channel PWM driver chip, and provides breakouts for 16 servos.
+      It also includes breakouts for Stemma QWIIC connectors on the side of the
+      board.
+      <Images
+        space
+        images={[
+          `${imagePath}/pico_pca/pico_pca_3.JPG`,
+          `${imagePath}/pico_pca/pico_pca_4.JPG`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }
