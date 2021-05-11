@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Autodrive";
 const coverImage = "autodrive.jpeg";
@@ -21,16 +13,27 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/autodrive/autodrive.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/autodrive/autodrive.jpeg`,
+          `${imagePath}/autodrive/autodrive_1.JPG`,
+        ]}
       />
-      This project was made as part of the Tufts Robotics Club.
+      This project was made as a homework assigmnet for Tufts ME-84 (Intro.
+      Robotics & Mechatronics) in Fall of 2018. The assignment was to use image
+      processing to make a line following robot. We did this by pointing an
+      OpenMV camera facing downwards and using canny edge-detection to find the
+      lines on the table. We also used a PyBoard v2 to control the servo motors
+      attached to the car (acting as drive motors).
+      <Images
+        space
+        images={[
+          `${imagePath}/autodrive/autodrive_2.JPG`,
+          `${imagePath}/autodrive/autodrive_3.JPG`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }
