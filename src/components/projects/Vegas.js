@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = '"Banned From Vegas"';
 const coverImage = "vegas.jpeg";
@@ -25,16 +17,27 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/vegas/vegas.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/vegas/vegas.jpg`,
+          `${imagePath}/vegas/vegas2.jpeg`,
+        ]}
       />
-      This robot was made at MakeHarvard 2020.
+      "Banned From Vegas" is an automatic card-dealing and sorting robot made at
+      MakeHarvard 2020. It uses computer vision to detect and sort a deck of
+      cards (and with a little bit of card-counting thrown in can make the
+      operator always win at cards). It was built over the course of 24 hours
+      and was powered by a Raspberry Pi and a large number of servos and motors.
+      The end result worked shockingly well.
+      <Images
+        space
+        images={[
+          `${imagePath}/vegas/vegas3.jpeg`,
+          `${imagePath}/vegas/vegas4.jpeg`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }

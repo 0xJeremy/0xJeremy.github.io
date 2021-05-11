@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "LEGO Robots";
 const coverImage = "lego.jpeg";
@@ -21,16 +13,41 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/lego/lego.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/lego/lego.jpeg`,
+          `${imagePath}/lego/iot_arms_1.JPG`,
+          `${imagePath}/lego/iot_arms_2.JPG`,
+          `${imagePath}/lego/iot_arms_4.JPG`,
+        ]}
       />
-      These robots were made for ME-84.
+      These are a series of robots made for Tufts ME-84 (Intro. Robotics &
+      Mechatronics) in the Fall of 2018. Each one was a homework assignment, and
+      all the robots were programmed in LabVIEW. The assignments include making
+      a kinetic art sculpture, an wirelessly-communicating clock, a childrens
+      toy, and a remote-control robotic arm. All these robots used the LEGO EV3
+      platform.
+      <Images
+        space
+        images={[
+          `${imagePath}/lego/clock_1.JPG`,
+          `${imagePath}/lego/clock_3.JPG`,
+        ]}
+      />
+      <Images
+        images={[
+          `${imagePath}/lego/towers_1.JPG`,
+          `${imagePath}/lego/towers_2.JPG`,
+        ]}
+      />
+      <Images
+        images={[
+          `${imagePath}/lego/gear_1.JPG`,
+          `${imagePath}/lego/gear_2.JPG`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }

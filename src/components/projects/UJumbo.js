@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "µJumbo";
 const coverImage = "ujumbo.jpeg";
@@ -21,16 +13,30 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/ujumbo/ujumbo.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/ujumbo/ujumbo.jpeg`,
+          `${imagePath}/ujumbo/jumbo_3.JPG`,
+        ]}
       />
-      This robot was made as part of the Tufts Robotics Club.
+      µJumbo was an entry to the Trinity International Robotic Firefighting
+      competition in the "smallest robot" category. Unfortunately, that year it
+      was only the second smallest robot (losing by a matter of several cubic
+      centimeters). This robot was to navigate a maze autonomously and
+      extinguish a fire (a candle). It was also required to recognize a tone
+      played as the starting signal (thus the microphone and filtering circuit
+      on the top of the robot). We equipped this robot with an Arduino Nano,
+      wheels encoders, and multiple time-of-flight distance sensors placed
+      around the robot.
+      <Images
+        space
+        images={[
+          `${imagePath}/ujumbo/jumbo_2.JPG`,
+          `${imagePath}/ujumbo/jumbo_4.JPG`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }

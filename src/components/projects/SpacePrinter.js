@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = '"Space Jam": Space Printer';
 const coverImage = "spaceprinter.JPG";
@@ -24,17 +16,14 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/spaceprinter/spaceprinter.JPG`}
-        alt=""
-      />
-      This printer was made as part of Tufts mechanical engineering senior
-      design (ME-73)
+      <Images images={[`${imagePath}/space_printer/spaceprinter.JPG`]} />
+      This is a 3D printer designed to be used in *space* (specifically,
+      zero-gravity environments, such as on the International Space Station). It
+      was built for Professor Douglas Matson for his use in research. We also
+      built the firmware from scratch for this printer given the unique control
+      style and setup of the stepper motors.
     </ProjectTemplate>
   );
 }

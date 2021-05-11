@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Electric Longboard";
 const coverImage = "longboard.jpeg";
@@ -20,16 +12,17 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/longboard/longboard.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/longboard/longboard.jpeg`,
+          `${imagePath}/longboard/longboard_1.jpeg`,
+        ]}
       />
-      This longboard was made with Tufts MAKE.
+      This was a project with the Tufts MAKE club in which we built an electric
+      longboard. It was a pretty straight forward project, and the end result
+      worked suprisingly well.
     </ProjectTemplate>
   );
 }

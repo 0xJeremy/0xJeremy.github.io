@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Firefighting Robot";
 const coverImage = "firefighting.jpeg";
@@ -21,16 +13,21 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/firefighting/firefighting.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/firefighting/firefighting.jpeg`,
+          `${imagePath}/firefighting/firefighting_1.JPG`,
+        ]}
       />
-      This robot was made as part of the Tufts Robotics Club.
+      This robot is one of the first I've made from scratch, and was made for
+      the Trinity International Robotic Firefighting Competition in the Spring
+      of 2018. It's task was to listen for a tone, and when signaled would begin
+      to autonomously navigate a maze and extinguish a fire. It was powered by a
+      Raspberry Pi Zero and was surrounded by ultrasonic distance sensors to
+      detect the walls of the maze.
+      <Images space images={[`${imagePath}/firefighting/firefighting_2.JPG`]} />
     </ProjectTemplate>
   );
 }

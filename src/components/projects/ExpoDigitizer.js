@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Expo Digitizer";
 const coverImage = "expo_digitizer.jpeg";
@@ -22,16 +14,19 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/expo_digitizer/expo_digitizer.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/expo_digitizer/expo_digitizer.jpeg`,
+          `${imagePath}/expo_digitizer/expo_digitizer_2.jpeg`,
+        ]}
       />
-      This robot was made at Tufts Polyhack in 2017.
+      This project was made as part of Tufts Polyhack in Fall 2017. It is an
+      attachment for an Expo marker to turn it into an active digitizer. Using
+      an accelerometer mounted to the marker, and a button to detect when it
+      makes contact with the board, this marker could generate a PDF of the
+      hardwriting of the user.
     </ProjectTemplate>
   );
 }

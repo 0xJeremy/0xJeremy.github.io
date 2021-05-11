@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Quadcopter UAV";
 const coverImage = "quadcopter.jpeg";
@@ -21,16 +13,19 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/quadcopter/quadcopter.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/quadcopter/quadcopter.jpeg`,
+          `${imagePath}/quadcopter/quadcopter_2.jpeg`,
+        ]}
       />
-      This quadcopter was made with Tufts MAKE.
+      This quadcopter was built with the Tufts MAKE club. The project was to
+      build a quadcopter from scratch, and program it to fly semi-autonomously
+      using computer vision. Unfortunately, due to semester time constraints, we
+      were unable to finish the autonomous portion of the build, but it flew
+      pretty well.
     </ProjectTemplate>
   );
 }

@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "QBot";
 const coverImage = "qbot.jpeg";
@@ -21,16 +13,22 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/qbot/qbot.jpeg`}
-        alt=""
+      <Images
+        images={[`${imagePath}/qbot/qbot.jpeg`, `${imagePath}/qbot/bot_1.JPG`]}
       />
-      This robot was made for ME-84.
+      This robot was a homework project from Tufts ME-84 (Intro. Robotics &
+      Mechatronics). The assignment was to create a robot that takes its cues
+      for movement from a camera (computer vision). We created a driving robot
+      that uses an OpenMV camera to recognize QR tags representing "move
+      forward", "move backward", "turn left", "turn right", "stop", etc. The
+      OpenMV camera commanded a PyBoard v2 which in turn sent commands to the
+      two servo motors (here being used as drive motors).
+      <Images
+        space
+        images={[`${imagePath}/qbot/bot_2.JPG`, `${imagePath}/qbot/bot_3.JPG`]}
+      />
     </ProjectTemplate>
   );
 }

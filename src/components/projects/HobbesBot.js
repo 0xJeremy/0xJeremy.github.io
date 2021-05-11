@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "HobbesBot";
 const coverImage = "hobbesbot.jpeg";
@@ -21,16 +13,29 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/hobbesbot/hobbesbot.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/hobbesbot/hobbesbot.jpeg`,
+          `${imagePath}/hobbesbot/hobbes_2.JPG`,
+        ]}
       />
-      This robot was made at Tufts Polyhack in 2017.
+      HobbesBot is the final project from Tufts ME-84 (Intro. Robotics &
+      Mechatronics). The assignment was to build an animatronic puppet that
+      takes cues from a human, and can interact with them. We created Hobbes,
+      the tiger from Calvin & Hobbes, as a 7 degrees-of-freedom robot equipped
+      with computer vision. Using a Raspberry Pi and a camera (along with half
+      of Google Cloud Platforms vision APIs), Hobbes determines the users mood
+      and reacts accordingly. As a cherry on top, we made two IoT enabled LED
+      cubes to light up when Hobbes detects the user is happy.
+      <Images
+        space
+        images={[
+          `${imagePath}/hobbesbot/hobbes_1.JPG`,
+          `${imagePath}/hobbesbot/hobbes_3.JPG`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }
