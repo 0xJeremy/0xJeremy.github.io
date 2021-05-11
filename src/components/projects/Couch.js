@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Drivable Couch";
 const coverImage = "couch.png";
@@ -21,16 +13,15 @@ const tags = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/couch/couch.png`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/couch/couch.png`,
+          `${imagePath}/couch/couch2.jpeg`,
+        ]}
       />
-      This project was made as part of the Tufts Robotics Club.
+      This is a robotic couch. It is remote-controlled via an xbox controller. It can carry three people. It's exactly what it sounds like, and is a ton of fun. This project was made with the Tufts Robotics Club, and was one of my first large-scale robotics projects. It was built using FIRST robotics hardware, and programmed in C++. At one point we had an actual couch on it, but due to storage problems it had to be thrown out.
     </ProjectTemplate>
   );
 }
