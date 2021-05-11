@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const title = "LEGO Robots";
+const title = "QBot";
 const coverImage = "qbot.jpeg";
 const description =
   "QBot was a robot made as part of ME-84 (Intro. Robotics & Mechatronics) in Fall 2018. It uses image recognition to respond to commands from QR codes.";

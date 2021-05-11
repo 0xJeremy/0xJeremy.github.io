@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Dum-E IoT Arms";
 const coverImage = "dume_arms.jpeg";
@@ -25,16 +17,29 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/dume_arms/dume_arms.jpeg`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/dume_arms/dume_arms.jpeg`,
+          `${imagePath}/dume_arms/dume_arms_1.JPG`,
+        ]}
       />
-      This project was made for MakeHarvard 2019.
+      The Dum-E IoT Arms (Dum-E being the name of the robotic arm Tony Stark
+      keeps in his workshop, of course) is a project made at the MakeHarvard
+      hackathon in 2019. We made them to be an educational teaching tool for
+      univresity students to learn about the basics of IoT, robotics, and
+      fabrication. We used them briefly in our university robotics club to teach
+      some of these topics after we had made the prototypes. The arms can be
+      controlled by a single centralized web-server and use ESP8266s to stream
+      instructions from the internet.
+      <Images
+        space
+        images={[
+          `${imagePath}/dume_arms/dume_arms_2.JPG`,
+          `${imagePath}/dume_arms/dume_arms_3.JPG`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }

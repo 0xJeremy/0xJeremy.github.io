@@ -1,15 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: "75%",
-    display: "block",
-    paddingBottom: "2vh",
-  },
-}));
+import Images from "./Images";
 
 const title = "Fleet";
 const coverImage = "fleet.png";
@@ -24,16 +16,29 @@ const data = {
 };
 
 export default function Component() {
-  const classes = useStyles();
-
   return (
     <ProjectTemplate title={title} data={data}>
-      <img
-        className={classes.image}
-        src={`${imagePath}/fleet/fleet.png`}
-        alt=""
+      <Images
+        images={[
+          `${imagePath}/fleet/fleet.png`,
+          `${imagePath}/fleet/fleet2.png`,
+          `${imagePath}/fleet/fleet3.jpeg`,
+        ]}
       />
-      This project was made for fun :)
+      "Fleet" is a series of small, modular robots I made as an open-source
+      hardware platform for developing swarm robotics software. It is intended
+      to be a low cost solution for labs, researchers, and hobbiests to
+      experiment with cutting edge swarm algorithms. Each robot is equipped with
+      a Raspberry Pi, 2x DC motors with encoders, Raspberry Pi camera, and
+      batteries to last several hours. Newer versions also have front and back
+      facing time of flight distance sensors.
+      <Images
+        space
+        images={[
+          `${imagePath}/fleet/fleet4.jpeg`,
+          `${imagePath}/fleet/fleet5.JPG`,
+        ]}
+      />
     </ProjectTemplate>
   );
 }
