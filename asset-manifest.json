@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/0xJeremy.github.io/static/js/main.b1519122.chunk.js",
-    "main.js.map": "/0xJeremy.github.io/static/js/main.b1519122.chunk.js.map",
+    "main.js": "/0xJeremy.github.io/static/js/main.b671baa3.chunk.js",
+    "main.js.map": "/0xJeremy.github.io/static/js/main.b671baa3.chunk.js.map",
     "runtime-main.js": "/0xJeremy.github.io/static/js/runtime-main.0d206124.js",
     "runtime-main.js.map": "/0xJeremy.github.io/static/js/runtime-main.0d206124.js.map",
     "static/js/2.896417e2.chunk.js": "/0xJeremy.github.io/static/js/2.896417e2.chunk.js",
     "static/js/2.896417e2.chunk.js.map": "/0xJeremy.github.io/static/js/2.896417e2.chunk.js.map",
     "index.html": "/0xJeremy.github.io/index.html",
-    "precache-manifest.2ceb9b28b38ff39c4665e5538894a165.js": "/0xJeremy.github.io/precache-manifest.2ceb9b28b38ff39c4665e5538894a165.js",
+    "precache-manifest.bda5b33d39a8e8cf3a633c33ffac69a5.js": "/0xJeremy.github.io/precache-manifest.bda5b33d39a8e8cf3a633c33ffac69a5.js",
     "service-worker.js": "/0xJeremy.github.io/service-worker.js",
     "static/js/2.896417e2.chunk.js.LICENSE.txt": "/0xJeremy.github.io/static/js/2.896417e2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0d206124.js",
     "static/js/2.896417e2.chunk.js",
-    "static/js/main.b1519122.chunk.js"
+    "static/js/main.b671baa3.chunk.js"
   ]
 }
