@@ -17,7 +17,7 @@ export default function Component() {
       <Images
         images={[
           `${imagePath}/icarus/Icarus_Board.png`,
-          `${imagePath}/icarus/Front.jpg`,
+          `${imagePath}/icarus/icarus_2.JPG`,
         ]}
       />
       This PCB was made as a companion board to the Daedalus motor controller,
@@ -28,7 +28,14 @@ export default function Component() {
       (including the Helios Pi-Hat and the Daedalus Motor Controller). This is
       one of the first PCBs I've made and I expect to iterate on it in the
       future.
-      <Images space images={[`${imagePath}/icarus/Board_Layout.png`]} />
+      <Images
+        space
+        images={[
+          `${imagePath}/icarus/icarus_1.JPG`,
+          `${imagePath}/icarus/icarus_3.JPG`,
+        ]}
+      />
+      <Images images={[`${imagePath}/icarus/Board_Layout.png`]} />
     </ProjectTemplate>
   );
 }

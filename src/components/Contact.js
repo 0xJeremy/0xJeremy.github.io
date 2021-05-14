@@ -12,7 +12,7 @@ const textPadding = 2;
 const useStyles = makeStyles((theme) => ({
   root: {
     fontWeight: "600",
-    fontSize: "4em",
+    fontSize: "min(6vh, 6vw)",
     position: "relative",
     left: `${offsetLeft}vw`,
     width: `${100 - offsetLeft}vw`,

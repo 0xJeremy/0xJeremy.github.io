@@ -31,6 +31,7 @@ import * as Vegas from "./Vegas";
 import * as SpacePrinter from "./SpacePrinter";
 import * as DevBoard from "./DevBoard";
 import * as PicoPCA from "./PicoPCA";
+import * as Surge from "./Surge";
 
 export default {
   hexapod: Hexapod,
@@ -66,4 +67,5 @@ export default {
   space_printer: SpacePrinter,
   devboard: DevBoard,
   pico_pca: PicoPCA,
+  surge: Surge,
 };
