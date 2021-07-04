@@ -3,7 +3,8 @@ import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
 import Images from "./Images";
 
-const title = "Hexapod";
+const title = "Hexapod Robot";
+const path = "hexapod";
 const coverImage = "hexapod_isometric.JPG";
 const description =
   "This was the final project for Tufts ME-134 (Advanced Robotics) in Fall 2020. We were tasked with creating a robot that could navigate an obstacle course (containing a tunnel, wall, and rough terrain) autonomously.";
@@ -11,6 +12,7 @@ const tags = {
   software: true,
   hardware: true,
 };
+const technology = ["Raspberry Pi", "Python", "Solidworks"];
 const data = {
   github: "https://github.com/0xJeremy/me134/tree/master/final",
 };
@@ -50,4 +52,13 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags, data };
+export {
+  Component,
+  title,
+  path,
+  coverImage,
+  description,
+  technology,
+  tags,
+  data,
+};

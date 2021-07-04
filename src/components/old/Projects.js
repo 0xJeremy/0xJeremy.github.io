@@ -3,16 +3,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import {
   colorOrange,
-  backgroundColor,
+  navy,
   colorBlue,
   colorGreen,
   colorYellow,
   colorRed,
-} from "./PageStyles";
+} from "../PageStyles";
 import ProjectCard from "./ProjectCard";
-import Toolbar from "./Toolbar";
+import Toolbar from "../Toolbar";
 import Chip from "@material-ui/core/Chip";
-import projectPages from "./projects";
+import projectPages from "../projects";
 
 const tableMargin = 1;
 const disabledColor = "#888888";
@@ -20,7 +20,7 @@ const smallScreen = window.screen.width < 650;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: backgroundColor,
+    background: navy,
   },
   title: {
     display: "flex",

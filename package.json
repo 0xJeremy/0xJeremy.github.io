@@ -1,7 +1,7 @@
 {
-  "name": "pwv3",
+  "name": "0xJeremy.github.io",
   "homepage": "http://0xJeremy.github.io/0xJeremy.github.io",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
@@ -10,6 +10,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-router-dom": "5.2.0",
+    "react-router-hash-link": "2.4.3",
     "react-scripts": "3.4.1",
     "typewriter-effect": "2.17.0"
   },

@@ -1,116 +1,102 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { colorGreen, colorOrange } from "./PageStyles";
-import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
-import Toolbar from "./Toolbar";
+import { fontMono, fontSans, orange, llslate, slate } from "./PageStyles";
+import { StyledButton } from "./Common";
 
-const offsetLeft = 5;
-const offsetTop = 15;
-const textPadding = 2;
+const smallScreen = window.screen.height < 850;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    fontWeight: "600",
-    fontSize: "min(6vh, 6vw)",
-    position: "relative",
-    left: `${offsetLeft}vw`,
-    width: `${100 - offsetLeft}vw`,
-    height: `${100 - offsetTop - 10}vh`,
-    top: `${offsetTop}vh`,
+    margin: "auto",
+    marginTop: "25vh",
   },
-  email: {
-    color: "white",
+  sectionTitle: {
+    textAlign: "center",
+    fontFamily: fontMono,
+    color: orange,
+    fontSize: "0.8em",
   },
-  website: {
-    color: "white",
-    paddingTop: `${textPadding}vh`,
+  subtitle: {
+    textAlign: "center",
+    fontFamily: fontSans,
+    color: llslate,
+    fontSize: "3em",
+    fontWeight: 600,
+    marginTop: "2vh",
+    letterSpacing: "1px",
   },
-  github: {
-    color: "white",
-    paddingTop: `${textPadding}vh`,
+  info: {
+    color: slate,
+    fontSize: "1.5em",
+    width: "60%",
+    margin: "auto",
+    textAlign: "center",
+    fontFamily: fontSans,
+    marginTop: "2vh",
   },
-  linkedin: {
-    color: "white",
-    paddingTop: `${textPadding}vh`,
+  centerButton: {
+    textAlign: "center",
+    marginTop: "4vh",
   },
   outline: {
-    borderColor: colorOrange,
-  },
-  link: {
-    color: colorGreen,
+    borderColor: orange,
   },
   button: {
-    float: "none",
-    fontWeight: "600",
-    fontSize: "0.7em",
-    color: colorOrange,
+    fontSize: "1em",
+    // marginRight: "2em",
+    padding: "12px 20px 12px 20px",
+  },
+  footer: {
+    textAlign: "center",
+    marginTop: "25vh",
+    marginBottom: "3vh",
+    fontFamily: fontMono,
+    color: slate,
+    fontSize: "0.8em",
+    transition: "0.3s",
     "&:hover": {
-      borderColor: colorGreen,
-      color: colorGreen,
+      color: orange,
+      cursor: "pointer",
     },
+  },
+  a: {
+    color: "inherit",
+    textDecoration: "none",
   },
 }));
 
-export default function Contact() {
-  const classes = useStyles();
-
-  useEffect(() => {
-    document.title = "Contact | Jeremy Kanovsky";
-  });
+export default function Contact(props) {
+  const classes = useStyles({ smallScreen });
 
   return (
-    <div>
-      <Toolbar />
+    <div className={classes.root} id="contact">
+      <div className={classes.sectionTitle}>04. What's next?</div>
+      <div className={classes.subtitle}>Get In Touch</div>
+      <div className={classes.info}>
+        I'm not currently looking for new job opportunities, but my inbox is
+        always open. Feel free to reach out and say hello! I'm always looking
+        for new projects, and would love to collaborate on something cool.
+      </div>
 
-      <div className={classes.root}>
-        <div className={classes.email}>
-          email:{" "}
-          <a
-            href="mailto:kanovsky.jeremy@gmail.com"
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-            kanovsky.jeremy@gmail.com
-          </a>
-        </div>
-        <div className={classes.website}>website: you're here.</div>
-        <div className={classes.github}>
-          github:{" "}
-          <a
-            href="https://github.com/0xJeremy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-            github.com/0xJeremy
-          </a>
-        </div>
-        <div className={classes.linkedin}>
-          linkedin:{" "}
-          <a
-            href="https://www.linkedin.com/in/jeremy-kanovsky/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-            linkedin.com/in/jeremy-kanovsky
-          </a>
-        </div>
-
-        <br />
-        <br />
-
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button
+      <div className={classes.centerButton}>
+        <a
+          href="mailto:kanovsky.jeremy@gmail.com"
+          rel="noopener noreferrer"
+          className={classes.a}
+        >
+          <StyledButton
             className={classes.button}
             classes={{ outlined: classes.outline }}
             variant="outlined"
-            color="primary"
           >
-            Home
-          </Button>
-        </Link>
+            Say Hello
+          </StyledButton>
+        </a>
+      </div>
+
+      <div className={classes.footer}>
+        This site is made by Jeremy Kanovsky with React.js and some small
+        headache.
       </div>
     </div>
   );

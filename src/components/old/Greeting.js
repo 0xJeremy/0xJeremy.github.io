@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typewriter from "typewriter-effect";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { colorGreen, colorOrange } from "./PageStyles";
+import { colorGreen, colorOrange } from "../PageStyles";
 
 const offsetLeft = 5;
 const offsetTop = 15;

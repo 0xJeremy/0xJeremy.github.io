@@ -12,12 +12,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const title = "Meteorite Visualizer";
+const path = "meteorites";
 const coverImage = "meteorites.png";
 const description =
   "This is a meteorite impact visualizer made for COMP-177 (Data Visualization) at Tufts in Spring 2020.";
 const tags = {
   software: true,
 };
+const technology = ["React.js", "Visualization", "Heroku"];
 const data = {
   github: "https://github.com/0xJeremy/Meteorite-Visualizer/",
 };
@@ -47,4 +49,13 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags, data };
+export {
+  Component,
+  title,
+  path,
+  coverImage,
+  description,
+  technology,
+  tags,
+  data,
+};

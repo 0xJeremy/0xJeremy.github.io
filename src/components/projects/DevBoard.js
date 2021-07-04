@@ -11,6 +11,10 @@ const tags = {
   software: true,
   pcb: true,
 };
+const data = {
+  github: "https://github.com/0xJeremy/mpp/tree/master/stm32",
+};
+const technology = ["KiCAD"];
 
 export default function Component() {
   return (
@@ -44,4 +48,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags };
+export { Component, title, coverImage, description, technology, tags, data };

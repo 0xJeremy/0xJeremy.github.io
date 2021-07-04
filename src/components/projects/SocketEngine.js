@@ -11,6 +11,7 @@ const tags = {
   software: true,
   oss: true,
 };
+const technology = ["Python", "Node.js", "Unix Sockets", "ZMQ"];
 const data = {
   github: "https://github.com/0xJeremy/socket.engine",
   pypi: "https://pypi.org/project/socket.engine/",
@@ -34,4 +35,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags, data };
+export { Component, title, coverImage, description, technology, tags, data };

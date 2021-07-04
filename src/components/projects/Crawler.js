@@ -14,6 +14,7 @@ const tags = {
 const data = {
   github: "https://github.com/0xJeremy/me134/tree/master/hw5",
 };
+const technology = ["Python", "Solidworks", "Raspberry Pi"];
 
 export default function Component() {
   return (
@@ -50,4 +51,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags, data };
+export { Component, title, coverImage, description, tags, technology, data };

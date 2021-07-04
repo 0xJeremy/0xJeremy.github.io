@@ -16,7 +16,7 @@ import {
   colorRed,
   colorBlue,
   colorYellow,
-} from "./PageStyles";
+} from "../PageStyles";
 
 const ViewProjectButton = withStyles({
   root: {

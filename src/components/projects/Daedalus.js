@@ -4,12 +4,17 @@ import { imagePath } from "./ProjectCommon";
 import Images from "./Images";
 
 const title = "Daedalus BLDC Motor Controller";
+const path = "daedalus";
 const coverImage = "Daedalus_Brackets_Board.png";
 const description =
   "This is a custom PCB designed to drive high-speed, high-power brushless motors. It includes current monitoring and positional feedback, turning the brushless motor into a high-torque servo motor.";
 const tags = {
   pcb: true,
 };
+const data = {
+  github: "https://github.com/0xJeremy/Daedalus",
+};
+const technology = ["KiCAD"];
 
 export default function Component() {
   return (
@@ -31,4 +36,13 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags };
+export {
+  Component,
+  title,
+  path,
+  coverImage,
+  technology,
+  data,
+  description,
+  tags,
+};

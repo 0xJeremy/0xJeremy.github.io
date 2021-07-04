@@ -13,6 +13,7 @@ const tags = {
 const data = {
   github: "https://github.com/0xJeremy/surge",
 };
+const technology = ["Python", "Lex-Yacc"];
 
 export default function Component() {
   return (
@@ -30,4 +31,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags, data };
+export { Component, title, coverImage, description, tags, technology, data };

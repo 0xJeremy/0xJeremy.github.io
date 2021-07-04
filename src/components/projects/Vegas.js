@@ -15,6 +15,7 @@ const tags = {
 const data = {
   github: "https://github.com/0xJeremy/MakeHarvard2020",
 };
+const technology = ["Python", "Computer Vision", "Raspberry Pi"];
 
 export default function Component() {
   return (
@@ -42,4 +43,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags, data };
+export { Component, title, coverImage, description, tags, technology, data };

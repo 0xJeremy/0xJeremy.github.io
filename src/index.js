@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Research from "./components/Research";
+import Home from "./pages/Home";
+import Projects from "./components/old/Projects";
+import Contact from "./components/old/Contact";
+import Research from "./components/old/Research";
 import projectPages from "./components/projects";
 
 ReactDOM.render(

@@ -14,6 +14,7 @@ const tags = {
 const data = {
   github: "https://github.com/0xJeremy/senior-design",
 };
+const technology = ["Solidworks", "Python", "Electronics"];
 
 export default function Component() {
   return (
@@ -28,4 +29,4 @@ export default function Component() {
   );
 }
 
-export { Component, title, coverImage, description, tags, data };
+export { Component, title, coverImage, description, tags, technology, data };
