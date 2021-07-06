@@ -1,20 +1,23 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
-import { fontSans, slate, orange } from "./PageStyles";
+import { fontSans, slate } from "./PageStyles";
 import { SectionHeader, StyledLink } from "./Common";
 
 const smallScreen = window.screen.height < 850;
+const thinScreen = window.screen.width < 950;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: "auto",
     marginTop: "50vh",
-    maxWidth: "60%",
+    width: (props) => (props.thinScreen ? "95%" : "60%"),
   },
   grid: {
     marginTop: "5vh",
+  },
+  gridItem: {
+    minWidth: (props) => (props.thinScreen ? "100%" : "auto"),
   },
   about: {
     fontFamily: fontSans,
@@ -23,12 +26,13 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     top: "50%",
     transform: "translateY(-50%)",
-    lineHeight: "1.6",
+    lineHeight: (props) => (props.thinScreen ? "1.2" : "1.6"),
   },
   imgWrapper: {
     // TODO: make this image prettier
     display: "block",
     position: "relative",
+    width: (props) => (props.thinScreen ? "100%" : "auto"),
     // width: '100%',
     // borderRadius: '5px',
     // backgroundColor: orange,
@@ -67,13 +71,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function About(props) {
-  const classes = useStyles({ smallScreen });
+  const classes = useStyles({ smallScreen, thinScreen });
 
   return (
     <div className={classes.root} id="about">
       <SectionHeader number="1" text="About Me" />
       <Grid container spacing={3} className={classes.grid}>
-        <Grid item xs={8}>
+        <Grid item xs={8} className={classes.gridItem}>
           <div className={classes.about}>
             Hello! My name is Jeremy and I write code that lives and runs on
             hardware. Specifically, I enjoy writing code for robots, 3D
@@ -97,9 +101,9 @@ export default function About(props) {
           </div>
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={4} className={classes.gridItem}>
           <div className={classes.imgWrapper}>
-            <img rounded src="static/avatar.jpeg" className={classes.avatar} />
+            <img src="static/avatar.jpeg" alt="Avatar" className={classes.avatar} />
           </div>
         </Grid>
       </Grid>

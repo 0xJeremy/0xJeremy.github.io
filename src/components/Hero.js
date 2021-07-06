@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { fontMono, fontSans, orange, llslate, slate } from "./PageStyles";
-import { StyledButton } from "./Common";
+import { StyledButton, StyledLink } from "./Common";
 
 const offsetTop = 18;
 const smallScreen = window.screen.height < 850;
+const thinScreen = window.screen.width < 950;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
     top: (props) =>
       props.smallScreen ? `${offsetTop / 3}vh` : `${offsetTop}vh`,
-    width: "70%",
+    width: (props) => (props.smallScreen ? "95%" : "70%"),
     margin: "auto",
   },
   hello: {
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     letterSpacing: "1px",
     fontFamily: fontSans,
-    fontSize: "5em",
+    fontSize: (props) => (props.smallScreen ? "2.5em" : "5em"),
   },
   name: {
     color: llslate,
@@ -36,26 +36,28 @@ const useStyles = makeStyles((theme) => ({
   },
   about: {
     fontFamily: fontSans,
-    fontSize: "1.2em",
+    fontSize: (props) => (props.thinScreen ? "1.1em" : "1.2em"),
+    marginTop: (props) => (props.thinScreen ? "16px" : 0),
     color: slate,
-    maxWidth: "50%",
+    maxWidth: (props) => (props.smallScreen ? "90%" : "50%"),
   },
   buttonGroup: {
-    marginTop: "64px",
+    marginTop: (props) => (props.smallScreen ? "32px" : "64px"),
   },
   outline: {
     borderColor: orange,
   },
   button: {
     float: "none",
-    fontSize: "1em",
+    fontSize: (props) => (props.thinScreen ? "0.8em" : "1em"),
     marginRight: "2em",
-    padding: "12px 20px 12px 20px",
+    padding: (props) =>
+      props.thinScreen ? "6px 10px 6px 10px" : "12px 20px 12px 20px",
   },
 }));
 
 export default function Hero(props) {
-  const classes = useStyles({ smallScreen });
+  const classes = useStyles({ smallScreen, thinScreen });
 
   useEffect(() => {
     document.title = "Home | Jeremy Kanovsky";
@@ -72,7 +74,7 @@ export default function Hero(props) {
       <div className={classes.about}>
         I'm a Boston-based software engineer who specializes in writing code for
         IoT devices and robots. Sometimes, I dabble in hardware. Currently, I'm
-        an engineer at Markforged working on the software powering
+        an engineer at <StyledLink href="https://markforged.com/" text="Markforged" /> working on the software powering
         next-generation 3D printers.
       </div>
 
@@ -87,7 +89,7 @@ export default function Hero(props) {
           </StyledButton>
         </HashLink>
 
-        <Link to="/projects" style={{ textDecoration: "none" }}>
+        <HashLink to="/#projects" style={{ textDecoration: "none" }}>
           <StyledButton
             className={classes.button}
             classes={{ outlined: classes.outline }}
@@ -95,7 +97,7 @@ export default function Hero(props) {
           >
             See My Work
           </StyledButton>
-        </Link>
+        </HashLink>
       </div>
     </div>
   );

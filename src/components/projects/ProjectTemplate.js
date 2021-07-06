@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { colorGreen, colorOrange } from "../PageStyles";
-import Button from "@material-ui/core/Button";
+import { orange, fontMono, fontSans, lslate } from "../PageStyles";
 import { Link } from "react-router-dom";
 import Toolbar from "../Toolbar";
+import { StyledButton } from '../Common';
 
 const offsetLeft = 5;
 const offsetTop = 3;
@@ -20,20 +20,22 @@ const useStyles = makeStyles((theme) => ({
     top: `${offsetTop}vh`,
   },
   title: {
-    color: colorOrange,
+    color: orange,
     paddingBottom: "3vh",
+    fontFamily: fontMono,
   },
   children: {
-    color: "white",
+    color: lslate,
+    fontFamily: fontSans,
     maxWidth: "100%",
     fontSize: (props) => (props.smallScreen ? "0.35em" : "0.5em"),
     display: "block",
   },
   outline: {
-    borderColor: colorOrange,
+    borderColor: orange,
   },
   link: {
-    color: colorGreen,
+    color: orange,
   },
   button: {
     float: "none",
@@ -41,24 +43,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     fontSize: (props) => (props.smallScreen ? "0.3em" : "0.5em"),
     marginRight: "2em",
-    color: colorOrange,
-    "&:hover": {
-      borderColor: colorGreen,
-      color: colorGreen,
-    },
   },
   linkButton: {
     float: "none",
-    marginLeft: (props) => (props.smallScreen ? `1vw` : "5vw"),
+    marginLeft: (props) => (props.smallScreen ? `1vw` : "3vw"),
     fontWeight: "600",
     fontSize: (props) => (props.smallScreen ? "0.2em" : "0.4em"),
-    marginRight: "2em",
-    color: colorGreen,
-    borderColor: colorGreen,
-    "&:hover": {
-      borderColor: colorOrange,
-      color: colorOrange,
-    },
+    marginRight: "1em",
   },
 }));
 
@@ -67,6 +58,7 @@ export default function ProjectTemplate(props) {
 
   useEffect(() => {
     document.title = `${props.title} | Jeremy Kanovsky`;
+    window.scrollTo(0, 0);
   });
 
   return (
@@ -77,31 +69,29 @@ export default function ProjectTemplate(props) {
         <div className={classes.title}>
           {props.title}
           {props.data && props.data.github && (
-            <Button
+            <StyledButton
               className={classes.linkButton}
               classes={{ outlined: classes.outline }}
               variant="outlined"
-              color="primary"
               href={props.data.github}
               target="_blank"
             >
               > View on GitHub
-            </Button>
+            </StyledButton>
           )}
           {props.data && props.data.pypi && (
-            <Button
+            <StyledButton
               className={classes.linkButton}
               classes={{ outlined: classes.outline }}
               variant="outlined"
-              color="primary"
               href={props.data.pypi}
               target="_blank"
             >
               > View on PyPi
-            </Button>
+            </StyledButton>
           )}
           {props.data && props.data.npm && (
-            <Button
+            <StyledButton
               className={classes.linkButton}
               classes={{ outlined: classes.outline }}
               variant="outlined"
@@ -110,7 +100,7 @@ export default function ProjectTemplate(props) {
               target="_blank"
             >
               > View on NPM
-            </Button>
+            </StyledButton>
           )}
         </div>
         <div className={classes.children}>{props.children}</div>
@@ -118,14 +108,13 @@ export default function ProjectTemplate(props) {
         <br />
 
         <Link to="/projects" style={{ textDecoration: "none" }}>
-          <Button
+          <StyledButton
             className={classes.button}
             classes={{ outlined: classes.outline }}
             variant="outlined"
-            color="primary"
           >
             &lt; Projects
-          </Button>
+          </StyledButton>
         </Link>
       </div>
     </div>

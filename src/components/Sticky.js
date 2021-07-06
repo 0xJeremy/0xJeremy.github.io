@@ -6,13 +6,15 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import { fontMono, orange, slate } from "./PageStyles";
 
 const smallScreen = window.screen.height < 850;
+const thinScreen = window.screen.width < 950;
+const sideSpace = thinScreen ? "20px" : "40px";
 
 const useSideStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
     bottom: "0",
-    left: (props) => (props.side === "left" ? "40px" : "auto"),
-    right: (props) => (props.side === "right" ? "40px" : "auto"),
+    left: (props) => (props.side === "left" ? sideSpace : "auto"),
+    right: (props) => (props.side === "right" ? sideSpace : "auto"),
     color: orange,
     fontSize: "2em",
     fontFamily: fontMono,
@@ -88,56 +90,60 @@ function StickySide(props) {
 
 export default function Sticky(props) {
   const classes = useStyles({ smallScreen });
+  const showSticky = window.screen.width > 750;
 
   return (
     <div>
-      <StickySide side="left">
-        <ul className={classes.socialList}>
-          <div className={classes.list}>
+      {showSticky && (
+        <StickySide side="left">
+          <ul className={classes.socialList}>
+            <div className={classes.list}>
+              <a
+                href="https://github.com/0xJeremy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={classes.a}
+              >
+                <li className={classes.listItem}>
+                  <GitHubIcon />
+                </li>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jeremy-kanovsky/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={classes.a}
+              >
+                <li className={classes.listItem}>
+                  <LinkedInIcon />
+                </li>
+              </a>
+              <a
+                href="mailto:kanovsky.jeremy@gmail.com/"
+                rel="noopener noreferrer"
+                className={classes.a}
+              >
+                <li className={classes.listItem}>
+                  <MailOutlineIcon />
+                </li>
+              </a>
+            </div>
+          </ul>
+        </StickySide>
+      )}
+      {showSticky && (
+        <StickySide side="right">
+          <div className={classes.emailBar}>
             <a
-              href="https://github.com/0xJeremy/"
-              target="_blank"
+              href="mailto:kanovsky.jeremy@gmail.com"
               rel="noopener noreferrer"
               className={classes.a}
             >
-              <li className={classes.listItem}>
-                <GitHubIcon />
-              </li>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jeremy-kanovsky/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={classes.a}
-            >
-              <li className={classes.listItem}>
-                <LinkedInIcon />
-              </li>
-            </a>
-            <a
-              href="mailto:kanovsky.jeremy@gmail.com/"
-              rel="noopener noreferrer"
-              className={classes.a}
-            >
-              <li className={classes.listItem}>
-                <MailOutlineIcon />
-              </li>
+              <div className={classes.email}>kanovsky.jeremy@gmail.com</div>
             </a>
           </div>
-        </ul>
-      </StickySide>
-
-      <StickySide side="right">
-        <div className={classes.emailBar}>
-          <a
-            href="mailto:kanovsky.jeremy@gmail.com"
-            rel="noopener noreferrer"
-            className={classes.a}
-          >
-            <div className={classes.email}>kanovsky.jeremy@gmail.com</div>
-          </a>
-        </div>
-      </StickySide>
+        </StickySide>
+      )}
     </div>
   );
 }

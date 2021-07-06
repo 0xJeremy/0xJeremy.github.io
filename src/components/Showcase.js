@@ -16,12 +16,17 @@ import * as Hexapod from "./projects/Hexapod";
 import * as Meteorites from "./projects/Meteorites";
 import * as Daedalus from "./projects/Daedalus";
 
-const smallScreen = window.screen.height < 850;
+const thinScreen = window.screen.width < 950;
 
 const showcaseInformationStyles = makeStyles((theme) => ({
   root: {
     direction: (props) => (props.float === "left" ? "lrt" : "rtl"),
     zIndex: 1000,
+    color: llslate,
+    "&:hover": {
+      color: orange,
+      cursor: "pointer",
+    },
   },
   featured: {
     textAlign: (props) => props.float,
@@ -31,33 +36,30 @@ const showcaseInformationStyles = makeStyles((theme) => ({
   },
   projectTitle: {
     textAlign: (props) => props.float,
-    color: llslate,
+    color: "inherit",
     fontWeight: 600,
     letterSpacing: "1px",
     fontFamily: fontSans,
     fontSize: "2em",
     paddingTop: "8px",
-    "&:hover": {
-      color: orange,
-      cursor: "pointer",
-    },
   },
   description: {
     textAlign: (props) => props.float,
     marginRight: (props) => (props.float === "left" ? "auto" : 0),
     marginLeft: (props) => (props.float === "left" ? 0 : "auto"),
-    width: "110%",
+    width: (props) => (props.thinScreen ? "80%" : "120%"),
     background: lnavy,
     fontFamily: fontSans,
     color: lslate,
     borderRadius: "5px",
     padding: "32px",
     fontSize: "1.2em",
-    margin: "12px 0 24px 0",
+    margin: (props) => (props.thinScreen ? "12px 0 12px 0" : "12px 0 24px 0"),
     transition: "0.3s",
-    // TODO: improve this hover animation
+    top: 0,
+    position: "relative",
     "&:hover": {
-      boxShadow: "3px 3px 3px rgba(0, 0, 0, 0.3)",
+      top: "-8px",
     },
   },
   technology: {
@@ -69,6 +71,7 @@ const showcaseInformationStyles = makeStyles((theme) => ({
   },
   a: {
     color: "inherit",
+    textDecoration: "none",
   },
   icons: {
     color: slate,
@@ -83,37 +86,45 @@ const showcaseInformationStyles = makeStyles((theme) => ({
 }));
 
 function ShowcaseInformation(props) {
-  const classes = showcaseInformationStyles(props.params);
+  const classes = showcaseInformationStyles({ ...props.params, thinScreen });
   const project = props.project;
 
   return (
-    <div className={classes.root}>
-      <div className={classes.featured}>Featured Project</div>
-      <div className={classes.projectTitle}>{project.title}</div>
-      <div className={classes.description}>{project.description}</div>
-      {project.technology.map((key) => (
-        <div className={classes.technology}>{key}</div>
-      ))}
-      <br />
-      {project.data && project.data.github && (
-        <div className={classes.icons}>
-          <a
-            href={project.data.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.a}
-          >
-            <GitHubIcon fontSize="medium" />
-          </a>
-        </div>
-      )}
-    </div>
+    <a
+      href={project.data.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.a}
+    >
+      <div className={classes.root}>
+        <div className={classes.featured}>Featured Project</div>
+        <div className={classes.projectTitle}>{project.title}</div>
+        <div className={classes.description}>{project.description}</div>
+        {project.technology.map((key) => (
+          <div className={classes.technology} key={key}>{key}</div>
+        ))}
+        {!thinScreen && <br />}
+        {project.data && project.data.github && !thinScreen && (
+          <div className={classes.icons}>
+{/*            <a
+              href={project.data.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.a}
+            >
+*/}              <GitHubIcon />
+            {/*</a>*/}
+          </div>
+        )}
+      </div>
+    </a>
   );
 }
 
 const showcaseStyles = makeStyles((theme) => ({
   projectContainer: {
     position: "relative",
+    width: (props) => (props.thinScreen ? "90vw" : "auto"),
   },
   image: {
     width: "100%",
@@ -122,6 +133,9 @@ const showcaseStyles = makeStyles((theme) => ({
     position: "relative",
     zIndex: -5,
     borderRadius: "5px",
+  },
+  gridItem: {
+    minWidth: (props) => (props.thinScreen ? "100%" : "auto"),
   },
 }));
 
@@ -132,7 +146,7 @@ function ShowcaseProject(props) {
   } else {
     params = { float: "left", imgFloat: "right" };
   }
-  const classes = showcaseStyles(params);
+  const classes = showcaseStyles({ ...params, thinScreen });
   const project = props.project;
 
   const text = <ShowcaseInformation project={project} params={params} />;
@@ -163,11 +177,11 @@ function ShowcaseProject(props) {
         alignItems="center"
         justify="center"
       >
-        <Grid item xs={props.right ? 7 : 5}>
+        <Grid item xs={props.right ? 7 : 5} className={classes.gridItem}>
           {left}
         </Grid>
 
-        <Grid item xs={props.right ? 5 : 7}>
+        <Grid item xs={props.right ? 5 : 7} className={classes.gridItem}>
           {right}
         </Grid>
       </Grid>
@@ -179,7 +193,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: "auto",
     marginTop: "30vh",
-    maxWidth: "75%",
+    width: (props) => (props.thinScreen ? "100%" : "75%"),
   },
   firstProject: {
     // TODO: De-duplicate this with project
@@ -193,16 +207,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Showcase(props) {
-  const classes = useStyles({ smallScreen });
+  const classes = useStyles({ thinScreen });
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="projects">
       <SectionHeader number="2" text="Some Things I've Built" />
       <div className={classes.firstProject}>
         <ShowcaseProject project={Hexapod} />
       </div>
       <div className={classes.project}>
-        <ShowcaseProject project={Meteorites} right />
+        {!thinScreen && <ShowcaseProject project={Meteorites} right />}
+        {thinScreen && <ShowcaseProject project={Meteorites} />}
       </div>
       <div className={classes.project}>
         <ShowcaseProject project={Daedalus} />

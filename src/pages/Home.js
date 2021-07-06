@@ -8,15 +8,17 @@ import OtherProjects from "../components/OtherProjects";
 import Contact from "../components/Contact";
 import Sticky from "../components/Sticky";
 
+const thinScreen = window.screen.width < 750;
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: "75%",
+    maxWidth: (props) => (props.thinScreen ? "90%" : "75%"),
     margin: "auto",
   },
 }));
 
 export default function Home() {
-  const classes = useStyles();
+  const classes = useStyles({ thinScreen });
 
   return (
     <div>

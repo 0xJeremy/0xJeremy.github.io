@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import {
-  colorOrange,
+  orange,
   navy,
   colorBlue,
   colorGreen,
   colorYellow,
   colorRed,
+  fontMono,
 } from "../PageStyles";
 import ProjectCard from "./ProjectCard";
 import Toolbar from "../Toolbar";
@@ -26,12 +27,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     flexWrap: "wrap",
-    color: colorOrange,
+    color: orange,
     fontWeight: "600",
     fontSize: "8vh",
     paddingBottom: "3vh",
     paddingTop: "3vh",
     marginLeft: "1vw",
+    fontFamily: fontMono,
   },
   icon: {
     fontSize: "1em",
@@ -43,6 +45,14 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: `${tableMargin}vw`,
     marginRight: `${tableMargin}vw`,
     width: `${100 - 2 * tableMargin}vw`,
+  },
+  gridItem: {
+    // top: 0,
+    // position: 'relative',
+    // transition: '0.3s',
+    // "&:hover": {
+    //   top: '-8px',
+    // }
   },
   hardware: {
     color: (props) => (props.filter.hardware ? colorRed : disabledColor),
@@ -69,9 +79,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
   hackathon: {
-    color: (props) => (props.filter.hackathon ? colorOrange : disabledColor),
+    color: (props) => (props.filter.hackathon ? orange : disabledColor),
     borderColor: (props) =>
-      props.filter.hackathon ? colorOrange : disabledColor,
+      props.filter.hackathon ? orange : disabledColor,
     marginLeft: "1.5vw",
     marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
@@ -90,6 +100,7 @@ export default function Projects() {
 
   useEffect(() => {
     document.title = "Projects | Jeremy Kanovsky";
+    window.scrollTo(0, 0);
   });
 
   const handleClick = (tag) => {
@@ -111,7 +122,7 @@ export default function Projects() {
 
       <div className={classes.root}>
         <div className={classes.title}>
-          > PROJECTS
+          > Projects
           <Chip
             variant="outlined"
             label="Hardware"
@@ -148,7 +159,7 @@ export default function Projects() {
           {Object.entries(projectPages).map(([name, project]) => {
             if (showProject(project)) {
               return (
-                <Grid item xs={gridSize} key={name}>
+                <Grid className={classes.gridItem} item xs={gridSize} key={name}>
                   <ProjectCard name={name} project={project} key={name} />
                 </Grid>
               );

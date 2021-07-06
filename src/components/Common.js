@@ -3,6 +3,8 @@ import Button from "@material-ui/core/Button";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { orange, slightOrange, fontMono, llslate } from "./PageStyles";
 
+const thinScreen = window.screen.width < 950;
+
 const StyledButton = withStyles({
   root: {
     color: orange,
@@ -16,13 +18,13 @@ const StyledButton = withStyles({
 
 const sectionHeaderStyles = makeStyles((theme) => ({
   root: {
-    width: "80%",
-    lineHeight: "0.1em",
+    width: "100%",
+    // lineHeight: "0.1em",
     // borderBottom: `1px solid ${slate}`,
-    margin: "10px 0 20px",
+    margin: (props) => (props.thinScreen ? "10px 0 0" : "10px 0 20px"),
     color: llslate,
     fontFamily: fontMono,
-    fontSize: "2em",
+    fontSize: (props) => (props.thinScreen ? "1.5em" : "2em"),
   },
   number: {
     color: orange,
@@ -36,7 +38,7 @@ const sectionHeaderStyles = makeStyles((theme) => ({
 }));
 
 function SectionHeader(props) {
-  const classes = sectionHeaderStyles();
+  const classes = sectionHeaderStyles({ thinScreen });
 
   return (
     <div>

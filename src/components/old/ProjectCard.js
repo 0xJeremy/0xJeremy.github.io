@@ -1,50 +1,38 @@
 import React from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import { Link } from "react-router-dom";
 import {
-  paperColor,
+  llnavy,
   colorGreen,
-  colorOrange,
+  orange,
   colorRed,
   colorBlue,
   colorYellow,
+  lslate,
+  llslate,
 } from "../PageStyles";
-
-const ViewProjectButton = withStyles({
-  root: {
-    backgroundColor: colorOrange,
-    borderColor: colorOrange,
-    color: "white",
-    fontFamily: [].join(","),
-    "&:hover": {
-      backgroundColor: "#F78200",
-      borderColor: colorOrange,
-      boxShadow: "none",
-    },
-  },
-})(Button);
+import { StyledButton } from "../Common";
 
 const useStyles = makeStyles({
   root: {
     maxWidth: "100%",
-    background: paperColor,
-    color: colorOrange,
+    background: llnavy,
+    color: lslate,
   },
   title: {
     fontSize: "2em",
     fontWeight: "600",
-    color: colorOrange,
+    color: orange,
   },
   description: {
-    color: "white",
+    color: llslate,
   },
   media: {
     height: "30vh",
@@ -73,8 +61,18 @@ const useStyles = makeStyles({
     borderColor: colorYellow,
   },
   hackathon: {
-    color: colorOrange,
-    borderColor: colorOrange,
+    color: orange,
+    borderColor: orange,
+  },
+  outline: {
+    borderColor: orange,
+  },
+  button: {
+    float: "none",
+    // fontSize: (props) => (props.thinScreen ? "0.8em" : "1em"),
+    // marginRight: "2em",
+    // padding: (props) =>
+    //   props.thinScreen ? "6px 10px 6px 10px" : "12px 20px 12px 20px",
   },
 });
 
@@ -144,9 +142,9 @@ export default function ProjectCard(props) {
           />
         )}
         <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
-          <ViewProjectButton size="medium" color="primary" variant="outlined">
+          <StyledButton className={classes.button} classes={{ outlined: classes.outline }} size="medium" variant="outlined">
             View Project
-          </ViewProjectButton>
+          </StyledButton>
         </Link>
       </CardActions>
     </Card>

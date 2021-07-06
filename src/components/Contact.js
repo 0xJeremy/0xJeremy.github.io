@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { fontMono, fontSans, orange, llslate, slate } from "./PageStyles";
 import { StyledButton } from "./Common";
 
-const smallScreen = window.screen.height < 850;
+const thinScreen = window.screen.width < 750;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     color: slate,
-    fontSize: "1.5em",
-    width: "60%",
+    fontSize: (props) => (props.thinScreen ? "1.1em" : "1.5em"),
+    width: (props) => (props.thinScreen ? "100%" : "60%"),
     margin: "auto",
     textAlign: "center",
     fontFamily: fontSans,
@@ -36,14 +36,13 @@ const useStyles = makeStyles((theme) => ({
   },
   centerButton: {
     textAlign: "center",
-    marginTop: "4vh",
+    marginTop: (props) => (props.thinScreen ? "8vh" : "4vh"),
   },
   outline: {
     borderColor: orange,
   },
   button: {
     fontSize: "1em",
-    // marginRight: "2em",
     padding: "12px 20px 12px 20px",
   },
   footer: {
@@ -66,11 +65,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Contact(props) {
-  const classes = useStyles({ smallScreen });
+  const classes = useStyles({ thinScreen });
 
   return (
     <div className={classes.root} id="contact">
-      <div className={classes.sectionTitle}>04. What's next?</div>
+      <div className={classes.sectionTitle}>03. What's next?</div>
       <div className={classes.subtitle}>Get In Touch</div>
       <div className={classes.info}>
         I'm not currently looking for new job opportunities, but my inbox is
@@ -95,8 +94,15 @@ export default function Contact(props) {
       </div>
 
       <div className={classes.footer}>
-        This site is made by Jeremy Kanovsky with React.js and some small
-        headache.
+        <a
+          href="https://github.com/0xJeremy/0xJeremy.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.a}
+        >
+          This site is made by Jeremy Kanovsky with React.js and some small
+          headache.
+        </a>
       </div>
     </div>
   );

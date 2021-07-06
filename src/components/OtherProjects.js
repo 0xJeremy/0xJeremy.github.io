@@ -27,7 +27,7 @@ import * as SpacePrinter from "./projects/SpacePrinter";
 import * as Crawler from "./projects/Crawler";
 import * as DevBoard from "./projects/DevBoard";
 
-const smallScreen = window.screen.height < 850;
+const thinScreen = window.screen.width < 750;
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
   folder: {
     float: "left",
+    color: orange,
   },
   github: {
     float: "right",
@@ -82,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProjectCard(props) {
-  const classes = useStyles();
+  const classes = useStyles({ thinScreen });
   const project = props.project;
 
   return (
@@ -117,13 +118,13 @@ const showcaseStyles = makeStyles((theme) => ({
   root: {
     margin: "auto",
     marginTop: "25vh",
-    width: "75%",
+    width: (props) => (props.thinScreen ? "95%" : "75%"),
   },
   sectionTitle: {
     textAlign: "center",
     fontFamily: fontMono,
-    color: slate,
-    fontSize: "1.5em",
+    color: llslate,
+    fontSize: (props) => (props.thinScreen ? "1em" : "1.5em"),
     fontWeight: "600",
     letterSpacing: "1px",
   },
@@ -131,11 +132,14 @@ const showcaseStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontFamily: fontMono,
     color: orange,
-    fontSize: "1em",
+    fontSize: (props) => (props.thinScreen ? "0.8em" : "1em"),
     marginTop: "2vh",
   },
   grid: {
     marginTop: "4vh",
+  },
+  gridItem: {
+    minWidth: (props) => (props.thinScreen ? "90vw" : "auto"),
   },
   centerButton: {
     textAlign: "center",
@@ -151,7 +155,7 @@ const showcaseStyles = makeStyles((theme) => ({
 }));
 
 export default function Showcase(props) {
-  const classes = showcaseStyles({ smallScreen });
+  const classes = showcaseStyles({ thinScreen });
   const projects = [
     SocketEngine,
     Helios,
@@ -192,7 +196,7 @@ export default function Showcase(props) {
       <Grid container spacing={2} className={classes.grid}>
         {toShow.map((project) => {
           return (
-            <Grid item xs={4}>
+            <Grid item xs={4} className={classes.gridItem}>
               <ProjectCard project={project} />
             </Grid>
           );
