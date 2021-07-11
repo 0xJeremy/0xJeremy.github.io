@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   emailBar: {
+    color: orange,
     "&::after": {
       content: '""',
       display: "block",
@@ -116,13 +117,9 @@ export function Sticky(props) {
       {showSticky && (
         <StickySide side="right">
           <div className={classes.emailBar}>
-            <a
-              href="mailto:kanovsky.jeremy@gmail.com"
-              rel="noopener noreferrer"
-              className={classes.a}
-            >
+            <AStyled href="mailto:kanovsky.jeremy@gmail.com">
               <div className={classes.email}>kanovsky.jeremy@gmail.com</div>
-            </a>
+            </AStyled>
           </div>
         </StickySide>
       )}

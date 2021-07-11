@@ -11,7 +11,7 @@ import {
   colorRed,
   fontMono,
 } from "../components/common";
-import ProjectCard from "../components/old/ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import Toolbar from "../components/Toolbar";
 import projectPages from "../projects";
 

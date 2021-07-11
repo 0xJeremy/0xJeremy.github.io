@@ -17,8 +17,8 @@ import {
   colorYellow,
   lslate,
   llslate,
-} from "../common";
-import { StyledButton } from "../common";
+  StyledButton,
+} from "./common";
 
 const useStyles = makeStyles({
   root: {

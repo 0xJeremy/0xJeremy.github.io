@@ -16,7 +16,7 @@ export function AStyled(props) {
       className={classes.a}
       href={props.href}
       target="_blank"
-      rel="noopener noreffer"
+      rel="noopener noreferrer"
     >
       {props.children}
     </a>
