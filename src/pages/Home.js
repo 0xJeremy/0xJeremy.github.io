@@ -1,12 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Sticky } from "../components";
 import Toolbar from "../components/Toolbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Showcase from "../components/Showcase";
-import OtherProjects from "../components/OtherProjects";
-import Contact from "../components/Contact";
-import Sticky from "../components/Sticky";
+import { Hero, About, Showcase, OtherProjects, Contact } from "../sections";
 
 const thinScreen = window.screen.width < 750;
 

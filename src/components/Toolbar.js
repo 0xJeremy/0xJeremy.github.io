@@ -4,8 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import Toolbar from "@material-ui/core/Toolbar";
-import { fontMono, orange, slate, lnavy } from "./PageStyles";
-import { StyledButton } from "./Common";
+import { fontMono, orange, slate, lnavy, StyledButton } from "./common";
 
 const smallScreen = window.screen.width < 650;
 const thinScreen = window.screen.width < 950;
@@ -64,9 +63,6 @@ const useStyles = makeStyles((theme) => ({
     alignContent: "center",
     textAlign: "center",
   },
-  outline: {
-    borderColor: orange,
-  },
   rightToolbar: {
     marginLeft: "auto",
     marginTop: "3vh",
@@ -92,7 +88,6 @@ function NavbarButton(props) {
   const content = (
     <StyledButton
       className={classes.navButton}
-      classes={{ outlined: classes.outline }}
       variant="outlined"
       href={props.href}
       target="_blank"
@@ -101,7 +96,9 @@ function NavbarButton(props) {
     </StyledButton>
   );
   return thinScreen ? (
-    <div className={classes.centerButton} onClick={close}>{content}</div>
+    <div className={classes.centerButton} onClick={close}>
+      {content}
+    </div>
   ) : (
     content
   );
@@ -158,9 +155,6 @@ function MobileDrawer(props) {
 function MobileToolBar(props) {
   const classes = useStyles({ smallScreen, thinScreen });
   const { open, toggle } = props;
-  
-
-  
 
   return (
     <Toolbar className={classes.root}>
@@ -174,7 +168,7 @@ function MobileToolBar(props) {
   );
 }
 
-function ToolBar(props) {
+export default function ToolBar(props) {
   const classes = useStyles({ thinScreen });
   const [open, setOpen] = useState(false);
 
@@ -188,9 +182,27 @@ function ToolBar(props) {
 
   const children = (
     <div>
-      <NavbarLink to="/" number="0" styles={classes} close={close} text="Home" />
-      <NavbarLink to="/#about" number="1" styles={classes} close={close} text="About Me" />
-      <NavbarLink to="/#projects" number="2" styles={classes} close={close} text="Projects" />
+      <NavbarLink
+        to="/"
+        number="0"
+        styles={classes}
+        close={close}
+        text="Home"
+      />
+      <NavbarLink
+        to="/#about"
+        number="1"
+        styles={classes}
+        close={close}
+        text="About Me"
+      />
+      <NavbarLink
+        to="/#projects"
+        number="2"
+        styles={classes}
+        close={close}
+        text="Projects"
+      />
       <NavbarLink
         to="/#contact"
         number="3"
@@ -203,13 +215,13 @@ function ToolBar(props) {
         href="https://github.com/0xJeremy/"
         styles={classes}
         text="Github"
-        close={close} 
+        close={close}
       />
       <NavbarButton
         href="/static/JCK%20Resume.pdf"
         styles={classes}
         text="Resume"
-        close={close} 
+        close={close}
       />
     </div>
   );
@@ -217,9 +229,11 @@ function ToolBar(props) {
   return (
     <div>
       {!thinScreen && <FullToolBar>{children}</FullToolBar>}
-      {thinScreen && <MobileToolBar open={open} toggle={toggle}>{children}</MobileToolBar>}
+      {thinScreen && (
+        <MobileToolBar open={open} toggle={toggle}>
+          {children}
+        </MobileToolBar>
+      )}
     </div>
   );
 }
-
-export default ToolBar;

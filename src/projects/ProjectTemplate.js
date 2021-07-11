@@ -1,9 +1,14 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { orange, fontMono, fontSans, lslate } from "../PageStyles";
 import { Link } from "react-router-dom";
-import Toolbar from "../Toolbar";
-import { StyledButton } from '../Common';
+import Toolbar from "../components/Toolbar";
+import {
+  orange,
+  fontMono,
+  fontSans,
+  lslate,
+  StyledButton,
+} from "../components/common";
 
 const offsetLeft = 5;
 const offsetTop = 3;
@@ -30,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "100%",
     fontSize: (props) => (props.smallScreen ? "0.35em" : "0.5em"),
     display: "block",
-  },
-  outline: {
-    borderColor: orange,
   },
   link: {
     color: orange,
@@ -71,8 +73,6 @@ export default function ProjectTemplate(props) {
           {props.data && props.data.github && (
             <StyledButton
               className={classes.linkButton}
-              classes={{ outlined: classes.outline }}
-              variant="outlined"
               href={props.data.github}
               target="_blank"
             >
@@ -82,8 +82,6 @@ export default function ProjectTemplate(props) {
           {props.data && props.data.pypi && (
             <StyledButton
               className={classes.linkButton}
-              classes={{ outlined: classes.outline }}
-              variant="outlined"
               href={props.data.pypi}
               target="_blank"
             >
@@ -93,9 +91,6 @@ export default function ProjectTemplate(props) {
           {props.data && props.data.npm && (
             <StyledButton
               className={classes.linkButton}
-              classes={{ outlined: classes.outline }}
-              variant="outlined"
-              color="primary"
               href={props.data.NPM}
               target="_blank"
             >
@@ -108,13 +103,7 @@ export default function ProjectTemplate(props) {
         <br />
 
         <Link to="/projects" style={{ textDecoration: "none" }}>
-          <StyledButton
-            className={classes.button}
-            classes={{ outlined: classes.outline }}
-            variant="outlined"
-          >
-            &lt; Projects
-          </StyledButton>
+          <StyledButton className={classes.button}>&lt; Projects</StyledButton>
         </Link>
       </div>
     </div>

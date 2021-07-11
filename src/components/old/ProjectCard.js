@@ -17,8 +17,8 @@ import {
   colorYellow,
   lslate,
   llslate,
-} from "../PageStyles";
-import { StyledButton } from "../Common";
+} from "../common";
+import { StyledButton } from "../common";
 
 const useStyles = makeStyles({
   root: {
@@ -62,9 +62,6 @@ const useStyles = makeStyles({
   },
   hackathon: {
     color: orange,
-    borderColor: orange,
-  },
-  outline: {
     borderColor: orange,
   },
   button: {
@@ -142,7 +139,11 @@ export default function ProjectCard(props) {
           />
         )}
         <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
-          <StyledButton className={classes.button} classes={{ outlined: classes.outline }} size="medium" variant="outlined">
+          <StyledButton
+            className={classes.button}
+            size="medium"
+            variant="outlined"
+          >
             View Project
           </StyledButton>
         </Link>

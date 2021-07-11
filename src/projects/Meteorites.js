@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ProjectTemplate from "./ProjectTemplate";
 import { imagePath } from "./ProjectCommon";
 import Images from "./Images";
-import { colorBlue } from "../PageStyles";
+import { colorBlue } from "../components/common";
 
 const useStyles = makeStyles((theme) => ({
   link: {

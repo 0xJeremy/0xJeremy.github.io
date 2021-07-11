@@ -1,8 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { fontSans, slate } from "./PageStyles";
-import { SectionHeader, StyledLink } from "./Common";
+import {
+  fontSans,
+  slate,
+  SectionHeader,
+  StyledLink,
+} from "../components/common";
 
 const smallScreen = window.screen.height < 850;
 const thinScreen = window.screen.width < 950;
@@ -70,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function About(props) {
+export function About(props) {
   const classes = useStyles({ smallScreen, thinScreen });
 
   return (
@@ -90,8 +94,7 @@ export default function About(props) {
               text="Microsoft Garage"
             />
             &nbsp; and the{" "}
-            <StyledLink href="https://nolop.org/" text="Nolop Makerspace" />
-            &nbsp;.
+            <StyledLink href="https://nolop.org/" text="Nolop Makerspace" />.
             <br />
             <br />
             Some of the things I've worked with recently are TypeScript,
@@ -103,7 +106,11 @@ export default function About(props) {
 
         <Grid item xs={4} className={classes.gridItem}>
           <div className={classes.imgWrapper}>
-            <img src="static/avatar.jpeg" alt="Avatar" className={classes.avatar} />
+            <img
+              src="static/avatar.jpeg"
+              alt="Avatar"
+              className={classes.avatar}
+            />
           </div>
         </Grid>
       </Grid>

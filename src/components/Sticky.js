@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import { fontMono, orange, slate } from "./PageStyles";
+import { fontMono, orange, slate, AStyled } from "./common";
 
 const smallScreen = window.screen.height < 850;
 const thinScreen = window.screen.width < 950;
@@ -38,10 +38,6 @@ const useStyles = makeStyles((theme) => ({
       margin: "0 auto",
       backgroundColor: orange,
     },
-  },
-  a: {
-    color: "inherit",
-    textDecoration: "none",
   },
   list: {
     marginBottom: "16px",
@@ -88,7 +84,7 @@ function StickySide(props) {
   return <div className={classes.root}>{props.children}</div>;
 }
 
-export default function Sticky(props) {
+export function Sticky(props) {
   const classes = useStyles({ smallScreen });
   const showSticky = window.screen.width > 750;
 
@@ -98,35 +94,21 @@ export default function Sticky(props) {
         <StickySide side="left">
           <ul className={classes.socialList}>
             <div className={classes.list}>
-              <a
-                href="https://github.com/0xJeremy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={classes.a}
-              >
+              <AStyled href="https://github.com/0xJeremy/">
                 <li className={classes.listItem}>
                   <GitHubIcon />
                 </li>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/jeremy-kanovsky/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={classes.a}
-              >
+              </AStyled>
+              <AStyled href="https://www.linkedin.com/in/jeremy-kanovsky/">
                 <li className={classes.listItem}>
                   <LinkedInIcon />
                 </li>
-              </a>
-              <a
-                href="mailto:kanovsky.jeremy@gmail.com/"
-                rel="noopener noreferrer"
-                className={classes.a}
-              >
+              </AStyled>
+              <AStyled href="mailto:kanovsky.jeremy@gmail.com/">
                 <li className={classes.listItem}>
                   <MailOutlineIcon />
                 </li>
-              </a>
+              </AStyled>
             </div>
           </ul>
         </StickySide>

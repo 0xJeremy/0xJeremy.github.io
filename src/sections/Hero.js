@@ -1,8 +1,15 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { HashLink } from "react-router-hash-link";
-import { fontMono, fontSans, orange, llslate, slate } from "./PageStyles";
-import { StyledButton, StyledLink } from "./Common";
+import {
+  fontMono,
+  fontSans,
+  orange,
+  llslate,
+  slate,
+  StyledButton,
+  StyledLink,
+} from "../components/common";
 
 const offsetTop = 18;
 const smallScreen = window.screen.height < 850;
@@ -44,9 +51,6 @@ const useStyles = makeStyles((theme) => ({
   buttonGroup: {
     marginTop: (props) => (props.smallScreen ? "32px" : "64px"),
   },
-  outline: {
-    borderColor: orange,
-  },
   button: {
     float: "none",
     fontSize: (props) => (props.thinScreen ? "0.8em" : "1em"),
@@ -56,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Hero(props) {
+export function Hero(props) {
   const classes = useStyles({ smallScreen, thinScreen });
 
   useEffect(() => {
@@ -74,29 +78,18 @@ export default function Hero(props) {
       <div className={classes.about}>
         I'm a Boston-based software engineer who specializes in writing code for
         IoT devices and robots. Sometimes, I dabble in hardware. Currently, I'm
-        an engineer at <StyledLink href="https://markforged.com/" text="Markforged" /> working on the software powering
-        next-generation 3D printers.
+        an engineer at{" "}
+        <StyledLink href="https://markforged.com/" text="Markforged" /> working
+        on the software powering next-generation 3D printers.
       </div>
 
       <div className={classes.buttonGroup}>
         <HashLink to="/#contact" style={{ textDecoration: "none" }}>
-          <StyledButton
-            className={classes.button}
-            classes={{ outlined: classes.outline }}
-            variant="outlined"
-          >
-            Get In Touch
-          </StyledButton>
+          <StyledButton className={classes.button}>Get In Touch</StyledButton>
         </HashLink>
 
         <HashLink to="/#projects" style={{ textDecoration: "none" }}>
-          <StyledButton
-            className={classes.button}
-            classes={{ outlined: classes.outline }}
-            variant="outlined"
-          >
-            See My Work
-          </StyledButton>
+          <StyledButton className={classes.button}>See My Work</StyledButton>
         </HashLink>
       </div>
     </div>

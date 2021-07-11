@@ -1,7 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { fontMono, fontSans, orange, llslate, slate } from "./PageStyles";
-import { StyledButton } from "./Common";
+import {
+  fontMono,
+  fontSans,
+  orange,
+  llslate,
+  slate,
+  StyledButton,
+  AStyled,
+} from "../components/common";
 
 const thinScreen = window.screen.width < 750;
 
@@ -38,9 +45,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginTop: (props) => (props.thinScreen ? "8vh" : "4vh"),
   },
-  outline: {
-    borderColor: orange,
-  },
   button: {
     fontSize: "1em",
     padding: "12px 20px 12px 20px",
@@ -58,13 +62,9 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
   },
-  a: {
-    color: "inherit",
-    textDecoration: "none",
-  },
 }));
 
-export default function Contact(props) {
+export function Contact(props) {
   const classes = useStyles({ thinScreen });
 
   return (
@@ -78,31 +78,16 @@ export default function Contact(props) {
       </div>
 
       <div className={classes.centerButton}>
-        <a
-          href="mailto:kanovsky.jeremy@gmail.com"
-          rel="noopener noreferrer"
-          className={classes.a}
-        >
-          <StyledButton
-            className={classes.button}
-            classes={{ outlined: classes.outline }}
-            variant="outlined"
-          >
-            Say Hello
-          </StyledButton>
-        </a>
+        <AStyled href="mailto:kanovsky.jeremy@gmail.com">
+          <StyledButton className={classes.button}>Say Hello</StyledButton>
+        </AStyled>
       </div>
 
       <div className={classes.footer}>
-        <a
-          href="https://github.com/0xJeremy/0xJeremy.github.io"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.a}
-        >
+        <AStyled href="https://github.com/0xJeremy/0xJeremy.github.io">
           This site is made by Jeremy Kanovsky with React.js and some small
           headache.
-        </a>
+        </AStyled>
       </div>
     </div>
   );

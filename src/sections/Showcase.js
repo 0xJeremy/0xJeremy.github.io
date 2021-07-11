@@ -10,11 +10,12 @@ import {
   lslate,
   llslate,
   lnavy,
-} from "./PageStyles";
-import { SectionHeader } from "./Common";
-import * as Hexapod from "./projects/Hexapod";
-import * as Meteorites from "./projects/Meteorites";
-import * as Daedalus from "./projects/Daedalus";
+  SectionHeader,
+  AStyled,
+} from "../components/common";
+import * as Hexapod from "../projects/Hexapod";
+import * as Meteorites from "../projects/Meteorites";
+import * as Daedalus from "../projects/Daedalus";
 
 const thinScreen = window.screen.width < 950;
 
@@ -69,10 +70,6 @@ const showcaseInformationStyles = makeStyles((theme) => ({
     float: (props) => props.float,
     paddingRight: "16px",
   },
-  a: {
-    color: "inherit",
-    textDecoration: "none",
-  },
   icons: {
     color: slate,
     paddingTop: "24px",
@@ -90,34 +87,32 @@ function ShowcaseInformation(props) {
   const project = props.project;
 
   return (
-    <a
-      href={project.data.github}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={classes.a}
-    >
+    <AStyled href={project.data.github}>
       <div className={classes.root}>
         <div className={classes.featured}>Featured Project</div>
         <div className={classes.projectTitle}>{project.title}</div>
         <div className={classes.description}>{project.description}</div>
         {project.technology.map((key) => (
-          <div className={classes.technology} key={key}>{key}</div>
+          <div className={classes.technology} key={key}>
+            {key}
+          </div>
         ))}
         {!thinScreen && <br />}
         {project.data && project.data.github && !thinScreen && (
           <div className={classes.icons}>
-{/*            <a
+            {/*            <a
               href={project.data.github}
               target="_blank"
               rel="noopener noreferrer"
               className={classes.a}
             >
-*/}              <GitHubIcon />
+*/}{" "}
+            <GitHubIcon />
             {/*</a>*/}
           </div>
         )}
       </div>
-    </a>
+    </AStyled>
   );
 }
 
@@ -206,7 +201,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Showcase(props) {
+export function Showcase(props) {
   const classes = useStyles({ thinScreen });
 
   return (

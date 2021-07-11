@@ -12,20 +12,21 @@ import {
   lslate,
   slate,
   lnavy,
-} from "./PageStyles";
-import { StyledButton } from "./Common";
-import * as SocketEngine from "./projects/SocketEngine";
-import * as Helios from "./projects/Helios";
-import * as Icarus from "./projects/Icarus";
-import * as Surge from "./projects/Surge";
-import * as PicoOscilloscope from "./projects/PicoOscilloscope";
-import * as Ballbot from "./projects/Ballbot";
-import * as DrawingRobot from "./projects/DrawingRobot";
-import * as Vegas from "./projects/Vegas";
-import * as Fleet from "./projects/Fleet";
-import * as SpacePrinter from "./projects/SpacePrinter";
-import * as Crawler from "./projects/Crawler";
-import * as DevBoard from "./projects/DevBoard";
+  StyledButton,
+  AStyled,
+} from "../components/common";
+import * as SocketEngine from "../projects/SocketEngine";
+import * as Helios from "../projects/Helios";
+import * as Icarus from "../projects/Icarus";
+import * as Surge from "../projects/Surge";
+import * as PicoOscilloscope from "../projects/PicoOscilloscope";
+import * as Ballbot from "../projects/Ballbot";
+import * as DrawingRobot from "../projects/DrawingRobot";
+import * as Vegas from "../projects/Vegas";
+import * as Fleet from "../projects/Fleet";
+import * as SpacePrinter from "../projects/SpacePrinter";
+import * as Crawler from "../projects/Crawler";
+import * as DevBoard from "../projects/DevBoard";
 
 const thinScreen = window.screen.width < 750;
 
@@ -76,10 +77,6 @@ const useStyles = makeStyles((theme) => ({
   github: {
     float: "right",
   },
-  a: {
-    color: "inherit",
-    textDecoration: "none",
-  },
 }));
 
 function ProjectCard(props) {
@@ -87,12 +84,7 @@ function ProjectCard(props) {
   const project = props.project;
 
   return (
-    <a
-      href={project.data.github}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={classes.a}
-    >
+    <AStyled href={project.data.github}>
       <div className={classes.card}>
         <div className={classes.icons}>
           <div className={classes.folder}>
@@ -110,7 +102,7 @@ function ProjectCard(props) {
           {project.technology.join("  ")}
         </div>
       </div>
-    </a>
+    </AStyled>
   );
 }
 
@@ -145,16 +137,13 @@ const showcaseStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginTop: "8vh",
   },
-  outline: {
-    borderColor: orange,
-  },
   button: {
     fontSize: "1em",
     padding: "12px 20px 12px 20px",
   },
 }));
 
-export default function Showcase(props) {
+export function OtherProjects(props) {
   const classes = showcaseStyles({ thinScreen });
   const projects = [
     SocketEngine,
@@ -204,12 +193,7 @@ export default function Showcase(props) {
       </Grid>
 
       <div className={classes.centerButton}>
-        <StyledButton
-          className={classes.button}
-          classes={{ outlined: classes.outline }}
-          variant="outlined"
-          onClick={toggleShown}
-        >
+        <StyledButton className={classes.button} onClick={toggleShown}>
           {more ? "Show Less" : "Show More"}
         </StyledButton>
       </div>
