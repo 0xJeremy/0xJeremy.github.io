@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: (props) => (props.thinScreen ? "16px" : 0),
     color: slate,
     maxWidth: (props) => (props.smallScreen ? "90%" : "50%"),
+    lineHeight: (props) => (props.thinScreen ? "1.2" : "1.4"),
   },
   buttonGroup: {
     marginTop: (props) => (props.smallScreen ? "32px" : "64px"),

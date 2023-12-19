@@ -28,44 +28,14 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: (props) => (props.thinScreen ? "1.2" : "1.6"),
   },
   imgWrapper: {
-    // TODO: make this image prettier
     display: "block",
     position: "relative",
     width: (props) => (props.thinScreen ? "100%" : "auto"),
-    // width: '100%',
-    // borderRadius: '5px',
-    // backgroundColor: orange,
-    // "&:hover": {
-    //   top: '15px',
-    //   left: '15px',
-    // },
-    // "&::after": {
-    //   content: '""',
-    //   display: 'block',
-    //   position: 'absolute',
-    //   width: '100%',
-    //   height: '100%',
-    //   borderRadius: '5px',
-    //   transition: '0.3s',
-    // }
   },
   avatar: {
     width: "100%",
     height: "auto",
     borderRadius: "5px",
-
-    // display: 'inline-block',
-    // position: 'relative',
-    // "&::after": {
-    //   content: '""',
-    //   position: 'absolute',
-    //   top: '-5%',
-    //   left: '-15%',
-    //   width: '100%',
-    //   height: '100%',
-    //   border: '4px solid red',
-    // }
-    // boxShadow: '2px 2px 2px 1px red',
   },
   tech: {
     color: "white",
@@ -122,22 +92,21 @@ export default function About(props) {
             hardware. Specifically, I enjoy writing code for robots, 3D
             printers, and embedded systems. I currently work at{" "}
             <StyledLink href="https://markforged.com/" text="Markforged" />
-            &nbsp; writing software that powers next generation 3D printers.
+            &nbsp;writing software that powers next generation 3D printers.
             Previously I've worked at the{" "}
             <StyledLink
               href="https://www.microsoft.com/en-us/garage/"
               text="Microsoft Garage"
             />
-            &nbsp; and the{" "}
-            <StyledLink href="https://nolop.org/" text="Nolop Makerspace" />
-            &nbsp;.
+            &nbsp;and the{" "}
+            <StyledLink href="https://nolop.org/" text="Nolop Makerspace" />.
             <br />
             <br />
             In my free time, I build open-source libraries, robots, and design
-            circuit boards. I like to read, and go up then fall off rocks.
+            circuit boards. I like to read, and climb up then fall off rocks.
             <br />
             <br />
-            Some of the things I've been working on recently ar:
+            Some of the things I've been working on recently are:
           </div>
 
           <Grid container spacing={1} className={classes.tech}>
