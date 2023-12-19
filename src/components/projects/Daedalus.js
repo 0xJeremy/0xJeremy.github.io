@@ -14,7 +14,7 @@ const tags = {
 const data = {
   github: "https://github.com/0xJeremy/Daedalus",
 };
-const technology = ["KiCAD"];
+const technology = ["KiCAD", "STM32CubeIDE"];
 
 export default function Component() {
   return (

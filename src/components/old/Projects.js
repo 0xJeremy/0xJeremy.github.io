@@ -80,8 +80,7 @@ const useStyles = makeStyles((theme) => ({
   },
   hackathon: {
     color: (props) => (props.filter.hackathon ? orange : disabledColor),
-    borderColor: (props) =>
-      props.filter.hackathon ? orange : disabledColor,
+    borderColor: (props) => (props.filter.hackathon ? orange : disabledColor),
     marginLeft: "1.5vw",
     marginTop: (props) => (props.smallScreen ? "2vh" : 0),
   },
@@ -159,7 +158,12 @@ export default function Projects() {
           {Object.entries(projectPages).map(([name, project]) => {
             if (showProject(project)) {
               return (
-                <Grid className={classes.gridItem} item xs={gridSize} key={name}>
+                <Grid
+                  className={classes.gridItem}
+                  item
+                  xs={gridSize}
+                  key={name}
+                >
                   <ProjectCard name={name} project={project} key={name} />
                 </Grid>
               );

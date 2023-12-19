@@ -210,7 +210,7 @@ export default function Showcase(props) {
           variant="outlined"
           onClick={toggleShown}
         >
-          {more ? "Show Less" : "Show More"}
+          {more ? "Show Fewer" : "Show More"}
         </StyledButton>
       </div>
     </div>

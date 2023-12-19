@@ -74,8 +74,9 @@ export default function Hero(props) {
       <div className={classes.about}>
         I'm a Boston-based software engineer who specializes in writing code for
         IoT devices and robots. Sometimes, I dabble in hardware. Currently, I'm
-        an engineer at <StyledLink href="https://markforged.com/" text="Markforged" /> working on the software powering
-        next-generation 3D printers.
+        an engineer at{" "}
+        <StyledLink href="https://markforged.com/" text="Markforged" /> working
+        on the software powering next-generation 3D printers.
       </div>
 
       <div className={classes.buttonGroup}>

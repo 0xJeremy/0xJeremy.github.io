@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { orange, fontMono, fontSans, lslate } from "../PageStyles";
 import { Link } from "react-router-dom";
 import Toolbar from "../Toolbar";
-import { StyledButton } from '../Common';
+import { StyledButton } from "../Common";
 
 const offsetLeft = 5;
 const offsetTop = 3;

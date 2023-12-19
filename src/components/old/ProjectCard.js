@@ -142,7 +142,12 @@ export default function ProjectCard(props) {
           />
         )}
         <Link to={`projects/${name}`} style={{ textDecoration: "none" }}>
-          <StyledButton className={classes.button} classes={{ outlined: classes.outline }} size="medium" variant="outlined">
+          <StyledButton
+            className={classes.button}
+            classes={{ outlined: classes.outline }}
+            size="medium"
+            variant="outlined"
+          >
             View Project
           </StyledButton>
         </Link>

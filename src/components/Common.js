@@ -25,6 +25,9 @@ const sectionHeaderStyles = makeStyles((theme) => ({
     color: llslate,
     fontFamily: fontMono,
     fontSize: (props) => (props.thinScreen ? "1.5em" : "2em"),
+    display: "flex",
+    // position: 'relative',
+    // whiteSpace: 'nowrap',
   },
   number: {
     color: orange,
@@ -34,6 +37,16 @@ const sectionHeaderStyles = makeStyles((theme) => ({
   text: {
     background: "#0a192f",
     padding: "0 10px",
+    position: "relative",
+    "&::after": {
+      content: '""',
+      display: "inline-block",
+      position: "absolute",
+      borderTop: `1px solid ${orange}`,
+      width: (props) => (props.thinScreen ? "0" : "15rem"),
+      transform: "translateY(1.1rem)",
+      marginLeft: "20px",
+    },
   },
 }));
 

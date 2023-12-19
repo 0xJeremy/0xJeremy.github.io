@@ -101,18 +101,21 @@ function ShowcaseInformation(props) {
         <div className={classes.projectTitle}>{project.title}</div>
         <div className={classes.description}>{project.description}</div>
         {project.technology.map((key) => (
-          <div className={classes.technology} key={key}>{key}</div>
+          <div className={classes.technology} key={key}>
+            {key}
+          </div>
         ))}
         {!thinScreen && <br />}
         {project.data && project.data.github && !thinScreen && (
           <div className={classes.icons}>
-{/*            <a
+            {/*            <a
               href={project.data.github}
               target="_blank"
               rel="noopener noreferrer"
               className={classes.a}
             >
-*/}              <GitHubIcon />
+*/}{" "}
+            <GitHubIcon />
             {/*</a>*/}
           </div>
         )}

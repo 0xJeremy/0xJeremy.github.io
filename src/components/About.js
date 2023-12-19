@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { fontSans, slate } from "./PageStyles";
+import { fontSans, slate, orange } from "./PageStyles";
 import { SectionHeader, StyledLink } from "./Common";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 
 const smallScreen = window.screen.height < 850;
 const thinScreen = window.screen.width < 950;
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: "auto",
     marginTop: "50vh",
-    width: (props) => (props.thinScreen ? "95%" : "60%"),
+    width: (props) => (props.thinScreen ? "95%" : "75%"),
   },
   grid: {
     marginTop: "5vh",
@@ -24,8 +25,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.2em",
     color: slate,
     position: "relative",
-    top: "50%",
-    transform: "translateY(-50%)",
     lineHeight: (props) => (props.thinScreen ? "1.2" : "1.6"),
   },
   imgWrapper: {
@@ -68,10 +67,50 @@ const useStyles = makeStyles((theme) => ({
     // }
     // boxShadow: '2px 2px 2px 1px red',
   },
+  tech: {
+    color: "white",
+  },
 }));
+
+const technologyStyles = makeStyles((theme) => ({
+  icon: {
+    color: orange,
+    display: "inline-block",
+    position: "relative",
+    top: "50%",
+    transform: "translateY(-40%)",
+  },
+  text: {
+    fontFamily: fontSans,
+    fontSize: "1.2em",
+    color: slate,
+    display: "inline-block",
+  },
+}));
+
+function Technology(props) {
+  const classes = technologyStyles({ thinScreen });
+
+  return (
+    <Grid item xs={6}>
+      <div className={classes.icon}>
+        <NavigateNextIcon />
+      </div>
+      <div className={classes.text}>{props.children}</div>
+    </Grid>
+  );
+}
 
 export default function About(props) {
   const classes = useStyles({ smallScreen, thinScreen });
+  const technologies = [
+    "Node.js",
+    "TypeScript",
+    "Python",
+    "CI/CD",
+    "React.js",
+    "AWS",
+  ];
 
   return (
     <div className={classes.root} id="about">
@@ -94,16 +133,28 @@ export default function About(props) {
             &nbsp;.
             <br />
             <br />
-            Some of the things I've worked with recently are TypeScript,
-            React.js, Python, and high-performance web applications. In my free
-            time I build open-source libraries, robots, and design circuit
-            boards.
+            In my free time, I build open-source libraries, robots, and design
+            circuit boards. I like to read, and go up then fall off rocks.
+            <br />
+            <br />
+            Some of the things I've been working on recently ar:
           </div>
+
+          <Grid container spacing={1} className={classes.tech}>
+            {technologies &&
+              technologies.map((skill, i) => (
+                <Technology key={i}>{skill}</Technology>
+              ))}
+          </Grid>
         </Grid>
 
         <Grid item xs={4} className={classes.gridItem}>
           <div className={classes.imgWrapper}>
-            <img src="static/avatar.jpeg" alt="Avatar" className={classes.avatar} />
+            <img
+              src="static/avatar.jpeg"
+              alt="Avatar"
+              className={classes.avatar}
+            />
           </div>
         </Grid>
       </Grid>
