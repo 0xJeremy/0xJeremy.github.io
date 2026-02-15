@@ -21,3 +21,4 @@ export * from "./research";
 export * from "./patents";
 export * from "./projects";
 export * from "./socials";
+export * from "./contact";

@@ -7,7 +7,7 @@
       // GitHub Pages SPA redirect
       // This script redirects all 404s to index.html while preserving the path
       // The path is stored in sessionStorage and restored by index.html
-      var pathSegmentsToKeep = 1; // Keep 1 segment for /sandbox/ base path
+      var pathSegmentsToKeep = 0; // Keep 0 segments for root base path
       var l = window.location;
       sessionStorage.redirect =
         l.protocol +

@@ -16,6 +16,6 @@ export const heroContent = {
   },
   secondaryButton: {
     label: "See My Work",
-    href: "/#projects",
+    href: "/#featured-projects",
   },
 };

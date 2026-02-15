@@ -6,18 +6,14 @@ import { NavLogo } from "./NavLogo";
 describe("NavLogo", () => {
   it("renders logo text", () => {
     render(<NavLogo />);
-    expect(screen.getByText("Sandbox")).toBeInTheDocument();
+    expect(screen.getByText("Jeremy Kanovsky")).toBeInTheDocument();
   });
 
-  it("renders placeholder icon by default", () => {
+  it("renders logo icon image", () => {
     render(<NavLogo />);
-    expect(screen.getByText("S")).toBeInTheDocument();
-  });
-
-  it("renders custom icon when provided", () => {
-    render(<NavLogo icon={<span data-testid="custom-icon">★</span>} />);
-    expect(screen.getByTestId("custom-icon")).toBeInTheDocument();
-    expect(screen.queryByText("S")).not.toBeInTheDocument();
+    const img = screen.getByRole("img", { name: /logo/i });
+    expect(img).toBeInTheDocument();
+    expect(img).toHaveAttribute("src", "/logo.png");
   });
 
   it("links to home page", () => {

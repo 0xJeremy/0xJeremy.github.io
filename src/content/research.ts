@@ -20,7 +20,7 @@ export const researchContent = {
       organization: "Tufts University, Department of Mechanical Engineering",
       location: "Medford, MA",
       overallDuration: "May 2018 - December 2018",
-      logoUrl: "/sandbox/static/logos/tufts.jpg",
+      logoUrl: "/static/logos/tufts.jpg",
       roles: [
         {
           title: "Undergraduate Research Project",

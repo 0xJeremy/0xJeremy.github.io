@@ -68,7 +68,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition:
     background var(--transition-fast),

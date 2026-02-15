@@ -138,13 +138,34 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 1;
+
+  /* Decorative orange outline box behind the image, offset down-right */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    z-index: -1;
+    transition: transform var(--transition-normal);
+  }
+
+  &:hover::after {
+    transform: translate(4px, 4px);
+  }
 `;
 
 const Image = styled.img`
+  position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: var(--radius-md);
   object-fit: cover;
+  filter: none;
+  z-index: 1;
 `;
 
 const ImagePlaceholder = styled.div`

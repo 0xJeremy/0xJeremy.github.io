@@ -20,8 +20,10 @@
  * Content is imported from src/content/ for easy editing.
  */
 
+import { useEffect } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Button } from "@/components/Button";
 import {
   HeroViewport,
   HeroContent,
@@ -37,6 +39,7 @@ import {
   FlatAboutContent,
   FlatExperienceContent,
   FlatPatentsContent,
+  ContactSection,
 } from "@/components/sections";
 import {
   FeaturedProjectsSection,
@@ -49,6 +52,7 @@ import {
   researchContent,
   patentsContent,
   projectsContent,
+  contactContent,
 } from "@/content";
 
 const PageContainer = styled.div`
@@ -69,12 +73,33 @@ const SectionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: var(--spacing-4xl);
-  padding-bottom: var(--spacing-4xl);
+  padding-bottom: var(--spacing-lg);
   z-index: 1;
 `;
 
 export const Home = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Set the page title
+  useEffect(() => {
+    document.title = "JK | Home";
+  }, []);
+
+  // Scroll to hash target after navigation from another page (e.g., /projects -> /#about)
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      // Small delay to ensure the DOM has rendered before scrolling
+      const timeout = setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      return () => clearTimeout(timeout);
+    }
+  }, [location.hash]);
 
   return (
     <PageContainer>
@@ -137,8 +162,6 @@ export const Home = () => {
         >
           <FlatAboutContent
             paragraphs={aboutContent.paragraphs}
-            skills={aboutContent.skills}
-            skillsIntro={aboutContent.skillsIntro}
             imageUrl={aboutContent.image.url}
             imageAlt={aboutContent.image.alt}
           />
@@ -149,6 +172,20 @@ export const Home = () => {
           id="experience"
           title={experienceContent.title}
           sectionNumber="02"
+          headerAction={
+            <div style={{ display: "flex", gap: "var(--spacing-md)" }}>
+              <Button
+                variant="secondary"
+                onClick={() => window.open("/resume.pdf", "_blank")}
+                style={{
+                  padding: "var(--spacing-xs) var(--spacing-md)",
+                  fontSize: "var(--font-size-xs)",
+                }}
+              >
+                Resume ↗
+              </Button>
+            </div>
+          }
         >
           <FlatExperienceContent entries={experienceContent.entries} />
         </FlatSection>
@@ -187,6 +224,16 @@ export const Home = () => {
           id="other-projects"
           projects={projectsContent}
           initialCount={6}
+        />
+
+        {/* Contact Section - Section 06 */}
+        <ContactSection
+          id="contact"
+          sectionNumber={contactContent.sectionNumber}
+          title={contactContent.title}
+          heading={contactContent.heading}
+          description={contactContent.description}
+          cta={contactContent.cta}
         />
       </SectionsContainer>
     </PageContainer>

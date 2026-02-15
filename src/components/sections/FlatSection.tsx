@@ -26,6 +26,7 @@ const Wrapper = styled.section`
   margin-bottom: var(--spacing-4xl);
   width: 75%;
   max-width: 1100px;
+  scroll-margin-top: calc(var(--viewport-inset) + 80px);
 
   @media (max-width: ${TABLET_BREAKPOINT}px) {
     width: 95%;
@@ -104,11 +105,29 @@ export interface FlatSectionProps {
   className?: string;
 }
 
+export interface FlatSectionProps {
+  /** Section content */
+  children: React.ReactNode;
+  /** Section title (displayed in header) */
+  title: string;
+  /** Section number for header (e.g., "01", "02") - optional */
+  sectionNumber?: string;
+  /** Whether to show the horizontal accent line after title */
+  showHeaderLine?: boolean;
+  /** Optional content to render in the header (e.g. a button) */
+  headerAction?: React.ReactNode;
+  /** Optional id for anchor linking */
+  id?: string;
+  /** Optional className for additional styling */
+  className?: string;
+}
+
 export const FlatSection = ({
   children,
   title,
   sectionNumber = void 0,
   showHeaderLine = true,
+  headerAction = void 0,
   id = void 0,
   className = void 0,
 }: FlatSectionProps) => (
@@ -116,6 +135,9 @@ export const FlatSection = ({
     <Header>
       {sectionNumber && <HeaderNumber>{sectionNumber}.</HeaderNumber>}
       <HeaderTitle>{title}</HeaderTitle>
+      {headerAction && (
+        <div style={{ marginRight: "var(--spacing-lg)" }}>{headerAction}</div>
+      )}
       {showHeaderLine && <HeaderLine aria-hidden="true" />}
     </Header>
     <Content>{children}</Content>

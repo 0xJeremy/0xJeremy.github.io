@@ -2,16 +2,14 @@
  * NavLogo Component
  *
  * The site logo that links to the home page.
- * Displays an icon placeholder (or custom icon) alongside the "Sandbox" text.
+ * Displays the Raspberry Pi logo icon alongside "Jeremy Kanovsky" text.
  *
  * Behavior:
  * - Always links to root route
  * - Fades on hover for subtle interaction feedback
- * - Accepts custom icon via prop, defaults to "S" placeholder
  *
  * Usage:
  * - Used in NavBar and MobileMenu header
- * - Pass custom `icon` prop to replace the default placeholder
  */
 
 import { Link } from "react-router-dom";
@@ -30,17 +28,10 @@ const LogoLink = styled(Link)`
   }
 `;
 
-const IconPlaceholder = styled.div`
+const LogoIcon = styled.img`
   width: 32px;
   height: 32px;
-  border-radius: var(--radius-md);
-  background: var(--color-gray-800);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-sm);
+  object-fit: contain;
 `;
 
 const LogoText = styled.span`
@@ -49,14 +40,9 @@ const LogoText = styled.span`
   letter-spacing: var(--letter-spacing-tight);
 `;
 
-export interface NavLogoProps {
-  /** Optional icon element to replace placeholder */
-  icon?: React.ReactNode;
-}
-
-export const NavLogo = ({ icon = null }: NavLogoProps) => (
+export const NavLogo = () => (
   <LogoLink to="/">
-    {icon ?? <IconPlaceholder>S</IconPlaceholder>}
-    <LogoText>Sandbox</LogoText>
+    <LogoIcon src="/logo.png" alt="Logo" />
+    <LogoText>Jeremy Kanovsky</LogoText>
   </LogoLink>
 );

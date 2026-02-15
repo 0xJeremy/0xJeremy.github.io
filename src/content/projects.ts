@@ -60,7 +60,7 @@ export const getMainImage = (
 };
 
 /** Base path for project images (includes Vite base path) */
-const IMAGE_PATH = "/sandbox/static/projects";
+const IMAGE_PATH = "/static/projects";
 
 /**
  * Projects data - edit this array to change displayed projects

@@ -39,15 +39,9 @@ export const aboutContent = {
     "In my free time, I build open-source libraries, robots, and design circuit boards. I like to read, and climb up then fall off rocks.",
   ] satisfies (string | AboutParagraph)[],
 
-  /** Skills/technologies to display in a grid */
-  skills: ["Node.js", "TypeScript", "Python", "CI/CD", "React.js", "AWS"],
-
-  /** Label for skills section */
-  skillsIntro: "Some of the things I've been working on recently:",
-
   /** Profile image (optional - shows placeholder if omitted) */
   image: {
-    url: void 0, // e.g., '/images/profile.jpg' or 'static/avatar.jpeg'
-    alt: "Profile photo",
+    url: "/me.jpg",
+    alt: "Photo of Jeremy Kanovsky",
   },
 };

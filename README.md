@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173/sandbox/`
+The app will be available at `http://localhost:5173/`
 
 ## Available Commands
 
@@ -191,6 +191,8 @@ describe('Button', () => {
   });
 });
 ```
+
+Run npm run build to verify
 
 ## Deployment to GitHub Pages
 

@@ -25,3 +25,6 @@ export type { FlatExperienceContentProps } from "./FlatExperienceContent";
 
 export { FlatPatentsContent } from "./FlatPatentsContent";
 export type { FlatPatentsContentProps } from "./FlatPatentsContent";
+
+export { ContactSection } from "./ContactSection";
+export type { ContactSectionProps } from "./ContactSection";

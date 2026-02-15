@@ -100,7 +100,7 @@ export const Layout = () => (
   <Container>
     <Header>
       <Nav>
-        <Logo to="/">Sandbox</Logo>
+        <Logo to="/">Jeremy Kanovsky</Logo>
         <NavLinks>
           <li>
             <StyledNavLink to="/">Home</StyledNavLink>
@@ -118,7 +118,9 @@ export const Layout = () => (
       <Outlet />
     </Main>
     <Footer>
-      <p>&copy; {new Date().getFullYear()} Sandbox. All rights reserved.</p>
+      <p>
+        &copy; {new Date().getFullYear()} Jeremy Kanovsky. All rights reserved.
+      </p>
     </Footer>
   </Container>
 );

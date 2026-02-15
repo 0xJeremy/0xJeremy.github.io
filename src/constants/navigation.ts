@@ -14,10 +14,14 @@ export const NAV_TRANSITION_DURATION = 300;
 /** Navigation links configuration */
 export const NAV_LINKS = [
   { label: "Home", href: "/", external: false },
-  { label: "About Me", href: "/about", external: false },
+  { label: "About Me", href: "/#about", external: false },
   { label: "Projects", href: "/projects", external: false },
-  { label: "Contact", href: "/contact", external: false },
-  { label: "GitHub", href: "https://github.com", external: true },
+  { label: "Contact", href: "/#contact", external: false },
+  {
+    label: "GitHub",
+    href: "https://github.com/0xJeremy/0xJeremy.github.io",
+    external: true,
+  },
   { label: "Resume", href: "/resume.pdf", external: true },
 ] as const;
 

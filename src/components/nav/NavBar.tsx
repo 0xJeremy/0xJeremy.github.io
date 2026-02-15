@@ -138,6 +138,17 @@ export const NavBar = ({ scrollBased = false }: NavBarProps) => {
                 key={link.href}
                 href={link.href}
                 external={link.external}
+                onClick={() => {
+                  if (link.href === "/") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  } else if (link.href.startsWith("/#")) {
+                    const id = link.href.split("#")[1];
+                    const element = document.getElementById(id);
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }
+                }}
               >
                 {link.label}
               </NavLink>

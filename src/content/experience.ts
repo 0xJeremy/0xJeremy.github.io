@@ -24,7 +24,7 @@ export const experienceContent = {
       organization: "Markforged",
       location: "Waltham, MA",
       overallDuration: "2019 - Present",
-      logoUrl: "/sandbox/static/logos/markforged.png",
+      logoUrl: "/static/logos/markforged.png",
       roles: [
         {
           title: "Senior Software Engineer",
@@ -73,7 +73,7 @@ export const experienceContent = {
       organization: "Microsoft",
       location: "Cambridge, MA",
       overallDuration: "January - May 2020",
-      logoUrl: "/sandbox/static/logos/microsoft.png",
+      logoUrl: "/static/logos/microsoft.png",
       roles: [
         {
           title: "Makerspace Lead",
@@ -89,7 +89,7 @@ export const experienceContent = {
       organization: "Nolop Makerspace, Tufts University",
       location: "Medford, MA",
       overallDuration: "January 2019 - May 2021",
-      logoUrl: "/sandbox/static/logos/nolop.png",
+      logoUrl: "/static/logos/nolop.png",
       roles: [
         {
           title: "Fabrication Supervisor",
@@ -105,7 +105,7 @@ export const experienceContent = {
       organization: "School of Engineering, Tufts University",
       location: "Medford, MA",
       overallDuration: "2019 - 2021",
-      logoUrl: "/sandbox/static/logos/tufts.jpg",
+      logoUrl: "/static/logos/tufts.jpg",
       roles: [
         {
           title: "Teaching Assistant",

@@ -12,6 +12,6 @@ export default defineConfig({
   },
   // IMPORTANT: Change this to your repository name before deploying
   // e.g., for https://username.github.io/my-repo/, set base: '/my-repo/'
-  base: '/sandbox/',
+  base: '/',
 });
 

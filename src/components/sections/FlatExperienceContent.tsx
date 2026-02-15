@@ -56,8 +56,8 @@ const EntryWrapper = styled.article`
   }
 
   &:not(:last-child) {
-    margin-bottom: var(--spacing-3xl);
-    padding-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-md);
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}px) {
@@ -66,7 +66,7 @@ const EntryWrapper = styled.article`
 `;
 
 const EntryHeader = styled.header`
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 `;
 
 const TopRow = styled.div`
@@ -159,8 +159,8 @@ const RolesContainer = styled.div`
 
 const RoleWrapper = styled.div`
   &:not(:last-child) {
-    margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--color-gray-700);
   }
 `;
@@ -204,27 +204,6 @@ const RoleDescription = styled.p`
 
   @media (max-width: ${MOBILE_BREAKPOINT}px) {
     font-size: var(--font-size-sm);
-  }
-`;
-
-const BulletList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-`;
-
-const BulletItem = styled.li`
-  position: relative;
-  padding-left: var(--spacing-lg);
-  font-size: var(--font-size-sm);
-  color: var(--color-gray-200);
-  line-height: var(--line-height);
-
-  &::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
   }
 `;
 
@@ -276,13 +255,7 @@ export const FlatExperienceContent = ({
                 {role.description && (
                   <RoleDescription>{role.description}</RoleDescription>
                 )}
-                {role.bullets && role.bullets.length > 0 && (
-                  <BulletList>
-                    {role.bullets.map((bullet) => (
-                      <BulletItem key={bullet}>{bullet}</BulletItem>
-                    ))}
-                  </BulletList>
-                )}
+                {/* Bullets removed as per request */}
               </RoleWrapper>
             ))}
           </RolesContainer>

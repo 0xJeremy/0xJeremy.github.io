@@ -7,13 +7,13 @@ describe("Home", () => {
   it("renders the hero title", () => {
     render(<Home />);
     expect(
-      screen.getByRole("heading", { name: /building the future/i }),
+      screen.getByRole("heading", { name: /jeremy kanovsky/i }),
     ).toBeInTheDocument();
   });
 
   it("renders the hero subtitle", () => {
     render(<Home />);
-    expect(screen.getByText(/passionate about creating/i)).toBeInTheDocument();
+    expect(screen.getByText(/i write code for hardware/i)).toBeInTheDocument();
   });
 
   it("renders action buttons", () => {
@@ -22,7 +22,7 @@ describe("Home", () => {
       screen.getByRole("button", { name: /see my work/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /contact me/i }),
+      screen.getByRole("button", { name: /get in touch/i }),
     ).toBeInTheDocument();
   });
 

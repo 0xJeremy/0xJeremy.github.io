@@ -30,7 +30,7 @@ describe("NavBar", () => {
 
   it("renders logo", () => {
     render(<NavBar />);
-    expect(screen.getByText("Sandbox")).toBeInTheDocument();
+    expect(screen.getByText("Jeremy Kanovsky")).toBeInTheDocument();
   });
 
   it("renders all navigation links on desktop", () => {

@@ -6,7 +6,9 @@ import { Layout } from "./Layout";
 describe("Layout", () => {
   it("renders the logo", () => {
     render(<Layout />);
-    expect(screen.getByRole("link", { name: /sandbox/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /jeremy kanovsky/i }),
+    ).toBeInTheDocument();
   });
 
   it("renders navigation links", () => {
