@@ -19,7 +19,7 @@ export const NAV_LINKS = [
   { label: "Contact", href: "/#contact", external: false },
   {
     label: "GitHub",
-    href: "https://github.com/0xJeremy/0xJeremy.github.io",
+    href: "https://github.com/0xJeremy",
     external: true,
   },
   { label: "Resume", href: "/resume.pdf", external: true },

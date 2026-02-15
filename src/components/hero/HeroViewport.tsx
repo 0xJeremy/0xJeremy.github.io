@@ -5,7 +5,7 @@
  * Designed for immersive hero sections with layered content.
  *
  * Structure:
- * - Outer container with viewport-inset margins on all sides
+ * - Outer container: full-bleed on mobile, viewport-inset margins on desktop (768px+)
  * - Optional media layer for background video/image/canvas
  * - Gradient overlay for text readability
  * - Content layer for children (above overlay)
@@ -26,15 +26,23 @@ const VIEWPORT_INSET = "var(--viewport-inset)";
 
 const ViewportContainer = styled.section`
   position: relative;
-  /* Calculate exact dimensions to center viewport with equal margins */
-  width: calc(100vw - ${VIEWPORT_INSET} * 2);
-  height: calc(100vh - ${VIEWPORT_INSET} * 2);
-  margin: ${VIEWPORT_INSET};
-  border-radius: var(--radius-2xl);
   overflow: hidden;
   background-color: var(--color-viewport);
-  box-shadow: var(--shadow-viewport);
   z-index: var(--z-viewport);
+
+  /* Mobile: full-bleed, no inset or border-radius */
+  width: 100%;
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height accounts for mobile browser chrome */
+
+  /* Desktop: inset with rounded corners */
+  @media (min-width: 768px) {
+    width: calc(100vw - ${VIEWPORT_INSET} * 2);
+    height: calc(100vh - ${VIEWPORT_INSET} * 2);
+    margin: ${VIEWPORT_INSET};
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-viewport);
+  }
 `;
 
 const MediaLayer = styled.div`

@@ -1,4 +1,4 @@
-# Sandbox
+# Personal Website
 
 A modern multi-page React application built with TypeScript, Vite, and styled-components. Configured for static deployment to GitHub Pages.
 

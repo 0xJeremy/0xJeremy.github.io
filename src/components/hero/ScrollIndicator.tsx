@@ -45,6 +45,11 @@ const Container = styled.div`
   gap: var(--spacing-sm);
   z-index: var(--z-content);
   animation: ${fade} 2s ease-in-out infinite;
+
+  /* Ensure scroll indicator stays within safe area on mobile */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    bottom: calc(var(--spacing-xl) + env(safe-area-inset-bottom));
+  }
 `;
 
 const Arrow = styled.div`

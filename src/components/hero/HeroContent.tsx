@@ -6,7 +6,8 @@
  *
  * Layout:
  * - Vertically centered within its container
- * - Left-aligned text with constrained max-width
+ * - Mobile: full-width with comfortable padding, compact side-by-side buttons
+ * - Desktop: left-aligned glassmorphism card with constrained max-width (45vw)
  * - Button group with primary and secondary actions
  *
  * Usage:
@@ -22,17 +23,22 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--spacing-lg);
-  max-width: 45vw;
   background: rgba(10, 25, 47, 0.5);
   backdrop-filter: blur(10px);
-  border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  margin: auto var(--spacing-md);
 
+  /* Mobile: full-width with comfortable padding */
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin: auto 0;
+  border-radius: 0;
+  max-width: 100%;
+
+  /* Desktop: constrained card with rounded corners */
   @media (min-width: 768px) {
     padding: var(--spacing-xl);
     margin: auto var(--spacing-2xl);
+    max-width: 45vw;
+    border-radius: var(--radius-lg);
   }
 `;
 
@@ -83,9 +89,24 @@ const Description = styled.p`
 
 const ButtonGroup = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   margin-top: var(--spacing-sm);
+
+  /* Mobile: compact side-by-side buttons */
+  & > button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-xs);
+  }
+
+  /* Desktop: restore default button sizing */
+  @media (min-width: 768px) {
+    gap: var(--spacing-md);
+
+    & > button {
+      padding: var(--spacing-md) var(--spacing-xl);
+      font-size: var(--font-size-sm);
+    }
+  }
 `;
 
 export interface HeroContentProps {
