@@ -11,7 +11,6 @@ export { NavLink } from "./NavLink";
 export type { NavLinkProps } from "./NavLink";
 
 export { NavLogo } from "./NavLogo";
-export type { NavLogoProps } from "./NavLogo";
 
 export { MobileMenu } from "./MobileMenu";
 export type { MobileMenuProps } from "./MobileMenu";
